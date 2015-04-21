@@ -1,0 +1,101 @@
+<!DOCTYPE htm PUBLIC "-//W3C//DTD htm 4.0 Transitional//EN"
+	"http://www.w3.org/TR/REC-htm40/loose.dtd">
+
+<htm lang="en-US">
+
+<HEAD>
+	<TITLE>Stars!-R-Us Article</TITLE>
+
+	<META name="author" content="Donald Davis">
+	<META name="copyright" content="&copy; 1999">
+	<!-- <META http-equiv="Content-Style-Type" content="text/css"> -->
+
+	<!-- <LINK href="main.css" rel="stylesheet" type="text/css"> -->
+
+	<!-- <href="http://www.strategygamefan.com/starsrus/"> -->
+</HEAD>
+<BODY background="../../starfield.gif" text="#8eb3f4" link="#FF0000" vlink="#c00000" alink="#800080" bgcolor="#000000">
+<h3>Basic Strategy Tip of the day : Packets<bR>
+by: Barry Kearns</h3>
+
+<p>After seeing someone INCORRECTLY corrected in the newsgroup about how mass packets operate, I figured that I'd try to chime in with what is, hopefully, CORRECT information about how mass packets behave in v2.6b. I'd also like to offer some basic strategy tips to the newer players out there who may not have realized some of the implications of what they are doing in some of their games.<br><br>
+
+<p>[Note: I have, today, tested the behavior of packets in a testbed to ensure (as much as possible) that what I'm posting is ACTUALLY true. Please don't rely on the help file as the definitive source of actual behavior, as there are some IMPLICATIONS that don't necessarily show up, and there are also false impressions that can be created due to the phrasing used. It usually takes just a minute or two to test out whether something works the way you THINK it works...]<br><br>
+
+<h4>Mass Packet Fundamentals:<br><br>
+
+<p>Mass packets serve two primary functions in Stars!... they act as a weapon, and they can be used to transport minerals from one location to another. Secondary functions include terraforming capabilities for the Packet Physics race (this changed in v2.6a... used to be Claim Adjuster) and they also act as penetrating scanners for Packet Physics.<br><br>
+
+<p>There are web-based packet damage calculators available to determine the effectiveness of various packet sizes at different speeds. There is a<br><br>
+
+<p>reasonably complex set of calculations involved, and it's easy to get confused and make assumptions about what the help file MEANS with respect to the terminology used. Care should be taken to thoroughly TEST out your assumptions before relying on an "understanding" of the presented math.<br><br>
+
+<p>A full set of calculations for this will be posted at some later date.<br><br>
+
+<p>There are certain aspects of mineral packets which do NOT change based on which PRT fired the packet. These include:<br><br><br><br>
+
+<li>Mass packets always travel in straight lines
+<li>Mass packets do not change speed or direction
+<li>Mass packets must be fired FROM a planet, targeted AT a planet
+<li>Mass packets cannot increase in size after being fired
+<li>Mass packets completely ignore the presence of mine fields
+<li>Mass Packets travel distance = their speed squared, each year.
+<li>Mass Packets travel exactly half that distance on the year of launch.
+<li>Mass packets which are "in space" at the end of a turn might be intercepted by freighters.<br><br>
+
+<p>Several other aspects of mass packets *do* change, based upon which Primary Racial Trait is doing the firing:<br><br>
+
+<li>Interstellar Traveller incurs a 20% overhead cost in mineral usage in order to be able to construct a packet. This means that placing one "unit" into the production queue consumes 120 kt of a mineral, but the packet itself will weigh only 100 kt. The difference is lost, and cannot be recovered.
+
+This is an inherent COST of firing mineral packets, which is often overlooked by the newer player. It is very much like a "tax" placed upon the minerals fired. What are the playing implications? If you have 12,000kt of Ironium at a "far away" world, and wish to transport it to a world which can better use it, I.T. players lose 2000kt right off the bat. Only 10,000kt make it INTO the packet.
+
+This "tax" plays a much more significant role if players try to "hop" packets from one world to another, rather than risking them being stolen while in flight. I've seen players with "feeder" chains of packet targets, with Auto-build orders set to fire them off. Huge losses can be incurred if this overhead is not noticed.
+
+It's generally more cost-effective to move minerals via freighter, rather than via mineral packet. (Unless you are Packet Physics).
+
+<li>Packet Physics incurs NO overhead mineral costs in producing mineral packets. So the above statements take on a new meaning for Packet Physics races. The only "losses" which occur happen due to theft, or IF there is any packet decay due to overdriving the speed.
+
+<li>All other PRTs incur a 10% overhead cost in minerals.<br><br>
+
+<p>Mineral packet decay characteristics are also governed somewhat by which PRT is doing the firing.<br><br>
+
+<p>For most PRTs, packets fired at the "default" speed of the Driver will not decay at all, regardless of the distance that the packet travels.<br><br>
+
+<p>If the Driver is set to a speed higher than its rating, then the packets become unstable and decay. The typical decay rate is 10% for one warp speed higher, 25% for two warps higher, and 50% for three warps over the default rating. So a single warp 7 Driver firing at warp 10 will cause a 50% decay rate. The decay rate is applied to the amount of each mineral in the packet DURING THAT YEAR. So in this example, a 4000kt packet that is already in flight will be down to 2000kt next year, 1000kt the year after, then 500kt, and so on. If decay is taking place, the MINIMUM amout for EACH mineral type in the packet that will decay is 10kt.<br><br>
+
+<p>Decay amounts are PRORATED on the year of launch, and on the year of arrival. This means that you could have launched 6000kt of Ironium in the example above, and produced the 4000kt packet in question. The year that the packet arrives, the decay amount will be scaled back, to represent whatever FRACTION of the ordinary yearly travel distance was covered by the packet during that year.<br><br>
+
+<p>Note that the "default" speed for a mass driver is RAISED by one if two identical drivers are placed on a starbase. This does NOT give the ability to fire at 4 speeds higher. It does lower the decay rate, however. So TWO warp 7 drivers yields NO decay at warp 8, 10% at warp 9, and 25% at warp 10. It cannot fire at warp 11.<br><br>
+
+<p>Packet Physics have their decay rates cut in half. The minimum decay amount is also half (5kt). So a PP packet weighing 70kt (one unit), fired at three warps over, would show up as 62, 47, 36, 27, 21, 16, 11, 6, and finally 1kt.<br><br>
+
+<p>Interstellar Traveller has a special case for packet decay. *ALL* packets fired by I.T. have a minimum 10% decay rate, no matter how slow. Packets fire 1 warp over decay at 25%, and 2 or 3 warps over yield a 50% decay rate.<br><br>
+
+<p>I.T. using dual Drivers can't escape, either. Dual warp 7 drivers yield 10% at warp 7, 10% at warp 8, 25% at warp 9, and 50% at warp 10. The minimum decay amount remains 10kt of each mineral type.<br><br>
+
+<p>Packet Physics races also see ALL mineral packets that are "in space", regardless of whether they are within scanner range. This change happened in v2.6a.<br><br>
+
+<h4>Packet Theft:<br><br>
+
+<p>Any packet which is "in space" at the end of a year is subject to the possibility of being "stolen", if someone has a freighter at the same point in space. Some (or all) of the minerals in the packet can be loaded onto the freighter, reducing the mass of the packet accordingly.<br><br>
+
+<p>One of the changes made in v2.6a was to take away the ability to jettison cargo if there is a mineral packet or salvage at that location. This prevents people from taking a small freighter out to intercept a huge packet, and doing load-jettison-repeat until the packet was empty.<br><br>
+
+<p>If there are multiple players at the location of a packet, all trying to steal minerals from it, the program will randomize who gets what during turn generation.<br><br>
+
+<p>Keep in mind that the travel characteristics are DETERMINISTIC. This means that if a packet shows up in a given location on the year of launch, other packets sent from that world to the same target AT THE SAME SPEED will *always* show up in that exact same spot. Knowing about this behavior is *very* useful when planning to steal packets, and also if you want to ESCORT or GUARD your packets from theft.<br><br>
+
+<p>An example: Let's say you want to fire minerals from A to B, and they are 200 l.y. apart. You use dual warp 10 Drivers on both the target and the sender. You launch your packets at warp 11. Your packet will be "in space" for TWO turns. It will travel ~60.5 l.y. on the year of launch, an additional 121 l.y. during the second year, and will hit during the third year.<br><br>
+
+<p>If you want to prevent your packets from being stolen, you don't have to have an escort which travels at warp 11... (Good thing, since it's not possible). Just fire a SMALL packet at the target first, and take note of the EXACT coordinates that the packet had during flight.<br><br>
+
+<p>When you're ready to send a big packet, you can STATION defensive fleetsat those points, OR you can give fleets in the local vicinity orders to MOVE to those points, timed so that they arrive at the same time.<br><br>
+
+<p>Packet thiefs can, of course, *see* you doing this, and may likely try to do the same thing. If this is happening to you, try launching lots of little packets at any of your starbases which can catch them. That multiplies the total number of points that they will have to try to target, if they want to catch the packet on the year of launch...<br><br>
+
+<p>Hopefully, someone out there will find this information useful.<br><br>
+
+<p>Barry Kearns<br><br>
+
+<h4><A HREF="../index.htm">Back to the Article Main Page.</A>
+</font></body>

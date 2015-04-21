@@ -1,0 +1,15 @@
+
+<!--
+BODY {background-color: #000000; color: #FFFFFF}
+A:link {color: "#3232FF"; text-decoration: none; font-weight: bold}
+A:visited {color: "#0000C8"; text-decoration: none; font-weight: bold}
+A:hover {color: "#8484FF"; text-decoration: none; font-weight: bold}
+TD {color: white}
+TD.top {background-color: "#8484FF"; font-weight: bold; color: #FFFFFF}
+H1 {font-weight: bold; color: white; font-size: 14pt}
+H2 {font-weight: bold; color: white;}
+.NoGap {position:relative; color: #FFFFFF}
+.TMPNoGap {position:relative; color: #FFFFFF; margin-top: -20px; z-index: 1;}
+table {  color: #FFFFFF}
+td {  color: #FFFFFF}
+-->

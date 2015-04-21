@@ -1,0 +1,71 @@
+<!DOCTYPE htm PUBLIC "-//W3C//DTD htm 4.0 Transitional//EN"
+	"http://www.w3.org/TR/REC-htm40/loose.dtd">
+
+<htm lang="en-US">
+
+<HEAD>
+	<TITLE>Stars!-R-Us Article</TITLE>
+
+	<META name="author" content="Donald Davis">
+	<META name="copyright" content="&copy; 1999">
+	<!-- <META http-equiv="Content-Style-Type" content="text/css"> -->
+
+	<!-- <LINK href="http://www.strategygamefan.com/starsrus/main.css" rel="stylesheet" type="text/css"> -->
+
+	<!-- <href="http://www.strategygamefan.com/starsrus/"> -->
+</HEAD>
+
+<BODY background="../../starfield.gif" text="#8eb3f4" link="#FF0000" vlink="#c00000" alink="#800080" bgcolor="#000000">
+<h3>Mineral Concentration And Mining<br>
+by Jason Cawley </h3>
+<p>
+
+> I looked at the helpfile and some FAQ but I don´t find the answer to the question:<br>
+> How decrease minerals if you use AR or Miningrobots?<br>
+> If you use normal mines it is clear.<Br>
+
+<p>The normal mines formula may seem clear, but it is trickier than the help may suggest - the help leaves out a lot and speaks of "approximation" a lot.
+
+<p>12500/concentration is the number of kt of minerals that can be extracted before the concentration drops one point. E.g. to go from 50 to 49, you mine 250 kt of minerals (12500/50 = 250). That is for standard, 1.0 mine efficiency. The number of minerals per point of concentration is raised for higher-efficiency planetary mines (1.5 times for 1.5 mine eff, etc). Also, the help does not explain how the lower mineral concentrations are handled. At around concentration 27, the minerals per point "go linear" at ~462 kt. They stay that way down to concentration 4. From 4 to 3, and 3 to 2, there are 1000 kt of minerals in each point. From 2 to 1, there are 2000 kt.
+
+<p>For remote miners and AR pop-based mining, they work the same as 1.0 efficiency plantary mines, in terms of the number of kt extracted before the concentration falls.
+
+<p>While the 12500 / concentration factoid tells you what you need to know for small changes (and at high concentrations, over 27), summing a bunch of those figures as the concentration changes is a chore, unless you use a trick to solve the general case. You do that by integrating to find the sum of all the individual, one-point-drop, amounts.
+
+<p>A continous approximation of the minerals you get for a given concentration drop, above the con 27 level, is 12500 * ln (starting con/ending con). E.g. from 50 to 27, about 7700 kt. You get the natural log part from integrating a 1/x function; you get the ratio of the starting and ending cons from a log of one minus a log of the other, since ln a - ln b = ln (a / b).
+
+<p>Math aside - definite integral from a to b of 12500/x * dx = 12500 times definite integral from a to b of 1/x * dx = 12500 * (ln a - ln b) (endpoint evaluation) = 12500 * ln (a/b).
+
+<p>The actual minerals received will be slightly higher than the continuous approximation, though, because the discrete calculation doesn't drop the concentration until the following year (or after the first, up to 4000 mine- equivalent, remote mining fleet), so the average concentration is effectively a little higher. The difference will be more noticable for higher rates of mining, too. But the continuous approximation is close enough for planning purposes.
+
+<p>For 27 and below, you get 462 per point, down to the last 3, then 1000, 1000, 2000 for the last 3, respectively.
+
+<p>As examples of using the formula, depleting from various starting levels to con 30 will give about the following amounts of minerals -
+
+100->30 => 15050 kt = 12500 * 1.204 = 12500 * ln (100/30)<br>
+80->30 => 12260 kt<br>
+60->30 => 8664 kt<br>
+40->30 => 3596 kt<br>
+
+<p>From con 30 to con 4, there are about 11920 kt of minerals, or call it 12000 to keep it a round number, easy to remember. Another 4000 to con 1. All for standard mine efficiency (or remotes), of course.
+
+<p>Note that this means there are about the same number of minerals in the rock from con ~30 to con 1 as from con 100 to con 30 (16000 and 15000 respectively); the "go linear" point at 27 con is half-way from the 100 to 1, basically, in terms of total minerals in the rock; the higher con portion "comes out" much faster of course.
+
+<p>This is the result of detailed testing, in which several others helped out. The ln, continuous approximation, checks out quite well as a rule of thumb, but you can get a few hundred more kt overall with rapid mining. The 15-20K kt of minerals you will often see for most planets at the end of long testbeds (to year 100 I mean), for example, fits with 18305 predicted by the formula for going from 50 (an average level) to 4; 15.6K predicted with a 10 ending con and 50 starting. More detailed tests were used to nail down the formula originally.
+
+<p>Summing up, to approximate the minerals for a concentration change, use the following piece-wise function -
+
+ending con >= 27 : 12500 * ln (starting con / ending con)<br>
+ending con 26-4 : 462 * (starting con - ending con)<br>
+ending con 3, 2 : 1000 each<br>
+ending con 1 : 2000.<br>
+
+<p>For drops from over 27 down to something in the lower ranges, calculate the minerals to 27, and those below it, seperately, and add them.
+
+<p>I hope this is useful. <br><br>
+
+Sincerely, <br><br>
+
+Jason Cawley <br><br>
+
+<a HREF="../index.htm">Back to the Article Main Page.</a></body></html>

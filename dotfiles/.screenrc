@@ -1,0 +1,38 @@
+# htt://gentoo-wiki.com/TIP_Using_screen#Resizing_regions_with_Commands
+# http://www4.informatik.uni-erlangen.de/~jnweiger/screen-faq.html
+
+wrap    off  # ignore wrap
+vbell   on   # visual bell
+nethack on   # funny error messages
+
+verbose off  # for debugging .screenrc
+startup_message off
+
+#altscreen  on      # clear screen after exiting vim
+defscrollback 3000  # size of window buffer; default: 100
+silencewait     15  # how long to monitor for silence; default: 30
+
+shelltitle '$|bash'        # rename tabs from bash title, needs custom PS1 in .bashrc
+termcapinfo xterm ti@:te@  # allow scrollback
+
+#logfile /home/jamesmcguigan/logs/screen_%Y-%m-%d_%0c
+#pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
+#hardcopy_append on  # append to "hardcopy.n" files created "C-a h", 
+
+
+hardstatus alwayslastline
+#hardstatus string '%{= mK}%-Lw%{= KW}%50>%n%f* %t%{= mK}%+Lw%< %{= kG}%-=%D %d %M %Y %c:%s%{-}'
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+hardstatus string '%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}]%{=b C}[ %D %d %M %Y %c ]%{W}' # [ host ][ screen-tabs ][ cpu ][ date ]
+
+
+
+# keybindings
+bind s           # remove Ctrl-A s - it freezes the screen
+bind S           # remove Ctrl-A S - it freezes the screen
+
+#bind v screen -t 'vim' vim
+
+# startup tabs
+#screen -t ft-cms.log 9 tail -F /var/log/tomcat/ft-cms.log
+screen -A -t

@@ -1,0 +1,176 @@
+<!doctype html public "-//w3c//dtd html 3.2//en">
+
+<html>
+	<meta>
+	<head>
+		<title>
+			The Stars! FAQ - Minefields
+		</title>
+<META NAME = "keywords" CONTENT = "stars, FAQ, PBEM, blitz, hotseat, stratergy, micromanagement, James, McGuigan, Jeff McBride, Jason Cawley, advanced, technical, advFAQ, rgcs, battle, fleet, ship, war, space, 4X, scifi, empire, interactive, xplosiv, Supernova, explore, expand, exterminate, research, diplomacy, JRC3, autohost">
+		<META NAME = "Description" CONTENT = "The Stars! FAQ is the web resource the PBEM game Stars! by Jeff Johnson and Jeff McBride">
+		<META NAME = "ROBOTS" CONTENT="ALL">
+		<META NAME = "Copyright" CONTENT = "James McGuigan">
+		<META NAME = "Author" CONTENT = "James McGuigan">
+		<meta name="FORMATTER" content="Arachnophilia 4.0">
+	</head>
+	<body bgcolor="#000000" text="#8eb3f4" link="#FF0000" vlink="#FF0000" alink="#b1111ff" background="starfield.gif">
+
+		<p align = center>
+		<img src="starsfaqlogo.gif" height="115" width="500"><br>
+		<a href="index.htm">Return to Main Menu</a> 
+		</p>
+
+<table width="90%" align ="center" border="0" cellpadding="0" >
+	<tr>
+		<td>
+
+		<li><h2>Minefields</h2>
+		<br>
+			<ul>
+			<li><h3>Order of Events</h3>
+				<ol>
+				<li>     Waypoint 0 - load / unload / fleet merge tasks 
+				<li>     Fleets move (in fleet # order, minefields get reduced as they are hit )
+				<li>     SD Minefields detonate (possibly damaging again fleet that hit minefield during movement) 
+				<li>     Production (incl. research, packet launch, fleet/starbase construction) 
+				<li>     Fleet battles (with possible tech gain) 
+				<li>     Meet MT 
+				<li>     Bombing 
+				<li>     Waypoint 1 - load / unload / fleet merge tasks 
+				<li>	    Minefield Decay
+				<li>     Mine Laying (in fleet # order)
+				<li>     Mine Sweeping 
+				<li>     Starbase and fleet repair 
+				</ol><br>
+			<br>
+			<li><h3>Stats</h3>
+				<ul>
+				<li><b>Normal Minefields</b>
+					<ul>
+					<li> Safe Speed = Warp 4
+					<li>	Chance / ly of hit = 0.3%
+					<li> Damage per engine = 100 (125)
+					<li> Minimum fleet damage = 500 (600) * engines per ship
+					</ul>
+					<br>
+				<li><b>Speed Bump Minefields</b>
+					<ul>
+					<li> Safe Speed = Warp 5
+					<li>	Chance / ly of hit = 3.5%
+					<li> Damage per engine = 0
+					<li> Minimum fleet damage = 0
+					</ul>
+					<br>
+				<li><b>Heavy Minefields</b>
+					<ul>
+					<li> Safe Speed = Warp 6
+					<li>	Chance / ly of hit = 1%
+					<li> Damage per engine = 500 (600)
+					<li> Minimum fleet damage = 2000 (2500)
+					</ul>
+					<br>
+				The numbers in parentheses (...) are for fleets with ramscoop engines
+				</ul>
+				<br><br>
+
+			<li><h3>Formulas</h3>
+				<ul>
+				<li><b>Collisions</b>
+					<ul>
+					<li> The formula for hitting a minefield per ly:  (current warp speed - safe warp speed) * chance per ly of a hit
+					<li> Each ly traveled through a minefield is checked separately
+					<li> If traveling through overlapping fields, to-hit rolls will only be made vs one of the fields (randomly selected at start of movement).
+					<br><br>
+					<li> After a minefield has been hit it gets reduced slightly, depending on its size:
+						<ul type="disc">
+						<li>Under 200 mines = 10 mines
+						<li>200 to 1000 mines = 5% of total field
+						<li>1000 to 5000 mines = 50 mines
+						<li>Above 5000 mines = 1% of total field 
+						</ul>
+						<br>
+
+					This reduction in minefield size can be exploited by smashing a few hundred chaff at a minefield at warp 10, so as to reduce the size of minefield before higher numbered fleets move.
+					
+					</ul>
+					<br>
+
+				<li><b>Damage</b>
+					<ul type="disc">
+	
+					 <li> The numbers in parentheses (...) should be used if *any* of the ships in the fleet have ramscoop engines (this includes the enigma pulsar and the settlers delight engine)<br>
+					<br>
+					<li> For fleets with more than 5 ships:
+					<ul>
+					Each ship takes 100 (125) damage per engine it has.
+					</ul><br>
+
+					<li> For small fleets, 5 ships or less - all of a single design:
+						<ul>
+						The fleet takes 500 (600) * # engines per ship, this is shared equally by all ships in the fleet
+						</ul><br>
+	
+					<li> For small fleets, 5 ships or less - with multiple designs in fleet:
+						<ul> 
+						The first design in the fleet menu (sorted by F4 design order), takes damage as for a single design fleet, but the 500 (600) is modified first by the number of missing/gained engines * 100 (125). The rest of the ships in the fleet take 100 (125) per engine. Missing engines are compared to the number of engines the fleet would have, had all the designs had the same number of engines: 
+							<br><br>
+							<b>Example:</b> 2 nubians [3 engines each - first design] and 2 DNs [5 engines each] = 4 gained engines.<br>
+( 500(600) + <b>(</b>100(125) * 4 [gained engines]<b>)</b> = 900(1100) ) * 3 [engines on a nubian] = 2700(3300) / 2 [nubians] = 1350 (1650)dp damage per nubian). 
+							</ul>
+							<br>
+
+					<li> Shields can absorb upto half of the damage inflicted my a minefield (like a torpedo), the rest is applied to armour. But ship designs cannot benefit from the shields of other designs within the fleet.			
+					<br><br>
+
+					<li> For heavy minefields substitute 2000 (2500) and 500 (600) into the equations<br>
+					<br>
+					<li> Speed bump minefields don't do any damage, but do still stop a fleet on impact
+					<br><br>
+
+					</ul><br>
+
+				<li><b>Decay</b>
+					<ul type="disc">
+					<li> The base rate for minefield decay is 2% per year, or 1% for Space Demolition races.
+					<li> Minefields will decay an additional 4% per planet that is within the field, or 2% for SD races.
+					<li> A detonating SD minefield has an additional 25% decay each year.
+					<li> Normal and Heavy Minefields have a minimum total decay rate of 10 mines per year
+					<li> Speed Bump Minefields have a minimum total decay rate of 2 mines per year
+					<li> There is a maximum total decay rate of 50% per year.
+					</ul>
+					<br>
+
+
+				<li><b>Sweeping</b>
+					<ul type="disc">
+					<li> Any fleet or starbase within a minefield, with beam weapons can sweep those minefields.
+					<li> Fleets will only sweep minefields if their battle orders specify to attack the owner of the minefield in question.
+					<li> The amount of mines a beam weapon can sweep is based on the formula: dp * range * range 
+						<ul type="circle">
+						<li> Gatling weapons get counted as range 4 for sweeping purposes
+						<li> Weapons mounted on a starbase still the +1 range bonus for working out sweeping (gatlings count as range 5 in this case)
+						<li> Beam capacitors don't affect the amount of mines that a beam can sweep.
+						<li> Speed bump fields can only be swept at 1/3 the normal rate.
+						</ul>
+					</ul>
+					<br>
+		
+				<li><b>Related Articles</b>
+					<ul type="disc">
+					<li><a href="articles/analysis_of_the_best_speed_in_a_minefield.htm">Analysis of the "Best Speed" in a Minefield<i> by Chris Scott</i><a>
+					</ul>
+
+		</ul>		<br>
+		
+			<p align = "center">
+			<a href="index.htm">Return to Main Menu</a> 
+			</p>
+
+				
+		</td>
+	</tr>
+</table>
+	
+
+	</body>
+</html>

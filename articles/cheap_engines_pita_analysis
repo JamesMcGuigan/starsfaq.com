@@ -1,0 +1,194 @@
+<!doctype html public "-//w3c//dtd html 3.2//en">
+<html>
+	<meta>
+	<head>
+		<title>
+			The Stars! FAQ - Cheap Engines PITA Analysis by Mark Norton
+		</title>
+		<meta name="GENERATOR" content="Arachnophilia 4.0">
+		<meta name="FORMATTER" content="Arachnophilia 4.0">
+	</head>
+	<body bgcolor="#000000" text="#8eb3f4" link="#f00000" vlink="#c00000" alink="#800080" background="../starfield.gif">
+		<p align = center>
+		<img src="../starsfaqlogo.gif" height="115" width="500">
+		<br>
+		<a href="../index.htm">
+			Return to Main Menu
+		</a>
+		 
+		</p>
+		<table width="90%" align ="center" border="0" cellpadding="0" >
+			<tr>
+				<td>
+					<p>
+					<H3>
+						Cheap Engines PITA Analysis
+					</H3>
+					Author: Mark Norton
+					<br>
+					Date: 05th April 2001
+					<br>
+					<br>
+					<blockquote>
+Cheap Engines are a pain in the ass. However, with IT, and IFE, CE will
+give a player AD8 drives to start. Not too shabby on the whole, and good
+tech to trade if need be. So as with so many other things in Stars! there's
+a tradeoff to calculate. I didn't find this in the Advanced FAQ and while
+it may have been done before, a large body of the former Stars! information
+has been lost with various websites going down, so I took it upon myself to
+figure it out myself (with some initial help from Dan Neely on #stars! on
+irc.starlink.org. Thanks Dan!).<br>
+<br>
+So, how much of a pain in the ass is Cheap Engines? A fleet with cheap
+engines has a 10% chance of not moving for a given year. The payoff is
+points in the RW, and 50% cheaper engines. That probability is for a single
+year, but I may need to plan for a 4 or 5 year trip. How does Cheap Engines
+affect long term travel?<br>
+<br>
+What is the probability the fleet will get there in N years?<br>
+<br>
+The fleet has a 10% chance of failing per year. Therefore it has a 90%
+chance of success per year. The probability that the fleet will get there in
+the nominal number of years is:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(0.9)^N<br>
+<br>
+A more interesting question though is, for a given trip length, what is the
+probability it'll take an extra year, two extra years, etc. For example,
+a trip with a nominal length of 3 years might take 5 years. What is the
+probability of that happening?<br>
+<br>
+As a basis, there are at least 3 successes and 2 failure. Therefore we have
+(0.9)^3 * (0.1)^2<br>
+<br>
+However that is the probability of a *particular* trip. There are several
+combinations of success and failure and that's where the binomial
+distribution comes in. For a series of trials N, with M successes with a
+probability P, the binomial distribution says that the probability of
+exactly M successes is:<br>
+<br>
+COMBIN(N, M) * P^M * (1-P) ^ (N-M)<br>
+<br>
+Where the COMBIN function is N! / (M! (N-M)!).<br>
+<br>
+In the case of the cheap engines travel, however, the combination function
+counts too many. This is due to the fact that the last leg of a trip by
+definition is a success. For example, take a trip that could have been 3
+years, but ends up being 5 years. A M stands for Move and a F stands for
+Failure.<br>
+<br>
+The combination of 5 things taken 3 at a time would result in 10, while we
+can see by simple inspection that the correct result is 6. However we can 
+also see that if we remove the last leg of the trip, the
+combination function will once more work fine.<br>
+<br>
+So we end up with a modified binomial distribution.<br>
+<br>
+N = Length of actual trip in years<br>
+M = Nominal length of the trip in years<br>
+P = Probability of failure<br>
+<br>
+COMBIN(N-1, N-M) * P^(N-M) * (1-P)^(M)<br>
+<br>
+In English, the number of ways failures can be distributed times the
+probability of the appropriate number of failures times the appropriate
+number of successes. Note that for N - M = 0 you have to remove the
+combination function in Excel.<br>
+<br>
+If we put this in handy table format:<br>
+<br>
+<pre>
+                         Nominal Trip Length<br>
+            1     2     3     4     5     6     7     8     9   10<br>
+A   1   0.900     *     *     *     *     *     *     *     *     *<br>
+c   2   0.990 0.810     *     *     *     *     *     *     *     *<br>
+t   3   0.999 0.972 0.729     *     *     *     *     *     *     *<br>
+u   4   1.000 0.996 0.948 0.656     *     *     *     *     *     *<br>
+a   5         1.000 0.991 0.919 0.590     *     *     *     *     *<br>
+l   6               0.999 0.984 0.886 0.531     *     *     *     *<br>
+    7               1.000 0.997 0.974 0.850 0.478     *     *     *<br>
+T   8                     1.000 0.995 0.962 0.813 0.430     *     *<br>
+r   9                           0.999 0.992 0.947 0.775 0.387     *<br>
+a  10                           1.000 0.998 0.987 0.930 0.736 0.349<br>
+v  11                                 1.000 0.997 0.981 0.910 0.697<br>
+e  12                                       0.999 0.996 0.974 0.889<br>
+l  13                                       1.000 0.999 0.994 0.966<br>
+   14                                             1.000 0.999 0.991<br>
+   15                                                   1.000 0.998<br>
+   16                                                         0.999<br>
+   17                                                         1.000<br>
+<br>
+</pre>
+
+I rounded at the 1/1000th's place and then eliminated fields where the
+value was zero after rounding (after the first one).<br>
+<br>
+Another handy number to have is, "What is the probability that my fleet
+will arrive in R years or less, with R being greater or equal to N, the
+nominal trip length?". This should be the cumulative probability.<br>
+<br>
+In Excel, it's easier just to sum the column up to that point.<br>
+<br>
+<pre>
+                         Nominal Trip Length<br>
+            1     2     3     4     5     6     7     8     9   10<br>
+A   1   0.900     *     *     *     *     *     *     *     *     *<br>
+c   2   0.990 0.810     *     *     *     *     *     *     *     *<br>
+t   3   0.999 0.972 0.729     *     *     *     *     *     *     *<br>
+u   4   1.000 0.996 0.948 0.656     *     *     *     *     *     *<br>
+a   5         1.000 0.991 0.919 0.590     *     *     *     *     *<br>
+l   6               0.999 0.984 0.886 0.531     *     *     *     *<br>
+    7               1.000 0.997 0.974 0.850 0.478     *     *     *<br>
+T   8                     1.000 0.995 0.962 0.813 0.430     *     *<br>
+r   9                           0.999 0.992 0.947 0.775 0.387     *<br>
+a  10                           1.000 0.998 0.987 0.930 0.736 0.349<br>
+v  11                                 1.000 0.997 0.981 0.910 0.697<br>
+e  12                                       0.999 0.996 0.974 0.889<br>
+l  13                                       1.000 0.999 0.994 0.966<br>
+   14                                             1.000 0.999 0.991<br>
+   15                                                   1.000 0.998<br>
+   16                                                         0.999<br>
+   17                                                         1.000<br>
+<br>
+</pre>
+The sums all add up to unity indicating that we've done this correctly.
+I've eliminated further numbers past unity for clarity. Note that it IS
+still possible to have a 1 year trip that takes 5, 10, even 100 years. It's
+just very, very unlikely (and past 4 significant digits of precision.)<br>
+<br>
+Using 95% as a confidence number (that is to say, the number at which we
+feel confident we can rely on the number) from 1 year to 4 years, you can
+usually expect to add a year. From 5 to 7 years, you can usually expect to
+add two years. From 8 to 10 years, you can usually expect to add 3 years.<br>
+<br>
+There are probably some other conclusions you can draw from the numbers as
+well. If you have 100 fleets that need to travel 4 years away, about 66 of
+them will arrive in 4 years, 92 ought to be there by 5 years and the rest
+will trickle in afterwards.<br>
+<br>
+Consider a trip that could take 2 years at W9 and 3 years at W8. We can see
+from the second table that there is only a 73% chance that the fleet will
+arrive in 3 years at W8, but there's a 97% chance that the fleet will arrive
+in 3 years a W9. That percentage difference might mean having to plan extra
+tankers to propel the fleet at W9 to get there in 3 years with more certainty.<br>
+<br>
+CE will always be irritating and it seems to have the Murphy's Law effect
+that you'll always fail when you need it the most, however with careful
+planning, CE really isn't too much of a hardship (particular for IT where
+quite a lot happens via gate, which CE doesn't affect.)<br>
+<br>
+Regards,<br>
+Mark Norton<br>
+<br>
+</blockquote>
+<br>
+<p align = "center">
+<a href="../index.htm">
+Return to Main Menu
+</a>
+ 
+</p>
+</td>
+</tr>
+</table>
+</body>
+</html>

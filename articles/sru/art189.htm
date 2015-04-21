@@ -1,0 +1,84 @@
+<!DOCTYPE htm PUBLIC "-//W3C//DTD htm 4.0 Transitional//EN"
+	"http://www.w3.org/TR/REC-htm40/loose.dtd">
+
+<htm lang="en-US">
+
+<HEAD>
+	<TITLE>Stars!-R-Us Article</TITLE>
+
+	<META name="author" content="Donald Davis">
+	<META name="copyright" content="&copy; 1999">
+	<!-- <META http-equiv="Content-Style-Type" content="text/css"> -->
+
+	<!-- <LINK href="http://www.strategygamefan.com/starsrus/main.css" rel="stylesheet" type="text/css"> -->
+
+	<!-- <href="http://www.strategygamefan.com/starsrus/"> -->
+</HEAD>
+
+<BODY background="../../starfield.gif" text="#8eb3f4" link="#FF0000" vlink="#c00000" alink="#800080" bgcolor="#000000">
+<h3>How to build a Stars! testbed<br>
+By Barry Kearns</h3>
+<p>
+
+<p>I'd like to outline a method that I think can help just about every Stars! player improve their skill level. It's a cookbook-style approach to setting up a testbed, which allows you to experiment at will with almost any combination of game scenarios which you can think up. It's easy to set up, and it makes reality-testing any new ideas you get MUCH easier and faster.
+
+<p>Create eight custom races, one for each primary racial attribute. If you do nothing else, this alone will probably help. Try to design them as if you were going to be playing your next 20 games using that particular race (Don't just slap one together, I mean. It'll pay off down the road if you design them well from the beginning). Name each of these races based on their primary race attribute. Don't get fancy. Name your Hyper-expansion player "Hyper" and save it as "Hyper.R1". No one else will be seeing this, so don't worry.
+
+<p>Start a new game. Select Difficulty Level of Easy and Universe Size of Tiny. Trust me, you'll see why later. Hit the Advanced Game button.
+
+<p>Set Density to Dense, Player Positions to Close, and check Beginner: Unlimited Minerals and Public Player Scores. Hit Next.
+
+<p>Assign your first custom race to positions 1 *AND* 2. Set position 3 and 4 to be your second race, 5 and 6 are your third race, and so on. You'll end up assigning 8 races to 16 slots. Hit the Next Button.
+
+<p>Set only one victory condition: Owns 100% of all planets. Hit Finish.
+
+<p>Use a game file name like 00.xy for your new game. Hit OK.
+
+<p>You'll be looking at a "host mode" screen for Stars!. Hit "Auto Generate" and the window should minimize itself.
+
+<p>Start a *second* copy of Stars! and hit Open Game...
+
+<p>What you're going to do is follow this series of steps for all 16 of the ".M" files for this game in progress. Select the .M1 file and perform the following, then repeat for .M2, .M3, etc. :
+
+<p>Open the Research dialog and set "Next Field to Research:" to <LOWEST Field>, and set the research allocation to 0%.
+Change the Auto-build order on your homeworld (and the second planet you start with, if present) to "Auto Build Factories, then Mines".<br>
+Merge all of your fleets and set them all to "Scrap Fleet". <br>
+Select "Save And Submit" from the file menu, and then open the next .M file.<br><br>
+
+<p>When you have completed all 16 files, maximize the "host mode" window again. If all of the races say "turned in", then hit the Generate Now button. If they all say "still out", then the turn was auto-generated for you. DO NOT hit the generate button if this is so.
+
+<p>Open up a DOS Prompt window and change to your Stars! directory.
+
+<p>Type the following:<br><br>
+
+        COPY 00.* TESTBED0.*<br><br>
+
+and press Enter. What you're doing is taking a "Year 2400" backup of the game in progress, so that you can go "back in time" and generate other testbeds from the same basic universe.
+
+<p>Now change back to that "host mode" window again. We're going to create a time-warp kind of effect now. Hit the generate button, even though the races say "still out". You should get a warning message asking if you are sure. Press Enter.
+
+<p>Keep pressing Enter repeatedly, to generate and acknowledge the warning. In fact, I tend to lean on the Enter key at this point, to get maximum speed in generating those turns. You can even find something small to use in conjunction with a book to hold the Enter key down. This might take a little while, depending on your computer's speed. What we're doing here is letting all of the players build up population, mines, factories, and research.
+
+<p>Editor's note: With 2.5, at least, you can do this with a text file and a command line switch. Prepare a text file with the first line equal to the base name of your xy file. Like if you have testbed.xy, use testbed. Repeat this line 99 times. Save the file. Then start stars with the following command line<br><br>
+
+stars! -b myfile.txt<br><br>
+
+Where myfile.txt is the file with 100 lines all the same, the name of your game file.
+
+<p>The -b says use the following file as a list of games to generate for, and force the generation of turns even if not all the players have submitted turns. This is all in the hosting games portion of the help file, so not everyone sees it. Very handy.
+
+<p>Keep the time-warp going for about 200 years or so, and then check in with one of the player files. You'll see a "Note: 200 years of data loaded" message, that's fine. Hit F10 and make sure that none of the players' planets have been wiped out by a comet altering their habitability range to outside of acceptable. If not, save the game files to something like "chkpt001.*" and time-warp for another 200 years. If someone's been toasted, reload the last checkpoint files and spin those again.
+
+<p>Once you've seen 156 tech levels in all player positions, you can stop the time-warping. Load each game file (this can take quite a while, be patient), and do two things: One, design a galleon hull with 8 Elephant Scanners, and put one into the production queue. This'll give each player a full-scan view of the entire universe. Second, terraform your homeworld back to 100%, or as close as possible. Many of the homeworlds will have been hit, but not damaged so severely that they're unrecoverable.
+
+<p>If all of the homeworlds are in acceptable condition, generate until all of the homeworlds are fully terraformed, load each player file to do one last verify of the condition it's in, then save the game files as "Testbed1.*".
+
+<p>The net effect of this exercise is to end up with a ready-to-use arena for testing out any ideas you might get, or learn about from the newsgroup. You should have good production capabilities on all of the homeworlds now, you have all of the race types represented, including two of each so you can test self-matchups, mega-tonnage of surface minerals, and all 26 tech levels.
+
+<p>Whenever you want to test an idea, just copy the "Testbed1.*" files to some other filename, and use that other filename to test your idea. Preserve the "Testbed0.*" and "Testbed1.*" files, and don't use them for any other purpose. That way, you won't have to repeat the exercise every time you want to test something new. You *WILL* have to "do it again" if you decide to change the race file layouts. That's why I recommend trying to get them as close to how you want them as possible, before you start. But hopefully we all learn, and will want to adapt our custom races, even for testing purposes, so repeating the process is not totally avoidable.
+
+<p>I hope this helps everyone. It's much less daunting to do than it is to read, now that I look back at it. And it's really convenient after you've established it.
+
+<p>Barry Kearns<br><br>
+
+<a HREF="../index.htm">Back to the Article Main Page.</a></body>

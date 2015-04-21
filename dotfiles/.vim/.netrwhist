@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/cygdrive/c/code/premierleague.com/trunk/cms/cq/jcr_root/apps/premierleague/components/test-mod2'
+let g:netrw_dirhist_2='/cygdrive/c/code/premierleague.com/trunk/cms/cq/jcr_root/etc/designs/premierleague/clientlibs/js'
+let g:netrw_dirhist_3='/cygdrive/c/code/premierleague.com/trunk/cms/cq/jcr_root/etc/designs/premierleague/clientlibs'
+let g:netrw_dirhist_4='/cygdrive/c/code/premierleague.com/trunk/cms/cq/jcr_root/etc/designs/premierleague/clientlibs/js'
+let g:netrw_dirhist_5='/cygdrive/c/code/premierleague.com/trunk/cms/cq/jcr_root/etc/designs/premierleague/clientlibs'

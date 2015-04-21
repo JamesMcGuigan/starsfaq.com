@@ -1,0 +1,124 @@
+<!doctype html public "-//w3c//dtd html 3.2//en">
+
+<html>
+	<meta>
+	<head>
+		<title>
+			The Stars! FAQ - File Info
+		</title>
+		<META NAME = "keywords" CONTENT = "stars, FAQ, PBEM, blitz, hotseat, stratergy, micromanagement, James, McGuigan, Jeff McBride, Jason Cawley, advanced, technical, advFAQ, rgcs, battle, fleet, ship, war, space, 4X, scifi, empire, interactive, xplosiv, Supernova, explore, expand, exterminate, research, diplomacy, JRC3, autohost">
+		<META NAME = "Description" CONTENT = "The Stars! FAQ is the web resource the PBEM game Stars! by Jeff Johnson and Jeff McBride">
+		<META NAME = "ROBOTS" CONTENT="ALL">
+		<META NAME = "Copyright" CONTENT = "James McGuigan">
+		<META NAME = "Author" CONTENT = "James McGuigan">
+		<meta name="FORMATTER" content="Arachnophilia 4.0">
+	</head>
+	<body bgcolor="#000000" text="#8eb3f4" link="#FF0000" vlink="#FF0000" alink="#b1111ff" background="starfield.gif">
+
+		<p align = center>
+		<img src="starsfaqlogo.gif" height="115" width="500"><br>
+		<a href="index.htm">Return to Main Menu</a> 
+		</p>
+
+<table width="90%" align ="center" border="0" cellpadding="0" >
+	<tr colspan="2">
+		<td>
+
+<h2 align="center">*.def - Game Definition Files</h2>
+
+<p>[From the Stars! Help File]</p>
+
+<b>For experienced hosts only</b><br><br>
+
+Use the following command to create a new game/universe without using Stars! setup dialogs:<br>
+<ul>
+stars!.exe -a game.def
+</ul>
+game.def has the following format, with arguments appearing in the order and groupings listed:
+<ul>
+Game Name<br>
+Universe Size (0-4)  Density (0-3)  Starting Distance (0-3) [Random Seed, any #]<br>
+Maximum Minerals (0/1)  Slow Tech (0/1)  BBS Play (0/1)  .... (other check boxes)<br>
+Number of Players (1-16)<br>
+Pathnames to race files, or AI descriptions<br>
+VC # of planets (0/1)  Percent of planets (20-100)<br>
+VC Tech (0/1)  Level (8-26)  Fields (2-6)<br>
+VC Score (0/1)  Score (1000-20000)<br>
+VC Exceeds nearest (0/1)  (Percent (20-300)<br>
+VC Production (0/1) Capacity (10-500)<br>
+VC Capital Ships (0/1)  Number  (10-300)<br>
+VC Turns (0/1)  Years (30-900)<br>
+VC Must Meet (0-7)  Minimum Years (30-500)<br>
+New universe file name<br>
+<br>
+<b>Random Seed</b>
+<ul>
+The optional Random Seed number forces the universe to be created exactly the same each time, if you use the same Seed number.
+</ul><br><br>
+
+<b>AI Descriptions</b>
+<ul>
+The AI description takes the form, "# N M", where N is the ID number of the AI and M is the skill level of the AI.<br><br>
+<li>Race ids:<br>
+<ul>
+<li> 0=Random, 
+<li>1=Robotoids
+<li> 2=Turndrones
+<li> 3=Automitrons
+<li> 4=Rototills
+<li> 5=Cybertrons
+<li> 6=Mcinti
+</ul>
+<br>
+<li>Skill levels:
+<ul>
+<li> 0=Random
+<li> 1=Easy
+<li> 2=Standard
+<li> 3=Tough
+<li> 4=Expert
+</ul>
+<br>
+For example, # 1 4 specifies an expert Robotoid AI.<br><br>
+</ul>
+
+<li><b>Example game.def file (<a HREF="game.def">"Save target as..." to download</a>)</b><br>
+<ul>
+Tour of Duty<br>
+3 2 2 13424531<br>
+0 0 0 0 1 1 1<br>
+4<br>
+c:\stars\play\game.r1<br>
+c:\stars\play\game.r2<br>
+c:\stars\play\game.r3<br>
+# 2 1<br>
+1 60<br>
+1 26 4<br>
+0<br>
+1 150<br>
+0<br>
+1 100<br>
+0<br>
+2 150<br>
+c:\stars\play\game.xy<br>
+</ul>
+<br><br>
+
+[Copyright 1998 Mare Crisium, LLC]
+
+
+
+		</ul>		<br>
+	
+		<p align = "center">
+		<a href="index.htm">Return to Main Menu</a> 
+		</p>
+
+				
+		</td>
+	</tr>
+</table>
+	
+
+	</body>
+</html>

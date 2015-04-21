@@ -1,0 +1,279 @@
+<!doctype html public "-//w3c//dtd html 3.2//en">
+
+<html>
+	<meta>
+	<head>
+		<title>
+			The Stars! FAQ - Tech Trading
+		</title>
+<META NAME = "keywords" CONTENT = "stars, FAQ, PBEM, blitz, hotseat, stratergy, micromanagement, James, McGuigan, Jeff McBride, Jason Cawley, advanced, technical, advFAQ, rgcs, battle, fleet, ship, war, space, 4X, scifi, empire, interactive, xplosiv, Supernova, explore, expand, exterminate, research, diplomacy, JRC3, autohost">
+		<META NAME = "Description" CONTENT = "The Stars! FAQ is the web resource the PBEM game Stars! by Jeff Johnson and Jeff McBride">
+		<META NAME = "ROBOTS" CONTENT="ALL">
+		<META NAME = "Copyright" CONTENT = "James McGuigan">
+		<META NAME = "Author" CONTENT = "James McGuigan">
+		<meta name="FORMATTER" content="Arachnophilia 4.0">
+	</head>
+	<body bgcolor="#000000" text="#8eb3f4" link="#FF0000" vlink="#FF0000" alink="#b1111ff" background="starfield.gif">
+
+		<p align = center>
+		<img src="starsfaqlogo.gif" height="115" width="500"><br>
+		<a href="index.htm">Return to Main Menu</a> 
+		</p>
+
+<table width="90%" align ="center" border="0" cellpadding="0" >
+	<tr>
+		<td>
+		<br>
+		<h2>Tech Trading</h2>
+			<ul>
+			<li><h3>Order of Events</h3>
+				<ol>
+				<b><li>     * Scrapping fleets (with possible tech gain)</b>
+					<li>     * Waypoint 0 load tasks (if done by hand) *
+					<li>     Waypoint 0 unload tasks 
+				<b><li>     * Waypoint 0 Colonization/Ground Combat resolution (with possible tech gain)</b>
+					<li>     Waypoint 0 load tasks (if done via task tile order)
+					<li>     MT moves 
+					<li>     In-space packets move and decay 
+						<ol type="a">
+						<li>          PP packets (de)terraform 
+						<li>          Packets cause damage 
+						</ol>
+					<li>	    Planets with 0 colonists become uninhabited (lose starbase and defences)
+					<li>     Fleets move 
+					<li>     SD Minefields detonate 
+					<li>     Production (incl. research, packet launch, fleet/starbase construction) 
+					<li>     SS Spy bonus obtained 
+					<li>     Population grows/dies 
+					<li>     Packets that just launched and reach their destination cause damage 
+					<li>     Random events (comet strikes, etc.)
+ 				<b><li>     * Fleet battles (with possible tech gain)</b>
+					<li>     Meet MT 
+					<li>     Bombing 
+					<li>	    Planets with 0 colonists become uninhabited (lose starbase and defences)
+					<li>     Waypoint 1 unload tasks 
+				<b><li>     * Waypoint 1 Colonization/Ground Combat resolution (with possible tech gain)</b>
+					<li>     Waypoint 1 load tasks 
+					<li>     Fleet Transfer 
+				</ol><br>
+
+			<br><br>
+			<li><h3>Guts</h3>
+			<ul>
+			<li>	Technology can be gained from either an ally or an enemy, in the following circumstances:
+				<ol>
+					<li>Scrapping fleets at a starbase (per fleet scrapped)
+					<li>Surviving a combat where ships destroyed were in battle (per battle location)
+					<li>Successfully invading a planet with your colonists (per invasion)
+				</ol>
+				<br>
+				For each "event" there is a chance of gaining a level of tech, and the chance is determined by the number of tech fields, higher than your own, available at each event. For scrapping and battle, a ship scrapped/destroyed in the event having a part requiring a greater level to build in on of the 6 tech fields, invasions count any fields the other race has are ahead of yours. Though you can have several events (and thus chances) happen in a single turn, you may only gain a single level of tech, by any of these methods in each turn.<br>
+				<br>
+				For each tech trading event, there is a 50% chance of not gaining any tech at all from it.
+						<ul> *** then *** </ul>
+				For each tech trading event which passes the 50% chance above, there is a 50% chance per field available, that is higher than your own, that you will gain a level in that field. With a maximum of a single tech level in a single field per turn. If there is only one tech field up for grabs at an event you have an overall chance of 25% for gaining a tech level (50% x 50% = 25%).<br>
+				<br>
+				For your convenience, here is a table listing the % chance of gaining a tech in various situations (numbers in %):<br><br>
+			</ul>
+		</ul>
+<table align="center"><tr><td>
+<b><pre>
+ # Higher
+Tech Fields
+ Available
+     6    |   49   74   87   93   97   98   99   99   99   99
+     5    |   49   74   86   93   96   98   99   99   99   99
+     4    |   47   72   85   92   96   98   99   99   99   99
+     3    |   44   69   82   90   94   97   98   99   99   99
+     2    |   38   61   75   84   91   94   96   98   99   99
+     1    |   25   44   58   68   76   82   87   90   92   94 
+---------------------------------------------------------------
+               1    2    3    4    5    6    7    8    9   10 
+                           Tech Trading Events
+</pre></b>
+</td></tr></table>
+<br>
+	<ul>
+        	
+		    <li>
+          <h3>Trading Mystery Trader Parts</h3>
+          <ul>
+			      <li> Mystery Trader Parts can only be traded via scrapping or via battle and not through invasion.<br>
+			      <li> The chance of getting a part is based on the number of MT items in the whole fleet (upto 25 items per event).<br>
+			      <li> As with trading tech levels there is 50% chance of not getting an MT part per event.<br>
+			      <li> After the above check, there is a 1% chance per MT item present of gaining the design.<br>
+			      <li> The total chance per event with the max 25 items is 12.5% (50% x 25%)<br>
+			      <li> This is the one instance where having multiple copies of a component on a single scrapper is advantageous.<br>
+
+		
+		      </ul>
+          <br>
+          <br>
+
+		    <li>
+          <h3>Tech Trading by Scrapping</h3>
+          <ul>
+			      <li> <b>How to set up:</b>
+			        <ol>
+				        <li>Each side builds several "scrapper" ships each turn (scout/FF hull with QJ5/FM engine and a tech item in the field you wish to trade)<br>
+				<br>
+                  			
+				        <li>Each side sends/gates the scrapper ships to a starbase/spacedock owned by the other player, and gives it orders to scrap itself there, making sure that they are separate fleets of 1 ship each.<br>
+			        </ol>
+              <br>
+			      <li> <b>Advantages:</b>
+				      <ol>
+				        <li>Easy to setup and and requires little co-ordination.
+				        <li>Allows precise control over what tech fields are traded.
+				      </ol>
+              <br>
+			      <li> <b>Disadvantages:</b>
+				      <ol>
+				        <li>Has a constant cost as you have to build new scrappers each year.
+				        <li>There is a small amount of added MM each year with managing the scrappers.
+				        <li>Cannot trade levels until you have a ship part with that level in the field or above.
+				        <li>Cannot trade levels above the highest tech level ship part in each field.
+				      </ol>
+              <br>
+			      <li> <b>Points to be careful of:</b>
+				      <ol>
+					      <li>The chances of gaining a tech through scrapping are based on the number of separate map fleets you scrap and not the number of ships in each fleet, so remember to "split all" before scrapping the the fleet.<br>
+                  <br>
+                <li>You can scrap ships at any type of starbase, including orbital forts.
+<br>
+                  <br>
+                  					
+                <li>You don't need to transfer your ships to the enemy for him to be able to gain tech from them, you just need to scrap them at one of his bases, which saves a year in the transfer cycle but removes an element of control from the recieving player.<br>
+                  <br>
+                  					
+					      <li> Only have one of each component on each scrapper design, having more than of an item will not improve your chances of a tech trade,
+only	your	costs.	
+              </ol></ol>
+	        </ul>
+          <br>
+          <br>
+
+
+
+		    <li>
+          <h3>Tech Trading by Battle (Wolf/Lamb Sites)</h3>
+          <ul>
+			      <li> <b>How to set up a site (for unarmed lambs):</b>
+			        <ol>
+				        <li> Each race builds a wolf, which is an armed ship design, and sends it to the location of the wolf/lamb site, and gives it battle orders to attack: "unarmed ships"/"nothing" + "everybody"<br>
+				<br>
+				        <li> One race builds a lamb ship each year, and unarmed scout/FF each year with a tech item  and sends it to the wolf/lamb site where it gets killed, thus giving each of the wolves present a chance to learn in that tech field.
+			        </ol>
+              <br>
+				    <li> <b>How to set up a site (for armed lambs):</b>
+			        <ol>
+				        <li> As above, but the wolves are given orders to attack: "armed ships"/"nothing" + "race sending lambs"
+			        </ol>
+              <br>
+				    <li> <b>Advantages:</b>
+				      <ol>
+				        <li> Good for large alliances (3+ players) to trade, each sending lambs to 2-3 sites each
+				      </ol>
+              <br>
+			      <li> <b>Disadvantages:</b>
+				      <ol>
+				        <li>Requires quite a bit of co-ordination to setup
+				        <li>Has a constant cost as you have to build new scrappers each year.
+				        <li>There is a small amount of cost to setup each site
+				        <li>There is a small amount of added MM each year with managing the scrappers
+				        <li>With multiple sites it is difficult to control which fields are traded
+				        <li>Cannot trade levels until you have a ship part with that level in the field or above.
+				        <li>Cannot trade levels above the highest tech level ship part in each field.
+				      </ol>
+              <br>
+			      <li> <b>Points to be careful of:</b>
+				      <ol>
+					      <li>When using armed lambs, ensure that the lamb isn't powerful enough to kill the lambs.<br>
+					<br>
+					      <li>If some of the ship fail to appear in the combat, ensure that they all have orders to attack the lamb or that lamb has orders to attack them. If they aren't attacking or being attacked then they won't take part in the battle<br>
+                  <br>
+					      <li> Only have one of each component on each scrapper, having more than this will not improve your chances of a tech trade<br>
+					<br>
+					      <li> Battles happen after production; any research you do will occur before the trade
+				      </ol>
+              <br>
+              <br>
+			</ol>
+		      </ul>
+        <li>
+          <h3>Tech Trading by Invasion</h3>
+          <ul>
+			There are two ways / speeds of doing tech trade by pop drop:<br>
+			<br>
+			      <li><b> How To set up for Slow Speed - Fully Automated</b>
+			        <ol>
+				        <li> Race A to colonize a spare planet with 100 pop (red will do).
+				        <li> Race A has a freighter full of pop in orbit of the planet
+				        <li> Race B has a freighter full of pop a few ly from the planet
+				        <li> Both races give repeat orders for their freighters to goto the planet, drop 200 pop and then leave
+				        <li> Both ships alternate, each recapturing the  every other turn
+			        </ol>
+              <br>
+			<br>
+			      <li><b> How to set up for Fast Speed - Manual Control</b>
+			        <ol>
+				        <li> Race A to colonize a spare planet with 100 pop (red will do).
+				        <li> Race A has a freighter full of pop in orbit of the planet and a second one a few ly from the planet
+				        <li> Race B has a freighter full of pop in orbit of the planet
+				        <li> Races A gives repeat orders for both his freighters to goto the planet, drop 200 pop and then leave
+				        <li> Race B each year manually drops 200 pop on the planet as a waypoint 1 task
+				        <li> Race A  owns the planet at the start of the turn, race B pop-drops it as a WP0, then the race A freighter does a WP1 pop drop to reclaim the planet again. Thus both sides get a chance to gain tech each turn.
+			        </ol>
+              <br>
+				    <li> <b> Advantages:</b>
+				      <ol>
+				        <li> Has no ongoing costs.
+				        <li> For slow speed invasion trading, there is no added MM after setup.
+				        <li> Can trade up to level 26 in all fields
+				      </ol>
+              <br>
+			      <li> <b> Disadvantages:</b>
+				      <ol>
+				        <li> Requires quite a bit of co-ordination to setup
+				        <li> There is a small amount of cost to setup each site.
+				        <li> Requires the loss of a few colonists.
+				        <li> Requires the use of a planet for each tech trading site
+				        <li> It is difficult to control which fields are traded
+				        <li> You cannot trade with AR races using this method
+				        <li> For fast speed tech trading there is a small amount of added MM each year.
+				        <li> For fast speed tech trading, if Race B must manually drop population each year, or the system gets messed up.
+				        <li> If the population on the planet dies through being on a red planet, you have to recolonise.
+				      </ol>
+              <br>
+			      <li> <b> Points to be careful of:</b>
+				      <ol>
+					      <li> It is advisable to keep a spare colony ship handy in case the planet become un-colonized <br>
+					<br>
+					      <li> For fast speed, if race B forgets to drop colonists one year, Race A should do nothing, but Race B should drop 400 colonists the next year.<br>
+					<br>
+					      <li> WP0 Invasions happen before production, WP1 invasions happen after production; gaining a tech level increases the cost of all tech levels in all fields, by 10 resources, in addition to the increased cost for the next level in field. Keep this in mind if you are tightly budgeting your research to gain a particular level.
+				      </ol>
+              <br>
+			</ol>
+		</ol>
+	        </ul>
+      </ul>
+
+		
+
+
+
+		</ul>		<br><br>
+		
+			<p align = "center">
+			<a href="index.htm">Return to Main Menu</a> 
+			</p>
+
+				
+		</td>
+	</tr>
+</table>
+	
+
+	</body>
+</html>

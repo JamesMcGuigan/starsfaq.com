@@ -1,0 +1,301 @@
+<!DOCTYPE htm PUBLIC "-//W3C//DTD htm 4.0 Transitional//EN"
+	"http://www.w3.org/TR/REC-htm40/loose.dtd">
+
+<htm lang="en-US">
+
+<HEAD>
+	<TITLE>Stars!-R-Us Article</TITLE>
+
+	<META name="author" content="Donald Davis">
+	<META name="copyright" content="&copy; 1999">
+	<!-- <META http-equiv="Content-Style-Type" content="text/css"> -->
+
+	<!-- <LINK href="http://www.strategygamefan.com/starsrus/main.css" rel="stylesheet" type="text/css"> -->
+
+	<!-- <href="http://www.strategygamefan.com/starsrus/"> -->
+</HEAD>
+
+<BODY background="../../starfield.gif" text="#8eb3f4" link="#FF0000" vlink="#c00000" alink="#800080" bgcolor="#000000">
+
+<h3>v2.5 Battle Model<br>
+Changes to battle for Stars! 2.5 <br>
+Compiled by the <!-- <a href="stars-r-us_links.htm"> -->Galactic Traveller<!--</A>--></h3>
+<p>
+
+Index <br>
+Battle Plans Dialog <br>
+Starting a Fight <br>
+Once Battle has been Started <br>
+Targeting <br>
+Tactics <br>
+Movement <br>
+Initiative <br>
+Firing <br>
+Damage <br>
+Beam Weapons <br>
+Torpedoes <br>
+Battle Devices <br><br>
+
+<hr><br><br>
+<h4>Battle Plans Dialog</h4>
+
+<p>You no longer specify tactics on a ship class basis. Tactics are now global to the fleet, are less specific and automatically try to do the right thing. See TACTICS below.
+
+<p>You can now specify primary and secondary target types. See TARGETING below.
+
+<p>You now specify who to attack in the Battle Plan.
+
+<p>Spread Out is gone from the battle plans dialog. It just works. Bomb Planet is gone from the battle plans dialog. It just works.
+<br><br><hr><br><br>
+
+<h4>Starting a Fight</h4>
+
+<p>The Attack Waypoint Task is gone. There is now a battle plan selection dropdown in the Fleet Composition tile. Armed fleets can have any waypoint task and will automatically initiate combat when at the same location as a planet or fleet owned by their target player(s). For solo games the Who: field is set to All and is not changeable by the user. New fleets of unarmed ships are given the battle plan Default-Defense. New fleets of armed ships are given the battle plan Default-Attack. These plans can be modified by the user to have any behavior they would like. The initial behavior of Default-Defense is to try to avoid combat entirely. The initial behavior of Default-Attack is to automatically attack enemies.
+
+<p>You can no longer Bomb or Invade a planet that has a starbase in orbit. The starbase must be destroyed first.
+
+<br><br><hr><br><br>
+
+<h4>Once Battle has been Started</h4>
+
+<p>Battles last up to 16 rounds.
+
+<p>Each round of Battle now has 3 parts:
+<ul>
+<li>All ships target an enemy ship that best meets their battle plan criteria.
+<li>All ships move from heaviest to lightest.
+<li>Weapons fire from highest initiative to lowest.
+</ul>
+
+<br><br><hr><br><br>
+
+<h4>Targeting</h4>
+
+<p>Targeting is no longer affected by cloaking. Battle plans now specify primary and secondary targets.
+
+<u>None/Disengage:</u> Don't look for a target just attempt to disengage. <br><br>
+
+<u>Any:</u> Any target will do.<br><br>
+
+<u>Starbases:</u> Go after the starbase if one exists.<br><br>
+
+<u>Armed Ships:</u> Target armed ships and armed starbases only.<br><br>
+
+<u>Bombers/Freighters:</u> Target bombers and freighters (ie possible troop xports) only.<br><br>
+
+<u>Unarmed Ships:</u> Target unarmed ships only.<br><br>
+
+<u>Fuel Transports:</u> Target fuel transports only.<br><br>
+
+<u>Freighters:</u> Target unarmed freighters only.<br><br>
+
+<p>When picking targets we try to avoid targeting tokens that are already targeted by someone else. If no token matching the primary target type is found then we attempt to match the secondary target type.
+
+<p>Example1: Primary target: Bombers/Freighters, Secondary target: Fuel Transports This would try to take out the enemies bombers and freighters first. Once they were gone it would try to take out their Fuel Transports. This example could be useful if you wanted to cripple enemy battle groups while attempting to avoid their heavy guns.
+
+<p>Example2: Primary target: Armed Ships, Secondary target: None/Disengage This would try to take out all of their armed ships and the starbase if it is armed but leave unarmed ships alone. This example might be useful if you are planning to steal cargo from them.
+
+<p>Example3: Primary target: Armed Ships, Secondary target: Bombers/Freighters This would ignore anything that wasn't armed or a bomber or a freighter. This might be useful if you didn't want to waste shots on non-dangerous ships.
+
+<p>Starbases use a Primary target of Armed Ships and a Secondary target of Any.
+
+<br><br><hr><br><br>
+
+<h4>Tactics</h4>
+
+<u>Disengage:</u> Attempt to disengage as soon as possible. 4 squares of movement are required to leave the battle. (Kind of like the Run Away in version 2)<br><br>
+
+<u>Disengage if challenged:</u> Attack as if "Maximize damage ratio" until targeted or damaged and then change to "Disengage". (No equivalent existed in version 2)<br><br>
+
+<u>Minimize damage to self:</u> Attempt to cause as much damage as possible while taking as little damage as possible. (Kind of like Maximum Range in version 2)<br><br>
+
+<u>Maximize net damage:</u> Attempt to maximize damage to enemies minus damage to self. (Kind of like Optimal Range in version 2)<br><br>
+
+<u>Maximize damage ratio:</u> Attempt to maximize damage to enemies divided by damage to self. (Kind of like Optimal Range in version 2)<br><br>
+
+<u>Maximize damage:</u> Attempt to maximize damage to enemies without regard to damage to self (Kind of like Get In Close in version 2) <br><br>
+
+<p>In all cases except Disengage the token will attempt to get closer to the target if it is current outside of maximum range.
+
+<p>If token runs out of primary and secondary targets it will automatically switch to Disengage.
+
+<p>If a token can no longer do any damage it will automatically Disengage. For example if the ship design has shield buster weapons only and none of the enemy tokens has shields.
+
+<br><br><hr><br><br>
+
+<h4>Movement</h4>
+
+<p>Distance a ship can move is measured in 1/4 squares. A 1/4 speed means you move on the 1st, 5th, and 9th battle rounds. A speed of 1 3/4 Means you move 2 squares on every round except the 3rd when you move 1.
+
+<p>Distance a ship can travel is determined as follows: <br>
+Movement = (Ideal Speed of Engine - 4) / 4 - weight / 70 / 4 / (Count of Engines) + 1/4 * Maneuvering jets + 1/2 * Overthrusters
+
+<p>Movement is pegged between 1/2 and 2 1/2.
+
+<p>Movement v/s Squares of Movement per Round:<br><br>
+
+<TABLE>
+<TR><TD>1<TD>2<TD>3<TD>4<TD>5<TD>6<TD>7<TD>8<TD>9<TD>10
+<TR><TD>1/2<TD>1<TD>0<TD>1<TD>0<TD>1<TD>0<TD>1<TD>0
+<TR><TD>3/4<TD>1<TD>1<TD>0<TD>1<TD>1<TD>1<TD>0<TD>1
+<TR><TD>1<TD>1<TD>1<TD>1<TD>1<TD>1<TD>1<TD>1<TD>1
+<TR><TD>1<TD>1/4<TD>2<TD>1<TD>1<TD>1<TD>2<TD>1<TD>1<TD>1
+<TR><TD>1<TD>1/2<TD>2<TD>1<TD>2<TD>1<TD>2<TD>1<TD>2<TD>1
+<TR><TD>1<TD>3/4<TD>2<TD>2<TD>1<TD>2<TD>2<TD>2<TD>1<TD>2
+<TR><TD>2<TD>2<TD>2<TD>2<TD>2<TD>2<TD>2<TD>2<TD>2
+<TR><TD>2<TD>1/4<TD>3<TD>2<TD>2<TD>2<TD>3<TD>2<TD>2<TD>2
+<TR><TD>2<TD>1/2<TD>3<TD>2<TD>3<TD>2<TD>3<TD>2<TD>3<TD>2
+</TABLE><br><br>
+
+<p>Movement happens in three parts:
+
+<ul>
+<li>Part 1: All tokens that can move 3 squares this round get to move 1 square.
+<li>Part 2: All tokens that can move 2 or more squares this round get to move 1 square.
+<li>Part 3: All tokens that can move this round get to move 1 square.
+</ul>
+
+<p>In each part tokens move in heaviest to lightest weight order with a random fudge factor. It depends on how many tweenkies the captain had for lunch.
+
+<p>Each token attempt to find the best square to move to that matches the tactic they have been assigned.
+
+<p>Example: You have selected Maximize Net Damage and have a ship with a combination of range 1 and 2 weapons. Your enemy has a ship with a combination of range 1 and 2 weapons also but their range 1 weapons are much better than yours. You will stay at range 2 because the that is where you do the highest net damage.
+
+<br><br><hr><br><br>
+
+<h4>Initiative</h4>
+
+<p>Initiative order is as follows: All ships have an inate hull initiative, which varies from 0 for unarmed freighters to something like 10 or 15 for battleships. See the Tech Browser for specific initiative values.
+
+<p>A new type of part, the battle computer is an Electrical Special. Each battle computer increases the initiative by 1, 2 or 3 points.
+
+<p>Firing initiative is the sum of the hull initiative, battle computers, race modifiers and the weapon's initiative.
+
+<p>Highest initiative fires first. If a ship has an base initiative of 15 and beam weapons with an initiative of 1, and a second ship has a base initiative of 14 and a torpedo weapon with initiative 3, the torp ship will fire first. If the torp ship also had a second weapon with an initiative of 1 then the torp would shoot first, the other ship's beam would fire and then the torp ship's second weapon would fire.
+
+<br><br><hr><br><br>
+
+<h4>Firing</h4>
+
+<p>Firing is no longer on a token by token all or nothing basis. Weapons fire from highest initiative to lowest on a weapon slot-by-weapon slot basis. The shortest range weapons of a given initiative fire first. If the target token is destroyed, damage will stream over to other tokens in the same square (if any). After the primary target is destroyed subsequent weapon slots can retarget on other squares in range.
+
+<p>Multiple weapon slots on the same ship can target different tokens in different squares.
+
+<br><br><hr><br><br>
+
+<h4>Damage </h4>
+
+<p>Damage applied now is as follows: If the damage applied to the armor of a token exceeds the remaining armor of 1 or more of the ships in the token, then those ship are destroyed. Any remaining damage is spread over the ENTIRE stack with each ship taking dp/(count of ships) damage. That is, until you can totally "do" a ship, you will be uniformly wailing away on the entire token. This definitely discourages splitting ships up.
+
+<br><br><hr><br><br>
+
+<h4>Beam Weapons </h4>
+
+<p>Beam weapons always hit their target but have a 10% damage decay per square of distance between attacker and target. For example a weapon that will do 100dp in the same square as its target will only do 90dp one square away. All damage from beam weapons is applied to shields first and any damage not absorbed by the shields is applied to armor as described in the DAMAGE section above.
+
+<p>If an attacking token has more than one ship and its beam weapon strike takes out an entire token the remaining damage can be applied to other tokens in the same square. The maximum number of tokens targeted is the number of ships in the attacking token.
+
+<p>Beam Weapon Categories <br>
+Note: all Damage values are approximations for comparison purposes only. See the tech browser for the exact stats of any particular part. <br><bR>
+
+Normal Beam Weapons <br>
+Damage: From 10 to 430 damage points <br>
+Range: From 1 to 3 squares <br>
+Initiative: From 6 to 11 <br><br>
+
+Range 0 Weapons <br>
+Damage: From 90 to 600 damage points <br>
+Range: Same square only <br>
+Initiative: 12 <br><br>
+
+Gattling Weapons <br>
+Damage: From 11 to 200 damage points <br>
+Range: 1 square <br>
+Initiative: 5
+
+<p>In spite of having short range and the lowest of all beam weapon initiative values these are extremely powerful weapons that hit every enemy token in their range each time they fire. They also sweep minefields as if they were range 4 weapons. See Minesweeping below. <br><br>
+
+Shield Busters <br>
+Damage: From 80 to 540 damage points <br>
+Range: 2 <br>
+Initiative: 14
+
+<p>These medium range weapons are very powerful but are only useful against shields. They have no affect on armor. They do have a higher initiative than any other weapon. This means that they will take out the enemy shields before your other weapons fire.
+
+<u>Minesweeping:</u> Each beam weapons can sweep up to (Damage x Range x Range) mines per year.
+
+<br><br><hr><br><br>
+
+<h4>Torpedoes</h4>
+
+<p>Each torpedo fired has a chance of missing. For example: If a token has two ships each with a weapon slot with 2 torps in it then a single shot would consist of 4 torps each of which would get a chance to hit or miss according to their accuracy value. With normal torps the accuracy is 75% which means that it is likely that 3 of the 4 torps would hit.
+
+<p>Torps that hit their primary target apply half of their damage directly to the armor of the target token. The other half of the damage is applied to the shields. Any damage that doesn't get absorbed by the shields is applied to the armor.
+
+<p>The maximum number of ships that can be killed by a torpedo strike is the number of torpedoes that hit. So in the above example the strike can kill up to 3 ships.
+
+<p>In the above case if the target token had one ship in it and these 3 "hits" caused more damage than was necessary to kill it then the damage can be applied to other enemy tokens in the same square. In this case the damage is applied to the shields and any damage not absorbed by the shields is applied to armor.
+
+<p>In no case can the number of ships killed exceed the number of torps that hit.
+
+<p>Missed torps do collateral damage to the target token only. Collateral damage is 1/8th the normal damage of the torp and works much like a "Shield Buster" beam weapon. In other words it only affects shields.
+
+<p>Torpedo accuracy can be improved using Battle Computers. Jammers can decrease the accuracy of enemy torpedoes. See BATTLE DEVICES below.
+
+<p>Torpedo Categories<br><br>
+
+Normal Torps <br>
+Damage: From 5 to 300 damage points <br>
+Range: From 3 to 5 squares <br>
+Initiative: from 0 to 3 Accuracy: 75% <br><br>
+
+Capital Ship Missiles <br>
+Damage: From 60 to 460 damage points <br>
+Range: From 5 to 6 squares <br>
+Initiative: From 0 to 3 <br>
+Accuracy: 25%
+
+<p>These powerful torpedoes do more damage than normal torpedoes and have a longer range than any other weapon. Due to the poor accuracy and the fact that a single torp can take out at most one enemy ship no matter how much damage it can do these "missles" are best mounted on starbases and battleships with lots of Battle Computers. Likewise their best purpose is to take out other players large ships and starbases.
+
+<br><br><hr><bR><br>
+
+<h4>Battle Devices</h4>
+
+<u>Jammers:</u> Decrease the accuracy of enemy torpedoes v/s the token with the jammers.<br><br>
+
+Example: A ship with 3 20% jammers would reduce a normal torpedo's 75% accuracy by 20% 3 times. 75 x .8 x .8 x .8 = 38% torp accuracy. <br><br>
+
+<u>Battle Computers:</u> Increase the initiative of all weapons on the ship. There are three battle computers ranging from +1 to +3 initiative. They also decrease the inaccuracy of torpedoes by 20-50%. <br><br>
+
+Example: A normal torp's 75% accuracy is modified by 2 30% battle computers by decreasing its inaccuracy 30% twice. 100 - ((100 - 75) x .7 x .7) = %88 torp accuracy. <br><br>
+
+If the attacking token has battle computers and the target has jammers the devices cancel each other out on a 1% to 1% basis. <br><br>
+
+Example: Target token has Jammers totaling a 50% decrease in accuracy. Attacker's battle computers add up to a 45% decrease in inaccuracy. Result: 5% decrease in accuracy. <br><br>
+
+Example: Target token has Jammers totaling a 30% decrease in accuracy. Attacker's battle computers add up to a 40% decrease in inaccuracy. Result: 10% decrease in inaccuracy. <br><br>
+
+NOTE: I have been saying that the battle computers decrease the inaccuracy of a torp by a percentage. This is not the same as saying that they would increase the accuracy by that percentage. As the torp accuracy gets higher and higher it is harder and harder to improve it. <br><br>
+
+Example: One 50% battle computer and a normal 75% accurate torp. <br>
+75% x 1.5 = 112% accuracy. WRONG. <br>
+100 - ((100 - 75) x .5) = 88% accuracy. CORRECT. <br><br>
+
+<u>Capacitors:</u> Increase the damage caused by all beam weapons on board by a percentage. Capacitor values run from 10% to 15%. <br><br>
+
+Example: A ship has a beam weapon capable of 100 damage and three 10% capacitors. 100dp x 1.1 x 1.1 x 1.1 = 133dp. <br><br>
+
+<u>Energy Dampener:</u> Reduces the movement value of all tokens in battle by 4 points which is the equivalent of 1 square per round. See MOVEMENT above. Dampeners are not additive. <br><br>
+
+<u>Beam Deflector:</u> Reduces damage done by beam weapons by up to 10%. <br><br>
+
+Example: A ship with 3 beam deflectors is hit by 300dp of beam weapon damage. 300 x 0.9 x 0.9 x 0.9 = 218dp.
+
+<br><br><hr><br><br>
+
+Galactic Traveller - the UK resource for interstellar strategy gaming.<br>
+Page Last Modified - 08/17/1996 03:00:17 <br><br>
+
+Email: Jamie Jackson Admin: webmaster@jacobean.demon.co.uk <br><br>
+
+<a HREF="../index.htm">Back to the Article Main Page.</a></body>

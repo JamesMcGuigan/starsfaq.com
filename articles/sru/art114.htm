@@ -1,0 +1,85 @@
+<!DOCTYPE htm PUBLIC "-//W3C//DTD htm 4.0 Transitional//EN"
+	"http://www.w3.org/TR/REC-htm40/loose.dtd">
+
+<htm lang="en-US">
+
+<HEAD>
+	<TITLE>Stars!-R-Us Article</TITLE>
+
+	<META name="author" content="Donald Davis">
+	<META name="copyright" content="&copy; 1999">
+	<!-- <META http-equiv="Content-Style-Type" content="text/css"> -->
+
+	<!-- <LINK href="main.css" rel="stylesheet" type="text/css"> -->
+
+	<!-- <href="http://www.strategygamefan.com/starsrus/"> -->
+</HEAD>
+<BODY background="../../starfield.gif" text="#8eb3f4" link="#FF0000" vlink="#c00000" alink="#800080" bgcolor="#000000">
+<h3>HOWTO: Automate Turn File Submission with Pegasus Mail<br>
+by: Alan Beall</h3>
+
+<h4>Introduction<br><br>
+
+<p>I was reading the strategy newsgroup one day, and I saw a post by Stephane Picard. It gave barebones description of how to easily submit turn files if you are using Pegasus.<br><br>
+
+<p>This is a more detailed explanation of how to put this process into action to make your turn submission woes much less woeful. You'll be able to get into a lot more games because you won't have to whine about how hard it is to submit files. ;)<br><br>
+
+<h4>Step One<br><br>
+
+<p>Compose a new message to your host. Do all the things you normally do by hand (Address, Subject, and the tedious job of attaching the turn file). Takes a bit of work, doesn't it?<br><br>
+
+<h4>Step Two<br><br>
+
+<p>Click on Message | Save Message. This brings up a dialog box.<br><br>
+
+Type a Title into the text box. <br>
+Click on OK. <br><br>
+
+<p>Pegasus will give the file a random name with a .PMO extension. Pegasus saves these files in the home directory. My copy uses the \SAVED directory. You can open this file with Notepad, to see what it looks like. Here is an example.<br><br>
+
+<p>Rename the file as GAMENAME.PMO(GAMENAME = the file name your host assigned to the game).<br><br>
+
+Move the file to your main Pegasus directory. <br><br>
+
+<h4>Step Three<br><br>
+
+<p>Now it is time to make a new icon for the automated process. You need to put this icon in a place that is convenient for you. I put mine in the folder with all of my Winsock applications, but another good place would be in the folder where your Stars! icon is located.<br><br>
+
+<p>In the folder where you want the new icon, click on File | New | New Item (shortcut in Win95).<br><br>
+
+<p>Specify where WINPMAIL.EXE is, use the -j switch, and tell it where the .PMO file is. Depending on where you keep Pegasus, the command line will look like this:<br><br>
+
+<p>c:\pegasus_directory\winpmail.exe -j c:\pegasus_directory\gamename.pmo<br><br>
+
+<h4>Finis<br><br>
+
+<p>When you double-click on the icon, Pegasus will automatically compose the message and send it (to the queue or directly, depending on how you have the program configured). You will never have to go through the pain of manually submitting a turn file, again.<br><br>
+
+<p>If you would like more information about this powerful tool, you can look at Help | Commandline Options | Advanced Job Submission in Pegasus. <br><br>
+
+<p>If you are ready to upgrade to the most powerful (and least expensive) e-mail client in the world, you need to check out the Pegasus Homepage.<br><br>
+
+<p>If you have questions or comments about this document, send a message to: Alan Beall<br><br>
+
+<h4>Example .PMO file<br><br>
+
+<p>GameName .PMO File<br>
+SY:1<Br>
+TO:"Host Name"<br>
+SU:bd file 12<br>
+CC:<br>
+EN:0<br>
+CS:1<br>
+RC:0<br>
+DC:0<br>
+UR:0<Br>
+SS:1<br>
+EX:0<br>
+AT:c:\games\stars\m_bd\bd.x12,Binary,3<br>
+FL:0<br><br>
+
+<p>This document and all its contents are © Copyrighted, 1996 by Alan Beall. Distribution is allowed as long as you give me credit and distribute it in its entirety. All other trademarks are the property of their respective owners.<br><br>
+
+
+<h4><A HREF="../index.htm">Back to the Article Main Page.</A>
+</font></body>

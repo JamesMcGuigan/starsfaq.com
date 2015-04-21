@@ -1,0 +1,277 @@
+<!doctype html public "-//w3c//dtd html 3.2//en">
+
+<html>
+	<meta>
+	<head>
+		<title>
+			The Stars! FAQ - Analysis of the "Best Speed" in a Minefield by Chris Scott
+		</title>
+		<META NAME = "keywords" CONTENT = "stars, FAQ, PBEM, blitz, hotseat, stratergy, micromanagement, James, McGuigan, Jeff McBride, Jason Cawley, advanced, technical, advFAQ, rgcs, battle, fleet, ship, war, space, 4X, scifi, empire, interactive, xplosiv, Supernova, explore, expand, exterminate, research, diplomacy, JRC3, autohost">
+		<META NAME = "Description" CONTENT = "The Stars! FAQ is the web resource the PBEM game Stars! by Jeff Johnson and Jeff McBride">
+		<META NAME = "ROBOTS" CONTENT="ALL">
+		<META NAME = "Copyright" CONTENT = "James McGuigan">
+		<META NAME = "Author" CONTENT = "James McGuigan">
+	</head>
+	<body bgcolor="#000000" text="#8eb3f4" link="#FF0000" vlink="#c00000" alink="#800080" background="../starfield.gif">
+		
+		<p align = center>
+		<img src="../starsfaqlogo.gif" height="115" width="500">
+		<br>
+		<a href="index.htm">Return to Main Menu</a>
+		 
+		</p>
+		
+		<table width="90%" align ="center" border="0" cellpadding="0" >
+			<tr>
+				<td>
+				<p>
+					<H3>Analysis of the "Best Speed" in a Minefield</H3>
+					
+					Author: Analysis of the "Best Speed" in a Minefield<br>
+					17th December 1998<br>
+					<br>
+
+<H4>Part 1</H4>
+					<blockquote>
+
+Hello everyone, I've just done a wee calculation which will be of interest 
+to some of you.<br>
+<br>
+I was looking at my neighbor's minefields and wondering what was my best 
+warp speed to clear 'em. It's late in the game, and I have big shields so I 
+didn't care about impact damage, only about cleaning 'em nice & fast.<br>
+<br>
+If I went in at Warp 10 I have about a 16% chance of traveling 100ly, and 
+84% odds of getting stopped sooner. <br>
+If I went in at Warp 4 I had a 100% chance of traveling only 16ly. 
+So what's my best speed?<br>
+<br> 
+The question is "which warp speed gives me my best 'expected' distance? 
+And now for the answer... <br>
+<br>
+The expected distance, and odds of impacting on a mine are given. <br>
+Warp 10: - 46.22ly - 84% <br>
+Warp 9: - 46.70ly - 78% <br>
+Warp 8: - 44.49ly - 70% <br>
+Warp 7: - 39.48ly - 60% <br>
+Warp 6: - 32.29ly - 45% <br>
+Warp 5: - 24.05ly - 26% <br>
+Warp 4: - 16.00ly - 0% <br>
+<br>
+Dog: "Congratulations Warp 9, you're our winner" <br>
+Warp 9: "I'd like to thank the minefields for this opportunity to show my 
+worth as a warp speed, and say hi to Hubby and all the little wormholes at 
+home"<br> 
+<br>
+Don't be fooled into thinking that warp 9 is the appropriate speed to travel 
+to the center of that minefield 46ly away, cos it's not!<br>
+<br> 
+Warp 7 still gives you odds of completing this trip faster.<br>
+<br>
+However if you want to travel to the center of that minefield 200ly away, 
+warp 9 is your best.<br>
+<br>
+If this seems counter-intuitive, consider that you will *sometimes* travel 
+as far as 81ly at warp 9, and that lifts the average. But the extra 
+risk taking works against you if you don't *want* to travel 81ly or more. 
+So if you're 64ly or closer, do drop your speed :)<br>
+<br> 
+When calculating this I found the expected distance by calculating the odds 
+of getting 1ly, 2ly, and so on, multiplying by the distance and adding them 
+all together. It was more accurate than inverting the probability density 
+function mathematically as I think all this is probably calculated 
+discretely (in 1ly jumps).<br>
+<br>
+Incidentally this was done for a *standard* minefield. <br>
+<br>
+In a heavy minefield your best expected distance is at Warp 7 - 38.58ly. 
+(Though I doubt whether this increase of 2.58ly is worth 63% odds of extreme 
+pain)<br> 
+<br>
+If you're in a speed-trap minefield it's counterproductive to even *try* 
+speeding!<br>
+<br>
+The calculations assume an infinite minefield, and best speed for smaller 
+minefields may vary (slightly). It'll also vary if you don't travel through 
+the minefield for your entire trip. I'll be knocking these complications 
+into the spreadsheet soon, and will let you know what I find. I anticipate 
+minimal impact, and only in special circumstances.<br>
+<br>
+One last consideration. If you have cheap engines, the 'expected' distances 
+will drop by 10% above warp 6, this only really matters in a 'heavy 
+minefield', where it means you arrive *later* by speeding :)<br>
+<br>
+A safe life is a wasted one, spin the wheel. 
+Peace & Mung Beans 
+Dog
+<br>
+<br>
+
+</blockquote>
+<H4>Part 2</H4>
+<blockquote>
+Warning Nerd-Data Attached<br>
+-------------------------- <br>
+I awoke this afternoon with a terrible hangover and decided to pass my day 
+by crashing virtual fleets into a virtual minefield and drinking lots of 
+fluids<br>
+<br> 
+I set up a spreadhseet and flung 3 million simulated fleets at simulated 
+minefields in many different ways in an effort to answer questions which 
+flowed from my earlier post on optimal minesweeping.<br>
+<br>
+To remind you of my post:<br>
+<br>
+I assumed impact damage was unimportant, the minefield was infinite, and 
+there was only one fleet at work. I suggested that Warp 9 (W9) Was best for standard minefields, W7 for Heavy 
+Mines, and W5 For Speed Traps.<br>
+<br>
+This message answers many more questions...<br>
+<br>
+Some of them are useful, some are merely interesting :) I'll be happy to answer any questions about what I've done, how I did it, 
+what it all means, or recipies for Peanut Brownies.<br>
+<br>
+First I'd like to answer Jason Cawley's question about clearing minefields 
+with more than 1 fleet (as I think it's the most potentially useful) 
+Naturally more fleets means you should risk going faster...<br>
+<br>
+<br>
+Clearing Minefields with multiple fleets<br>
+---------------------------------------- <br>
+---------------------------------------- <br>
+<br>
+Standard Minefield <br>
+------------------ <br>
+2+ fleets W10 <br>
+Heavy Minefield (Safe = W6) <br>
+--------------------------- <br>
+2-3 fleets W8 <br>
+4-9 fleets W9 <br>
+10+ fleets W10 <br>
+Speed Trap Minefield (Safe = W5) <br>
+-------------------------------- <br>
+4-9 fleets W6 <br>
+10-70 fleets W7 <br>
+70+ fleets W8 <br>
+<br>
+Note <br>
+---- <br>
+1: In a Speed Trap Minefield with 2-3 fleets you'd send the innermost at 
+W6, and others at W7 <br>
+2: You'll virtually never improve your ETA by splitting speeds under other 
+circumstances. <br>
+3: If you are travelling less than full-range for WarpN-1 you ought drop 
+your speed. <br>
+<br>
+<br>
+Clearing Minefields with 1 fleet <br>
+--------------------------------------------- <br>
+--------------------------------------------- <br>
+Heavy Minefields <br>
+---------------- <br>
+W7 gives best expected distance, however this advantage is small and ceases 
+to exist if you have cheap engines (i.e. W7 May not fire) <br>
+<br>
+So unless you *really* don't care about the pain you should probably use W6 <br>
+<br>
+<br>
+Speed Traps <br>
+----------- <br>
+W5, don't speed :) <br>
+Standard Minefields <br>
+------------------- <br>
+The basic rules... <br>
+1: If the centre is 81Ly or smaller, always use the warp which will get you 
+there in 1 year. <br>
+2: W9 If over 310Ly from centre. <br>
+3: Re-apply the rules each year. <br>
+<br>
+Now the Trickier rules... <br>
+1: If the minefield is 82 to 97Ly W10 = best expected time, but W9 = best 
+odds of making it in 2 years. <br>
+2: If the minefield is from 101-130Ly W9 = best expected time, but W10 = 
+best odds of making it in 2 years. <br>
+3: W10 If minefield is from 131-310Ly or 98-100Ly <br>
+4: **If there's a gap before entering the minefield**, W10 starts to look 
+better fast (a 10Ly gap is always conclusive). <br>
+------------------------------------------------------------ <br>
+I know some of these complexities may seem a little weird so I'll explain: 
+I claimed the expected distanace from Warp 9 was slightly better than Warp 
+10, and it's true. <br>
+<br>
+There is a larger influence from the 'last leg' of the journey than I had 
+anticipated however. <br>
+<br>
+What happens is that there is a kind of 'fight' between the W9 and W10 for 
+supremacy. <br>
+<br>
+At long distances W9 wins because it has the bigger *expected* distance, 
+but at short distances W10 wins because it has a longer 'reach'. <br>
+<br>
+The major complicating factor is that at short distances you can often drop 
+the warp speed to complete the final leg of the journey. <br>
+<br>
+This, and the differing shapes of the distance distribution between Warp 9 
+& Warp 10 create a 'ripple' effect which allows Warp 9 to win between 101 
+and 130Ly, but then Warp 9 doesn't start winning again until the ripples 
+become irrelevant at 310Ly. <br>
+<br>
+And let's face it, a 310Ly (radius) minefield is uncommon. 
+If you have more than 1 fleet, W10 wins hands down, the fleet's 
+co-operative effect is always worth more than W9's advantage. 
+Even with W9 at its most advantageous, a 10-year gap in the minefield will 
+render W10 preferable. <br>
+<br>
+Let's not badmouth W9 too Badly though, after all, it has some definite 
+advantages below 130Ly and is statistically much better behaved than W10 
+(i.e. it'll operate unexpectedly less often, even when it is 1% or 2% 
+slower) <br>
+<br>
+<br>
+How I did this... <br>
+----------------- <br>
+I made a spreadsheet which accepts the dimensions and distance to a 
+minefield, and simulates flying ships at it for up to 13 years. The 
+spreadsheet was smart enough to test ships working in teams, and to drop 
+the speed when I was close to centre. It was also smart enough to allow 
+for dropping to Warp 9 if I was from 101-130Ly (once I found and verified 
+that effect). <br>
+<br>
+Each iteration took about 10 seconds and flew between 4000 an 20000 ships. 
+Each of the comments and distances mentioned have been verified against at 
+least 80000 ship-simulations. <br>
+<br>
+The spreadsheet is written in Excel97, is not very freindly, and is about 
+64Meg (so unless anyone's heaps interested, I won't bother distributing 
+it). <br>
+<br>
+I realise this sim has been an act of extreme nerdiness, but then if you 
+had a hangover this big you might wanna feeb for a day too :-) <br>
+<br>
+No virtual ships were destroyed in this study, although about 2000000 
+virtual mines didn't make it... <br>
+<br>
+Please let me know if there are any questions anyone would like answered 
+and I'll sim 'em :) <br>
+<br>
+--------------------------- <br>
+A safe life is a wasted one <br>
+Peace & Mung Beans <br>
+Dog <br>
+
+					</blockquote>
+					<br>
+
+					<p align = "center">
+					<a href="index.htm">Return to Main Menu</a>
+					 
+					</p>
+	
+					
+				</td>
+			</tr>
+		</table>
+		
+		
+	</body>
+</html>

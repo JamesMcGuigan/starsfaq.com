@@ -1,0 +1,190 @@
+<!doctype html public "-//w3c//dtd html 3.2//en">
+
+<html><head>
+	<meta>
+	
+		<title>
+			The Stars! FAQ - Bugs and "Features
+		</title>
+<META NAME = "keywords" CONTENT = "stars, FAQ, PBEM, blitz, hotseat, stratergy, micromanagement, James, McGuigan, Jeff McBride, Jason Cawley, advanced, technical, advFAQ, rgcs, battle, fleet, ship, war, space, 4X, scifi, empire, interactive, xplosiv, Supernova, explore, expand, exterminate, research, diplomacy, JRC3, autohost">
+		<META NAME = "Description" CONTENT = "The Stars! FAQ is the web resource the PBEM game Stars! by Jeff Johnson and Jeff McBride">
+		<META NAME = "ROBOTS" CONTENT="ALL">
+		<META NAME = "Copyright" CONTENT = "James McGuigan">
+		<META NAME = "Author" CONTENT = "James McGuigan">
+		<meta name="FORMATTER" content="Arachnophilia 4.0">
+	</head>
+	<body bgcolor="#000000" text="#8eb3f4" link="#FF0000" vlink="#FF0000" alink="#b1111ff" background="starfield.gif">
+
+		<p align = center>
+		<img src="starsfaqlogo.gif" height="115" width="500"><br>
+		<a href="index.htm">Return to Main Menu</a> 
+		</p>
+
+<table width="90%" align ="center" border="0" cellpadding="0" >
+	<tr>
+		<td>
+
+<br><br>
+<li><h2>Known Bugs in Stars JRC3<br></h2>
+
+		<ul>
+<li><h3>Coding Bugs</h3>
+
+<ul>
+<li><b>Race File Corruption:</b><br>
+	<ul>
+If you edit the race name in a race file can cause the file to become corrupt. This is especially common when making the race name shorter than before. To get around this, when editing the race name, either edit it one letter at a time (saving and re-opening each time) or copy the race data into a new file by hand.<br>
+	</ul><br>
+
+<li> <b>Random Race:</b><br>
+	<ul>
+If at any point during the race creation you select random race but then de-select it, it can cause the race to generate a random race every time you use it to play a game with. This is because the random tag within the file is not unselected. Though it has been reported by others, I did a recent test of this, but could not activate it.<br>
+	</ul><br>
+
+<li> <b>32k Ship Limit Per Fleet:</b><br>
+	<ul>
+There is a limit of 32k of any one type of ship in a fleet (32,767 to be precise). If you try and merge two fleets together which would push the ship count over this limit (i.e. a fleet with 25k chaff and another with 10k), stars has a few problems. If done manually, the ship type will disappear from the fleet readout, but re-appear in the next generation (you will only lose ships in excess of the 32k). But if done using the &quot;merge with fleet&quot; waypoint order, all the ships of that type will disappear. This is because when the integer (16 bit - signed) holding the number of ships goes over the 32k limit it becomes negative, and as you can't have a negative number of ships, it reads as 0.<br>
+<br>
+There are also some other limits in the game: 512 separate fleets, 512 separate minefields, 16 ship designs, 10 starbase designs, 256 tokens at a battle. The game will not allow you to exceed these limits.<br>
+	</ul><br>
+
+<li> <b>AR Starter Colonies:</b><br>
+	<ul>
+     			Starter colonies for AR races will not contribute excess resources 
+                  to research, unless the build queue is cleared first (using 
+                  the clear button) or the hull design changed / upgraded. This 
+                  is due to the "build Starter Colony" order invisibly blocks 
+                  the end of the queue despite the fact that it has already been 
+                  completed. 
+	 </ul><br>
+
+<li> <b>Failing to Close to Range 2 with Sappers and R2 Beams:</b>
+	<ul>
+In the battle VCR, if a token of ships armed is armed with both sappers and range 2 beams, and is facing an enemy token for which it has enough power in its sappers to completely take down its shields to 0dp in a single turn, then the ship will not attempt to move into range 2 in that turn even if it has spare movement points and regardless of the given battle orders (even with maximize damage). If the token lacks the sapper firepower to deplete all the shields then the token will close to range 2 as normal. The exact logic code-wise behind this bug has not been figured out yet.
+	</ul><br>
+
+<a name="copyprotection">
+<li> <b>Copy Protection Activates When Editing an Allies Turn File:</b>
+	<ul>
+When you save an submit a turn and then transfer the .x file to another computer (which is being used by another player in the game) and then re-open the turn and then re-save and submit before finally turning over the file to the host, it can cause the copy protection to kick in. The solution is to open the turn file up, delete the .x file while stars is still running and then save and submit, the newly created .x file will be safe to send to the host for generation. The reason for this bug is that the machines hardware hash is only written to the .x file when the .x file is being created and not updated on subsequent save and submit, whereas the stars serial number is updated each time. When you open up your allies turn file, his hardware hash is already encoded into the .x file, but when you update the file with a new save and submit, your stars serial number is added to the file replacing his. Thus the host during generation sees the same serial number on two turn files but both with different hardware hashes. For more information, see the section on the <a href="copy_protection.htm">Copy Protection Features</a>.
+	</ul><br>
+
+<a name="font">
+<li> <b>Font Problems When Using a Non-English Version of Windows:</b>
+	<ul>
+When playing stars on a non-english version of windows, there can be a few problems with fonts used in stars, the most noticeable of these is in the player scores dialog where the player names are written horizontally, making them overlap each other. This is due to the fact that Microsoft has used different filenames for the various fonts in each language version of windows. To solve this problem requires editing the stars.ini file in the windows directory and editing the [fonts] section. Details of the correct text for each language can be found <a href="fileinfo.htm#starsini">here</a>
+
+	</ul><br>
+
+<li> <b>Netscape email attachment corruption :</b>
+	<ul>
+Wen sending emails using Netscape, it will treat small attachments of an unknown file type as text (7bit byte) instead of binary (8bit byte) and so truncates the leading byte, this can lead to corruption of turn files sent this way. The solution is to tell it that the various stars file types should be sent MIME encoded.
+	</ul><br>
+
+</ul><br>
+
+
+
+			<li><h3>Player Exploitable Bugs / "Features"</h3>
+<ul>
+The use of these bugs (with the exception of chaff), is generally considered cheating in multiplayer games unless specified previously by the host that they are allowed, though if you are in doubt check with your games host. Though it is still advisable for hosts to mention which things are disallowed before the start of the game.<br>
+
+<br>
+<li> <b>Chaff:</b><br>
+<ul>
+The game mechanics will cap the kills inflicted by missiles to the number of missiles fired (i.e. one missile = one kill). Also the targeting algorithm favours weakly armoured targets (in relation to cost in res and bor). These two facts can be taken advantage of. The cheapest armed ship you can build is a scout or frigate with an x-ray laser and QJ5 engine. If you build 1000's of these, the enemy's missiles will target these first. The problem is that the targeting algorithm doesn't take into consideration the fact that to kill a frigate with an Armageddon missile is actually wasting 1005 points of damage in overkill. So with enough chaff you can effectively nullify the enemies missile firepower. But note that the &quot;one missile = one kill rule&quot; doesn't apply to beams, so beamers will eat through chaff very quickly.<br>
+<br>
+                  See <a href="articles/chaff.htm">Art Lathrops article</a> for a
+                  more in-depth description of chaff and the various tactics associated 
+                  with it. Though most players consider this a perfectly legitimate 
+                  and very useful tactic, there are an odd few players who consider 
+                  this cheating, and so you will find the occasional game which 
+                  bans chaff, though be very careful to get an exact definition 
+                  (including ship designs) as to what is consider chaff from the 
+                  host if it is banned (well before it becomes an issue), as the 
+                  line between chaff and a cheap sweeper is very thin. 
+                </ul>
+<br>
+<li> <b>Split Fleet Dodge:</b><br>
+<ul>
+An attacking fleet can only attack ships at the same location. If you split your fleet into many smaller individual fleets and diverge their movement orders, an attacking fleet can only engage one of  them (the one with the largest mass will be targeted - though there may be a bug with this). A change was made in the JRC3 patch to stop multiple chasing fleets from all attacking the same target when this was done.<br>
+</ul>
+<br>
+<li> <b>UR/CE Scrapping:</b><br>
+<ul>
+Races with CE get half price engines, and races with UR get to reclaim up to 90% of resources and 70% of minerals that went into the ship/fleet. However when scrapping at another races starbase, Stars doesn't take into account the fact that CE races get half price engines and the resources given are based on the full amount. A ship that is mostly engine (scout with pricey engine), can be used between an alliance to generate &quot;free&quot; resources and minerals. This has been partially countered now that gifted or alien ship (i.e. not built by that race) are considered 30% cheaper in working out scrapping.<br>
+</ul>
+<br>
+<li> <b>Battle Board Overload:</b><br>
+<ul>
+The battle board can only handle a maximum of 256 tokens (shared among all races present). Excess tokens are simply left out of the battle. The tokens selected are based on fleet number, so the lowest numbered tokens would fight and the other left out, though each player is guaranteed (256 / players present) number of tokens. This can be taken advantage of by splitting off 256 chaff (or other cheap ship type), doing a split all on the 256 chaff fleet and then merging the rest of the fleet with the highest numbered ship. This would allow you to &quot;dodge&quot; the battle for the price of 256 chaff. Or simply keep some of more vulnerable ships out of battle (i.e. bombers and freighters). Most players would consider the deliberate use of this to be &quot;cheating&quot; unless specified by the host prior.<br>
+</ul>
+<br>
+<li> <b>0.2% Minimum Damage:</b><br>
+<ul>
+                  Stars records damage to armour in a fleet/stack as in 1/512ths 
+                  (0.2%). Any shots in combat (that do armour damage) will be 
+                  rounded up to the next 1/512th of the total armour in the stack. 
+                  Normally this isn't an issue, but can be abused. By Building 
+                  100+ DDs or nubs with alpha/beta torps, and splitting them into 
+                  individual fleets just before combat, you will fire a very large 
+                  amount of slavos (100 fleets of nubs with 9 slots each with 
+                  beta torps = 900 salvos). Normally these would only do a little 
+                  bit of damage, but because they are all individual salvos they 
+                  will each do 0.2% damage, and with 900 slavos that is 180% damage. 
+                  Which would kill one enemy token/stack outright and damage another 
+                  by 80%, and this is per round of shooting. The number of missiles 
+                  per slot won't increase the damage, but having 2 or 3 in the 
+                  slot will give you a second or third chance to make that salvo 
+                  hit (missed missiles don't damage armour). Note that shields 
+                  aren't calculated this way. And the 0.2% rule doesn't override 
+                  the one missile = one kill rule, so when the stack is at 99% 
+                  damage you will still need one missile per ship to do the killing 
+                  blow. The best counter tactics for this are first to split up 
+                  your fleet into several smaller tokens (thus it will only kill 
+                  part of your fleet), and to have gatling armed beam ships (as 
+                  they do damage to each token in range).<br>
+</ul>
+<br>
+<li> <b>False Public Player Scores:</b><br>
+<ul>
+Stars calculated actual resources during the middle of the generation, but calculates resources displayed in public player scores at the very end of the turn. This can be taken advantage of, by uploading pop from each of your planets using waypoint 1 orders (i.e. after movement) and then dropping them back as a waypoint 0 order (ie before movement). This doesn't affect actual output, but can significantly lower your reported resource output from which your score is largely based. This could prevent other players realizing that you are running away with the lead (and thus ganging up on you) until it is too late. Though this could backfire if you are caught, as other players would know that you are hiding something so may to gang up to stop you (which is exactly what you are trying to prevent).<br>
+</ul>
+<br>
+<li> <b>North/South Minefield Immunity:</b><br>
+<ul>
+There is an unusual bug in which there are no minefield hit checks done do a fleet traveling exactly due north or due south. Though the checks are carried out if there is even 1ly of east/west movement. This could allow a player to travel through a minefield at warp 10 with a 0% chance of hitting a mine. Most players would consider deliberate use of this bug to be &quot;cheating&quot;.<br>
+</ul>
+<br>
+<li> <b>East/West Speed Bump Minefield Immunity:</b><br>
+<ul>
+A similar bug to the one above, but this time affecting only speed bump fields for fleet traveling due East or West.<br>
+</ul>
+<br>
+
+<li> <b>SS Pop Steal:</b><br>
+<ul>
+The robber baron scanner can steal minerals from an enemy player, though a player cannot usually steal enemy colonists. Though in the J patch, the check for seeing if the player wishes to steal enemy colonists was disabled when using the waypoint 1 task option (Transport|colonists|load all). This was not intended. This bug has been proved to unbalance the game when used. Most if not all players would consider use of this bug to be very serious &quot;cheating&quot; unless &quot;specifically&quot; stated by the host prior the start of the game.<br>
+</ul>
+<br>
+<li> <b>[freepop] Hack:</b><br>
+<ul>
+Using a memory editing utility it is possible to create colonists out of thin air, limited only by a players freighter capacity, with the help of a memory editor. This abuses a lack of a viability check for loading colonist from an uninhabited planet, usually you cannot load more colonists than you drop down in a turn, but a memory editor can be used to trick the user interface into believing that you had dropped down millions of colonists, and the host doesn't double check these figures. Use of this in a multiplayer game would be considered by most players to be a totally inexcusable cheating offence.<br>
+</ul>
+
+
+
+			<br>
+		
+			<p align = "center">
+			<a href="index.htm">Return to Main Menu</a> 
+			</p>
+
+				
+		</ul></ul></td>
+	</tr>
+</table>
+	
+
+	</body>
+</html>

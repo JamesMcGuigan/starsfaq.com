@@ -1,0 +1,77 @@
+<!DOCTYPE htm PUBLIC "-//W3C//DTD htm 4.0 Transitional//EN"
+	"http://www.w3.org/TR/REC-htm40/loose.dtd">
+
+<htm lang="en-US">
+
+<HEAD>
+	<TITLE>Stars!-R-Us Article</TITLE>
+
+	<META name="author" content="Donald Davis">
+	<META name="copyright" content="&copy; 1999">
+	<!-- <META http-equiv="Content-Style-Type" content="text/css"> -->
+
+	<!-- <LINK href="http://www.strategygamefan.com/starsrus/main.css" rel="stylesheet" type="text/css"> -->
+
+	<!-- <href="http://www.strategygamefan.com/starsrus/"> -->
+</HEAD>
+
+<BODY background="../../starfield.gif" text="#8eb3f4" link="#FF0000" vlink="#c00000" alink="#800080" bgcolor="#000000">
+<h3>Stars! on Linux<br>
+By: Jason Hissong</h3>
+
+<p><p>Well, I have found a way to get Stars! to successfully run on Linux!  I have played a couple of games with it and it is very usable.  As a matter of fact, I have not ran into any troubles!  I even ran the Host Application so this may open new doors for hosting Stars! using Linux.  This page documents how I did it.
+
+<p>Please note that I do not know for sure if this will work on all systems.   This is just a starting point.  You may have to play around with it to get it to work.  These instructions assume you are familiar with Linux and you are root.   I used a Pentium II 266Mhz with 32 Megs of RAM, running Red Hat Linux version 5.1.   Please let me know if you got it to run on other versions.
+
+<p>1. Get the latest SOURCE version of WINE.  WINE is a windows emulator that runs in Linux.  The latest version can be found at http://www.winehq.com.   It is very important to get the source version so you can compile it on your box.
+
+<p>2. Once downloaded, uncompress it, compile it, and install it.  Follow the instructions provided on compiling  and installing it.
+
+<p>3. After you compiled and installed it, copy the wine.ini file to your home directory.   Rename it to .winerc once copied.  (Make sure you remember to put the period "." before the winerc part, this background can sometimes obscure the periods :)
+
+<p>4. Edit the .winerc file.  At the bottom of the file, delete the semi-colon ";" from the beginning of the line.  You should have something like this:<br><br>
+
+[Tweak.Layout]<br>
+Win95Look=true<br><br>
+
+If you forget this step, Stars! is not very useful as some of the dialog boxes and controls do not appear right.
+
+<p>5. Create a directory somewhere in your filesystem that will act like a msdos drive.   I use something like /usr/dos_c or whatever.  Just remember that is the place where your dos programs will be run from.
+
+<p>6. In the .winerc file, you will see a section like the following:<br><br>
+
+[Drive C]<br>
+Path=/c<br>
+Type=hd<br>
+Label=MS-DOS<br>
+Filesystem=msdos<br><br>
+
+Change the "Path=/c" to "Path=/path/to/the/directory/you/created" for example, if you created the /usr/dos_c directory, you would have "Path=/usr/dos_c".
+
+<p>7. In your directory you created, in our example, /usr/dos_c, create a directory called windows.  In the windows directory, create a directory called system.  So you now have two new directories, /usr/dos_c/windows and /usr/dos_c/windows/system.
+
+<p>8. In the /usr/dos_c/windows directory, create a new file called "win.ini".  You can do this by typing in the following command:<br><br>
+
+touch win.ini<br>
+
+<p>9. Create a directory under /usr/dos_c called stars.  (You will want to not use the "!", trust me!)
+
+<p>10. Put the Stars! CDROM in the cdrom drive, mount it, goto the directory that you mounted the cdrom on and copy everything in the install directory (which contains the stars!.exe file) on the cdrom to the /usr/dos_c/stars directory.
+
+<p>11. Copy ALL of the DLL files on the cdrom to the /usr/dos_c/stars directory.
+
+<p>12. Once all of this is done, you should be able to type:<br><br>
+
+wine /usr/dos_c/stars/stars\!.exe<br><br>
+
+and stars will run!  You need the "\" character before the "!" to get it to run successfully.
+
+<h3>A couple of notes about playing Stars! on Linux</h3>
+
+<p>When you open a new game, in the open box, change the file filter to include everything (All Files) for some reason it does not do wildcard stuff right.
+
+<p>I would turn off the Music and Sound effects to be safe.
+
+<p>When you install the wine software, it installs it to /usr/local/bin.   Make sure this is in your path.<br><br>
+
+<a HREF="../index.htm">Back to the Article Main Page.</a></body>

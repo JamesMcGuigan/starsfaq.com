@@ -1,0 +1,149 @@
+<!DOCTYPE htm PUBLIC "-//W3C//DTD htm 4.0 Transitional//EN"
+	"http://www.w3.org/TR/REC-htm40/loose.dtd">
+
+<htm lang="en-US">
+
+<HEAD>
+	<TITLE>Stars!-R-Us Article</TITLE>
+
+	<META name="author" content="Donald Davis">
+	<META name="copyright" content="&copy; 1999">
+	<!-- <META http-equiv="Content-Style-Type" content="text/css"> -->
+
+	<!-- <LINK href="../main.css" rel="stylesheet" type="text/css"> -->
+
+	<!-- <href="http://www.strategygamefan.com/starsrus/"> -->
+</HEAD>
+<BODY background="../../starfield.gif" text="#8eb3f4" link="#FF0000" vlink="#c00000" alink="#800080" bgcolor="#000000">
+<h3>Kill Ratios for Bombing<br>
+by: Thomas Pfister</h3>
+
+<p>I´ll try to explain how bombs/defenses exact work.<br><br>
+
+<h4>1) Defense coverage.</h4>
+
+<p>Each Defense type has a specific base defense coverage, that is
+the value of Defense coverage _ONE_ Defense gives:<br><br>
+
+SDI     d=0.99%<br>
+Missile d=1.99%<br>
+Laser   d=2.39%<br>
+Planet  d=2.99%<br>
+Neutron d=3.79%<br><br>
+
+The coverage of more then one Defense is calculated<br><br>
+
+Def(base)=1-((1-d)^n), while n is the number of Defenses.<br><br>
+
+e.g. 100 Neutron-Defs:<br><br>
+
+=1-((1-3.79%)^100)<br>
+=1-((1-0.0379)^100)<br>
+=1-(0.9621^100)<br>
+=1-0.0208)<br>
+=0.9792<br>
+= 97.92%<br><br>
+
+<p>This is the coverage versus normal Bombs like cherrys and versus
+packets and meant killing Pop.<br><br>
+
+Versus buildings the Defense coverage is halfed:<br><br>
+
+Def(build)=Def(base)*.5<br><br>
+
+e.g. versus 100 Neutron Defs:<br><br>
+
+= 97.92% *.5<br>
+= 48.96%<br><br>
+
+Versus invasions the coverage is 75%<br><br>
+
+Def(inv)=Def(base)*.75<br><br>
+
+e.g. versus 100 Neutron Defs:<br><br>
+
+= 97.92 * .75<br>
+= 73.44<br><br>
+
+Versus smart bombs the coverage is calculated the following<br><br>
+
+Def(smart)=1-((1-(d/2))^n)<br><br>
+
+e.g. versus 100 Neutron defs:<br><br>
+
+= 1-((1-(3.79%/2))^100)<br>
+= 1-((1-(1.895%))^100)<br>
+= 1-((1-0.01895)^100)<br>
+= 1-((0.98105)^100)<br>
+= 1-(14.76)<br>
+= 0.8524<br>
+= 85.24%<br><br>
+
+<h4>2) Normal Bombs</h4>
+
+Normal Bombs works linear, that means<br><br>
+
+Pop_Kills(normal)=sum (kill_bomb_type(n)*#(n)) * (1-Def(base))<br><br>
+
+e.g. 10 Cherry(2.5%) + 5 M70(1.2%) vs 100 Neutron Defs (97.92%)<br><br>
+
+= Sum (2.5% * 10; 1.2%  *5) * (1-97.92%)<br>
+= SUM (25% ; 6%) * 2.08%<br>
+= 31% * 2.08 %<br>
+= 0.31 * 0.0208<br>
+= 0.00868<br>
+= 0.868% of planetary Pop will be killed<br><br>
+
+Destroy_Build = sum (destroy_build_type(n)*#(n))  *(1-Def(build))<br><br>
+
+e.g. 10 Cherry(10 buildings) + 5 M 70(6 buildings) vs 100 Neutron Defs<br><br>
+
+= sum (10*10; 5*6) * (1-(97.92%/2))<br>
+= sum (100;30) * (1-(48.96%))<br>
+= 130 * (1-0.4896)<br>
+= 130 * 0.5104<br>
+= ~66 Buildings will be destroyed.<br><br>
+
+If you increase the number of bombs the bombing result will increase linear.<br><br>
+
+<h4>3) Smart Bombs</h4>
+
+Doesnt work linear, the kills will be:<br><br>
+
+Pop_kill(smart)= (1-Def(smart))-(1-Def(smart)* ((1-smart_type_1)^n1) *
+1-smart_type_2)^n2)....)<br><br>
+
+e.g. 10 Annihilators(7%) + 5 neutron (2.2%) vs. 100
+Neutron-Defs(Def(smart(=85,24%)))<br><br>
+
+= (1-85.24%)- (1-85.24%) * ((1-7%)^10) * ((1-2.2%)^5))<br>
+= (1-0.8524) -(1-0.8524) * ((1-0.07)^10) * ((1-0.022)^5))<br>
+= 0.1476 - (0.1476 * (0.93^10) * (0.978^5))<br>
+= 0.1476 - (0.1476 * 0.484  * 0.895)<br>
+= 0.1476 - 0.0543<br>
+= 0.0933<br>
+= 9.33% of planetary Pop will be killed.<br><br>
+
+<p>As the second term (which gives at least 0.0543) goes versus zero if
+the number of bombs increase, the maximum kills will be the first term
+(14.76%) with high Bomb numbers, but with 100 Annihiltaors it will be
+already very near this value. So with planetary Pop say around 350.000
+and a high growth rate say >16% it is impossible to bomb a planet out
+with smart bombs, as the pop growth is anyway higher then the kills
+from Bombing.<br><br>
+
+Hope this is helpful and explains how Bombs/Defs works.<br><br>
+
+Thomas<br><br>
+
+Shane Kearns wrote:<br>
+I've spun up a spreadsheet with Thomas' formulae - Data for all bombs
+and defences are already in it (except MCM which I can't remember off
+hand).<br><br>
+
+Just put in the number and type of defences, number and type of bombs
+(up to 8 different bombs supported) and it gives you expected kills,
+minimum kill (for standard bombs) and installations destroyed.<br><br>
+
+<h4><A HREF="../index.htm">Back to the Article Main Page.</A>
+</font></body></html>

@@ -1,0 +1,107 @@
+<!DOCTYPE htm PUBLIC "-//W3C//DTD htm 4.0 Transitional//EN"
+	"http://www.w3.org/TR/REC-htm40/loose.dtd">
+
+<htm lang="en-US">
+
+<HEAD>
+	<TITLE>Stars!-R-Us Article</TITLE>
+
+	<META name="author" content="Donald Davis">
+	<META name="copyright" content="&copy; 1999">
+	<!-- <META http-equiv="Content-Style-Type" content="text/css"> -->
+
+	<!-- <LINK href="http://www.strategygamefan.com/starsrus/main.css" rel="stylesheet" type="text/css"> -->
+
+	<!-- <href="http://www.strategygamefan.com/starsrus/"> -->
+</HEAD>
+
+<BODY background="../../starfield.gif" text="#8eb3f4" link="#FF0000" vlink="#c00000" alink="#800080" bgcolor="#000000">
+<h3>Minesweeping<br>
+by Dog (warppuppy)</h3>
+<p>
+
+<p>I awoke this afternoon with a terrible hangover and decided to pass my day by crashing virtual fleets into a virtual minefield and drinking lots of fluids.
+
+<p>I set up a spreadhseet and flung 3 million simulated fleets at simulated minefields in many different ways in an effort to answer questions which flowed from my earlier post on optimal minesweeping.
+
+<p>To remind you of my post: I assumed impact damage was unimportant, the minefield was infinite, and there was only one fleet at work. I suggested that Warp 9 (W9) Was best for standard minefields, W7 for Heavy Mines, and W5 For Speed Traps.
+
+<p>This message answers many more questions... Some of them are useful, some are merely interesting :) I'll be happy to answer any questions about what I've done, how I did it, what it all means, or recipies for Peanut Brownies.
+
+<p>First I'd like to answer Jason Cawley's question about clearing minefields with more than 1 fleet (as I think it's the most potentially useful) Naturally more fleets means you should risk going faster...
+
+<h4>Clearing Minefields with multiple fleets</h4>
+
+Standard Minefield <br>
+2+ fleets W10 <br><Br>
+
+Heavy Minefield (Safe = W6) <Br>
+2-3 fleets W8 <Br>
+4-9 fleets W9 <Br>
+10+ fleets W10 <Br><Br>
+
+Speed Trap Minefield (Safe = W5) <Br>
+4-9 fleets W6 <Br>
+10-70 fleets W7 <Br>
+70+ fleets W8 <Br><Br>
+
+Note:
+
+<p>In a Speed Trap Minefield with 2-3 fleets you'd send the innermost at W6, and others at W7. You'll virtually never improve your ETA by splitting speeds under other circumstances.
+If you are travelling less than full-range for WarpN-1 you ought drop your speed.
+
+<h4>Clearing Minefields with 1 fleet</h4>
+
+<u>Heavy Minefields </u><br>
+
+<p>W7 gives best expected distance, however this advantage is small and ceases to exist if you have cheap engines (i.e. W7 May not fire). So unless you *really* don't care about the pain you should probably use W6 <br><br>
+
+<u>Speed Traps </u><br>
+<p>W5, don't speed :)
+
+<u>Standard Minefields</u>
+The basic rules...
+<ul>
+<li>If the centre is 81Ly or smaller, always use the warp which will get you there in 1 year.
+<li>W9 If over 310Ly from centre.
+<li>Re-apply the rules each year.
+</ul>
+
+<p>Now the Trickier rules...
+<ul>
+<li>If the minefield is 82 to 97Ly W10 = best expected time, but W9 = best odds of making it in 2 years.
+<li>If the minefield is from 101-130Ly W9 = best expected time, but W10 = best odds of making it in 2 years.
+<li>W10 If minefield is from 131-310Ly or 98-100Ly
+<li>**If there's a gap before entering the minefield**, W10 starts to look better fast (a 10Ly gap is always conclusive).
+</ul>
+
+<p>I know some of these complexities may seem a little weird so I'll explain:
+
+<p>I claimed the expected distanace from Warp 9 was slightly better than Warp 10, and it's true. There is a larger influence from the 'last leg' of the journey than I had anticipated however.
+
+<p>What happens is that there is a kind of 'fight' between the W9 and W10 for supremacy. At long distances W9 wins because it has the bigger *expected* distance, but at short distances W10 wins because it has a longer 'reach'. The major complicating factor is that at short distances you can often drop the warp speed to complete the final leg of the journey. This, and the differing shapes of the distance distribution between Warp 9 & Warp 10 create a 'ripple' effect which allows Warp 9 to win between 101 and 130Ly, but then Warp 9 doesn't start winning again until the ripples become irrelevant at 310Ly. And let's face it, a 310Ly (radius) minefield is uncommon.
+
+<p>If you have more than 1 fleet, W10 wins hands down, the fleet's co-operative effect is always worth more than W9's advantage.
+
+<p>Even with W9 at its most advantageous, a 10-year gap in the minefield will render W10 preferable.
+
+<p>Let's not badmouth W9 too Badly though, after all, it has some definite advantages below 130Ly and is statistically much better behaved than W10 (i.e. it'll operate unexpectedly less often, even when it is 1% or 2% slower)
+
+<h4<How I did this...</h4>
+
+<p>I made a spreadsheet which accepts the dimensions and distance to a minefield, and simulates flying ships at it for up to 13 years. The spreadsheet was smart enough to test ships working in teams, and to drop the speed when I was close to centre. It was also smart enough to allow for dropping to Warp 9 if I was from 101-130Ly (once I found and verified that effect). Each iteration took about 10 seconds and flew between 4000 an 20000 ships. Each of the comments and distances mentioned have been verified against at least 80000 ship-simulations.
+
+<p>The spreadsheet is written in Excel97, is not very freindly, and is about 64Meg (so unless anyone's heaps interested, I won't bother distributing it).
+
+<p>I realise this sim has been an act of extreme nerdiness, but then if you had a hangover this big you might wanna feeb for a day too :-)
+
+<p>No virtual ships were destroyed in this study, although about 2000000 virtual mines didn't make it...
+
+<p>Please let me know if there are any questions anyone would like answered and I'll sim 'em :) <br><br>
+
+A safe life is a wasted one<Br>
+Peace & Mung Beans<br>
+Dog<br><br>
+
+<a HREF="../index.htm">Back to the Article Main Page.</a></body></html>
+

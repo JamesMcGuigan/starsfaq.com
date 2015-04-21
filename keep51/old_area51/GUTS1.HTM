@@ -1,0 +1,665 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (Win95; I) [Netscape]">
+   <title>4)</title>
+</head>
+<body text="#FFFF99" bgcolor="#000000" link="#3366FF" vlink="#FF99FF" alink="#FF0000" background="background.gif">
+<a NAME="4)"></a><b>4) <font size=+1>Guts!</font></b>
+<br><a NAME="4.1)"></a><b>4.1) <font color="#FFFF00"><font size=+1>GUTS
+OF BOMBING</font></font></b>
+<p><b>Author:&nbsp;&nbsp;&nbsp; Leonard Dickens</b>
+<br><b>Email:&nbsp;&nbsp;&nbsp;&nbsp; leonard@dc.net</b>
+<br><b>Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1998/07/17</b>
+<br><b>Forums:&nbsp;&nbsp;&nbsp; rec.games.computer.stars</b>
+<p><b>Here is an improved version of Thomas Pfister's excellent recent
+post on</b>
+<br><b>bombing.&nbsp; Since it came time for Armageddon's in a game I am
+in, I took</b>
+<br><b>the time to understand the post and brush it up to cover bombing
+in a</b>
+<br><b>more complete manner.</b>
+<br>&nbsp;
+<p><b><font size=+1>Bombing and Defenses in Stars!</font></b>
+<p><a NAME="4.1.1)"></a><b>(4.1.1)<font color="#FFFF00"> <font size=+1>DEFENSIVE
+COVERAGE</font></font></b>
+<p><b>Each Defense type has a specific "base" defense coverage, which is</b>
+<br><b>the value of Defense coverage _ONE_ Defense gives population:</b>
+<p><b><tt>SDI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.99%</tt></b>
+<br><b><tt>Missile&nbsp; 1.99%</tt></b>
+<br><b><tt>Laser&nbsp;&nbsp;&nbsp; 2.39%</tt></b>
+<br><b><tt>Planet&nbsp;&nbsp; 2.99%</tt></b>
+<br><b><tt>Neutron&nbsp; 3.79%</tt></b>
+<p><b>The coverage of more than one Defense is calculated as follows:</b>
+<p><b>(4.1.1a) For pop defending against normal bombs:</b>
+<p><b>&nbsp; <font color="#FF0000">Def(pop) = 1-((1-d)^n)</font>, where
+n is the number of Defenses.</b>
+<p><b>e.g. 100 Neutron-Defs:</b>
+<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1
+- ((1 - 3.79%)^100)</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1
+- ((1 - 0.0379)^100)</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1
+- (0.9621^100)</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1
+- 0.0208</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0.9792</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 97.92%</b>
+<p><b>This is the defensive coverage afforded to population versus normal</b>
+<br><b>bombs (like cherry bombs; see list below) and versus packet hits.</b>
+<p><b>(4.1.1b) For buildings (factories, mines, and defenses themselves)
+the</b>
+<br><b>defensive coverage versus normal bombs is halved:</b>
+<p><b>&nbsp; <font color="#FF0000">Def(build) = Def(pop)*0.5</font></b>
+<p><b>e.g. versus 100 Neutron Defs:</b>
+<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 97.92% *.5</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 48.96%</b>
+<p><b>(4.1.1c) For pop versus invasions the coverage is 75%:</b>
+<p><b>&nbsp; <font color="#FF0000">Def(inv) = Def(pop)*.75</font></b>
+<p><b>e.g. versus 100 Neutron Defs:</b>
+<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 97.92%
+* .75</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 73.44%</b>
+<p><b>(4.1.1d) Versus smart bombs the coverage is calculated differently.&nbsp;
+The</b>
+<br><b>base coverage level of the defenses is halved.&nbsp; Thus, the total</b>
+<br><b>defensive coverage is calculated as follows:</b>
+<p><b>&nbsp; <font color="#FF0000">Def(smart) = 1-((1-(d/2))^n)</font></b>
+<p><b>e.g. versus 100 Neutron defs:</b>
+<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1 - ((1 - (3.79%/2))^100)</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1 - ((1 - (1.895%))^100)</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1 - ((1 - 0.01895)^100)</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1 - ((0.98105)^100)</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1 - .1476</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 0.8524</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 85.24%</b>
+<p><b>(4.1.1e) The following table summarizes the effective defense percentage</b>
+<br><b>obtained against each type of attack, using 100 defenses:</b>
+<p><b><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pop&nbsp;&nbsp;
+build&nbsp;&nbsp; inv&nbsp;&nbsp; smart</tt></b>
+<br><b><tt>SDI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 63.03&nbsp; 31.51&nbsp; 47.27&nbsp;
+39.12</tt></b>
+<br><b><tt>Missile&nbsp; 86.60&nbsp; 43.30&nbsp; 64.95&nbsp; 63.21</tt></b>
+<br><b><tt>Laser&nbsp;&nbsp;&nbsp; 91.10&nbsp; 45.55&nbsp; 68.32&nbsp;
+69.95</tt></b>
+<br><b><tt>Planet&nbsp;&nbsp; 95.20&nbsp; 47.60&nbsp; 71.40&nbsp; 77.83</tt></b>
+<br><b><tt>Neutron&nbsp; 97.90&nbsp; 48.95&nbsp; 73.43&nbsp; 85.24</tt></b>
+<br>&nbsp;
+<p><a href="contents.htm#guts in contents">return to table of contents</a>
+<br>&nbsp;
+<p><a NAME="4.1.2)"></a><b>(4.1.2) <font color="#FFFF00"><font size=+1>NORMAL
+BOMBS</font></font></b>
+<p><b>Each normal bomb type has a specific pop-kill percentage, as well
+as</b>
+<br><b>building-kill number and a minimum kill number.&nbsp; The values
+given by</b>
+<br><b>_ONE_ bomb are summarized here:</b>
+<p><b>&nbsp;<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+perc #inst&nbsp; min</tt></b>
+<br><b><tt>Lady Finger 0.6%&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp; 300</tt></b>
+<br><b><tt>Black Cat&nbsp;&nbsp; 0.9%&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp; 300</tt></b>
+<br><b><tt>M70&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.2%&nbsp;&nbsp;&nbsp;
+6&nbsp;&nbsp; 300</tt></b>
+<br><b><tt>M80&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.7%&nbsp;&nbsp;&nbsp;
+7&nbsp;&nbsp; 300</tt></b>
+<br><b><tt>Cherry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.5%&nbsp;&nbsp; 10&nbsp;&nbsp;
+300</tt></b>
+<br><b><tt>LBU-17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.2%&nbsp;&nbsp; 16&nbsp;&nbsp;&nbsp;&nbsp;
+0</tt></b>
+<br><b><tt>LBU-32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.3%&nbsp;&nbsp; 28&nbsp;&nbsp;&nbsp;&nbsp;
+0</tt></b>
+<br><b><tt>LBU-74&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.4%&nbsp;&nbsp; 45&nbsp;&nbsp;&nbsp;&nbsp;
+0</tt></b>
+<br><b><tt>OrbtlColnyM 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp; 2000</tt></b>
+<br><b><tt>Hush-a-boom 3.0%&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;
+?</tt></b>
+<br><b><tt>MultiContnM 2.0%&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp;
+?</tt></b>
+<p><b>Normal bombs add linearly; that is, adding another bomb always</b>
+<br><b>increases the amount of stuff killed/destroyed the same amount.&nbsp;
+(That</b>
+<br><b>is, until the enough bombs are there such that the planet is wiped</b>
+<br><b>clean, after which point additional bombs add nothing).</b>
+<p><b>The effect of normal bombs is computed as follows:</b>
+<p><b>(4.1.2a) Normal bombs versus pop.</b>
+<p><b>In this case, you get the larger of the percentage kill sum (as</b>
+<br><b>modified by defenses), and the minimum kill value (also as modified).</b>
+<br><b>It is typically the case that a bomb kills more than its minimum
+kill</b>
+<br><b>value.&nbsp; If so, you should use this formula:</b>
+<p><b>&nbsp; <font color="#FF0000">Normalpopkills = sum[bomb_kill_perc(n)*#(n)]
+* (1-Def(pop))</font></b>
+<p><b>e.g. 10 Cherry and 5 M70 bombing vs 100 Neutron Defs (97.92%)</b>
+<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= sum[2.5% *10; 1.2% *5] * (1-97.92%)</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= sum[25% ; 6%] * 2.08%</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 31% * 2.08 %</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 0.31 * 0.0208</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 0.00868</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 0.868% of planetary pop will be killed</b>
+<p><b>The minimum calculation does not give a percentage of pop killed,
+but</b>
+<br><b>rather an absolute number.&nbsp; It works as follows:</b>
+<p><b>&nbsp; <font color="#FF0000">Minkills = sum[bomb_kill_min(n)*#(n)]
+* (1-Def(pop))</font></b>
+<p><b>e.g. the same bombs/planet as the previous example:</b>
+<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = sum[300
+*10; 300 *5] * (1-97.92%)</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = sum[3000;
+1500] * 2.08%</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 4500
+* 2.08 %</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 4500
+* 0.0208</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 93.6&nbsp;
+minimum pop killed (probably rounded to 100...(?))</b>
+<p><b>To determine whether the minimum kill value will be used, just</b>
+<br><b>multiply the planet population by Normalpopkills and see which is</b>
+<br><b>higher.&nbsp; Whichever way gives more kills is used.</b>
+<p><b>e.g. the same bombs/planet as before; assume the planet pop is 300000.</b>
+<br><b>The amount of pop killed (via Normalpopkills) is 0.00868 * 300000
+=</b>
+<br><b>2604 (rounded to 2600 (?)), which will used since 2604 is greater
+than</b>
+<br><b>93.6.</b>
+<br>&nbsp;
+<p><b>(4.1.2b) Normal bombs versus buildings.</b>
+<p><b>&nbsp; <font color="#FF0000">Destroy_Build = sum[destroy_build_type(n)*#(n)]
+* (1-Def(build))</font></b>
+<p><b>e.g. 10 Cherry + 5 M70 vs 100 Neutron Defs</b>
+<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= sum[10*10; 5*6] * (1-(97.92%/2))</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= sum[100; 30] * (1-(48.96%))</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 130 * (1- 0.4896)</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 130 * 0.5104</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= ~66 Buildings will be destroyed.</b>
+<p><b>Building kills are allotted proportionately to each building type
+on</b>
+<br><b>the planet.&nbsp; For example, a planet with 1000 installations
+(of all</b>
+<br><b>three types combined) taking 400 building kills will lose 40% of
+each</b>
+<br><b>of its factories, mines, and defenses.&nbsp; If there had been 350
+mines,</b>
+<br><b>550 factories, and 100 defenses, the losses would be 140 mines,
+220</b>
+<br><b>factories, and 40 defenses.</b>
+<p><a href="contents.htm#guts in contents">return to table of contents</a>
+<br>&nbsp;
+<p><a NAME="4.1.3)"></a><b>4.1.3) <font color="#FFFF00"><font size=+1>SMART
+BOMBS</font></font></b>
+<p><b>Each smart bomb type has a specific pop-kill percentage.&nbsp; The
+values</b>
+<br><b>given by _ONE_ bomb are summarized here:</b>
+<p><b><tt>Smart&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1.3%</tt></b>
+<br><b><tt>Neutron&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2.2%</tt></b>
+<br><b><tt>Enriched Neutron&nbsp;&nbsp; 3.5%</tt></b>
+<br><b><tt>Peerless&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+5.0%</tt></b>
+<br><b><tt>Annihilator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7.0%</tt></b>
+<p><b>Smart bombs do *not* add linearly; instead, they use this formula:</b>
+<p><b>&nbsp; <font color="#FF0000">Pop_kill(smart) = (1-Def(smart))(1 -
+multiply[ (1 - kill_perc(n)^#n) ])</font></b>
+<p><b>Where "multiply[x(n)]" is the math "big-pi" operator, which means</b>
+<br><b>multiply all the terms together, i.e.:</b>
+<br><b>&nbsp; multiply[x(n)] = x(n1)*x(n2)*x(n3)... *x(ni)</b>
+<p><b>e.g. 10 Annihilators + 5 neutron vs. 100 Neutron-Defs(Def(smart)=85.24%)</b>
+<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= (1-85.24%) * (1 -&nbsp; multiply[((1-7%)^10); ((1-2.2%)^5)])</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= (1-0.8524) * (1 -&nbsp; ((1-0.07)^10) * ((1-0.022)^5))</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 0.1476 * (1 - (0.93^10) * (0.978^5))</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 0.1476 * (1 - 0.484 * 0.895)</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 0.1476 * 0.56682</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 0.0837</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 8.37% of planetary pop will be killed.</b>
+<p><b>Notice that the second term asymptotically approaches 1.0 as the</b>
+<br><b>number of bombs increase.&nbsp; Thus, with high bomb numbers, the
+maximum</b>
+<br><b>kills will approach the first term (14.76%); that's the term</b>
+<br><b>determined solely by the planet's defenses.&nbsp; There are two
+results</b>
+<br><b>worth noting of this behavior, one each for the attack and defense:</b>
+<p><b>On the attack, you will note that it doesn't really take that many</b>
+<br><b>bombs to approach the kill limit; i.e., a single B-52 carrying 16</b>
+<br><b>Annihilators will, by itself, kill roughly 69% of the maximum killable</b>
+<br><b>pop; adding a second such bomber boosts this to 90%, and a third
+to</b>
+<br><b>97%.&nbsp; Adding additional bombers above this point gains you
+almost no</b>
+<br><b>additional pop killed.&nbsp; Thus, fleets of smart bombers should
+be quite</b>
+<br><b>small.</b>
+<p><b>But on defense, we note that there is a maximum kill percentage for</b>
+<br><b>any given defensive tech, and that as defensive tech increases,
+this</b>
+<br><b>value can fall below the pop growth rate.&nbsp; Thus, with planetary
+pop in</b>
+<br><b>the high growth zone (say 1/4 to 1/2 max. pop), but above the level</b>
+<br><b>needed to operate all defenses (250K), the planet may grow more
+pop</b>
+<br><b>than can be bombed!&nbsp; Sometimes you can never bomb out a high
+defenses</b>
+<br><b>planet with smart bombs alone.</b>
+<p><a href="contents.htm#guts in contents">return to table of contents</a>
+<br>&nbsp;
+<p><b>(<a NAME="4.1.4)"></a>4.1.4) <font color="#FFFF00"><font size=+1>HETEROGENEOS
+(MIXED TYPE) ATTACKS</font></font></b>
+<p><b>When you attack a planet using multiple types of weapons/bombs</b>
+<br><b>(i.e. mixing normal and smart bombs), the effects are resolved in
+the</b>
+<br><b>following order:</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; waypoint 0 invasions</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in-space packets move,
+hit</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; production (new installations
+built, new packets launched)</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; population grows/dies</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; normal bombing</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; smart bombing</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; waypoint 1 invasions</b>
+<p><b>Each of the steps above is done for each player, before moving on
+to</b>
+<br><b>do the next step.&nbsp; Thus, allies bombing the same planet can
+therefore</b>
+<br><b>overcome the smart bomb pop-kill limitation, as they are individually</b>
+<br><b>limited but not collectively.&nbsp; (And two players each knocking
+off 15%</b>
+<br><b>of the pop will be able to clear any planet).&nbsp; It is also possible
+to</b>
+<br><b>use normal bombs to knock down a planet's defenses before destroying</b>
+<br><b>the pop using smarts against the weakened defense.</b>
+<p><b>(4.1.5) Credit</b>
+<p><b>This file was created primarily by Thomas Pfister, who posted it
+to</b>
+<br><b>r.g.c.s on June 6, 1998.&nbsp; Leonard Dickens has cleaned up the
+English,</b>
+<br><b>anglicized the numbers, and added extra analysis/details not found
+in</b>
+<br><b>the original.&nbsp; Credit is also due to SBPosey, whose useful
+work on exact</b>
+<br><b>order of execution is excerpted here in section 4.1.4</b>
+<p><a href="contents.htm#guts in contents">return to table of contents</a>
+<br>&nbsp;
+<p><a NAME="4.2)"></a><b>4.2) <font color="#FFFF00"><font size=+1>GUTS
+OF TECH TRADING</font></font></b>
+<br><b>&nbsp;You can gain tech from another player in 3 ways.</b>
+<br><b>&nbsp;1) Scrap, at one of your starbases, a ship with higher tech
+than you possess.</b>
+<br><b>&nbsp;2) Have an armed ship present at a battle in which a ship
+with higher tech than you possess is killed.</b>
+<br><b>&nbsp;3) Invade the planet of a player with higher tech.</b>
+<p><b>For each event (battle, scrap, or invasion), there is a 50% that
+nothing</b>
+<br><b>will be learned.&nbsp; If that test is passed, then there is a 50%
+chance for</b>
+<br><b>each tech category that is superior to yours that you will learn
+a tech.</b>
+<br><b>For ways (1) and (2), the only techs that count are those that went
+into</b>
+<br><b>building the ship.&nbsp; For way (3), all techs that the invaded
+player has</b>
+<br><b>are available.&nbsp; Once you learn a tech, by any method, that
+is it for the</b>
+<br><b>turn; only 1 tech from other players per turn.</b>
+<p><b>Examples:</b>
+<br><b>&nbsp;You have techs at all 10 and your opponent has techs at all
+11.</b>
+<p><b>&nbsp;You destroy a Scout A (Tech 0) with a Trans-Galactic Drive
+(Tech 9),</b>
+<br><b>a Dolphin Scanner (Techs 10, 5 and 4), and a Colloidal Phaser (Tech
+10).</b>
+<br><b>You chance of learning a tech level is 0 (no superior tech categories).</b>
+<p><b>&nbsp;You destroy a Scout B: the same scout, but with a Gatling Gun</b>
+<br><b>(Tech 11) in place of the Colloidal Phaser.&nbsp; Your chance of</b>
+<br><b>learning a tech level is :</b>
+<br><b>&nbsp;(.5*.5)=.25</b>
+<br><b>&nbsp;(50% for learning ANYTHING times 50% for 1 superior tech category)=25%</b>
+<br><b>&nbsp;If you learn a level, it will be weapons (from the gatling
+gun)</b>
+<p><b>&nbsp;You destroy a Scout C: Scout B with a Cheetah Scanner (Tech
+11)</b>
+<br><b>in place of the Dolphin Scanner.&nbsp; The ship has superior tech
+in two fields, so your chance of learning a tech level is</b>
+<br><b>&nbsp; .5 * (1 - (.5^2)</b>
+<br><b>&nbsp;=.5 * (1 - .25)</b>
+<br><b>&nbsp;=.5 * .75 = .375</b>
+<br><b>&nbsp;(50% times 50% for 2 superior tech categories)=37.5%</b>
+<br><b>&nbsp;If you learn tech, it will be either weapons (from the gatling
+gun), or electronics (from the scanner).</b>
+<p><b>&nbsp;You invade one of his planets.&nbsp; You chance of learning
+a tech level</b>
+<br><b>is</b>
+<br><b>&nbsp; .5 * (1 - .5^6)</b>
+<br><b>&nbsp;=.5 * (1 - .015625</b>
+<br><b>&nbsp;=.5 * .984375 = .492</b>
+<br><b>&nbsp; (50% times 98.4% for 6 tech categories)=49.2%</b>
+<br><b>&nbsp;If you gain tech, it could be in any of the fields your opponent
+leads in.</b>
+<p><b>&nbsp;You destroy 5 Scout Bs in 1 battle.&nbsp; One Battle, so chance
+is the</b>
+<br><b>same as for a single Scout B: 25%.</b>
+<p><b>&nbsp;You destroy 5 Scout Bs in 5 separate battles.&nbsp; Your chances
+are</b>
+<br><b>&nbsp;(1 - (1 - 25%)^5)=76.27%</b>
+<p><b>&nbsp;For 5 Scout Cs in 5 separate battles, 90.46% (1 - (1 - 37.5%)^5).</b>
+<p><b>&nbsp;For 5 Invasions: 96.62% (1 - (1 - 49.2%)^5).</b>
+<p><b>&nbsp;For purposes of destroying ships, it doesn't matter if they
+are destroyed</b>
+<br><b>in battle or scrapped.&nbsp; It also doesn't matter if they are
+owned by you or</b>
+<br><b>another player, or scrapped by you or another player.</b>
+<p><b>&nbsp;Remember you may only gain 1 tech level from another player
+per turn, via any method.&nbsp; In terms of turn order, scrapping takes
+place first, then waypoint zero invasions, then battles, then waypoint
+one invasions.</b>
+<p><b>(courtesy SBPosey, with minor editing by myself)</b>
+<p><a href="contents.htm#guts in contents">return to table of contents</a>
+<br>&nbsp;
+<p><b>*******************************************************************************</b>
+<p><a NAME="4.2.1)"></a><b>4.2.1)&nbsp;&nbsp;&nbsp;&nbsp;<font size=+1>
+<font color="#FFFF00">HOW DO I SET UP A WOLF / SHEEP SITE?</font></font></b>
+<br><b>&nbsp;The wolf/sheep concept relies on the fact that a player with
+a warship (wolf) present at a battle in which a ship (sheep)with superior
+tech is destroyed stands a chance of gaining a tech level.&nbsp;&nbsp;
+With scrapping, you can attempt to transfer tech to a single ally.&nbsp;
+By arranging to have the ship killed, rather than scrapped, where 2 or
+more allies are present, each of them stands a chance of gaining tech.&nbsp;
+Thus, this is often the tech trading technique larger alliances favor.</b>
+<br><b>&nbsp;Since, presumably, the parties involved in the scheme have
+each other set to friend, the wolf ships must have their battle orders
+explicitly set to attack the player providing the sheep.&nbsp; For this
+reason, the sheep donor should take care not to have any ships present
+other than the sheep due to be destroyed.</b>
+<p><b>&nbsp;Example: races A, B, C, and D enter into a tech trading alliance.&nbsp;
+Each race produces 6 'wolf' ships.&nbsp; They each split these ships into
+two fleets of three, and send each fleet to an uninhabited planet near
+their homeworld.&nbsp; Once there, the fleets are split, and one wolf from
+each fleet is given to each of his allies.&nbsp; Now there are eight sheep/wolf
+sites; each player has a ship present at six of these sites, and prepares
+to send sheep to the remaining two.</b>
+<br><b>&nbsp;All players give their wolves orders to attack only the player
+who is about to start sending sheep.</b>
+<br><b>&nbsp;The players discuss amongst themselves who shall specialize
+in what fields, and start building two sheep per year, and sending them
+off to the nearby sites.</b>
+<br><b>&nbsp;Eventually, players may wish to send wolf ships of their own
+to each of the sites, so that they can clear up some ship slots.</b>
+<br><b>&nbsp;In this way, each player has 6 chances to gain tech, at the
+cost of two sheep, each year.</b>
+<br><b>&nbsp;This is cheaper and easier than managing scrapping.&nbsp;
+On the downside, you don't have control over which field you try to gain
+in a given year.</b>
+<p><a href="contents.htm#guts in contents">return to table of contents</a>
+<br>&nbsp;
+<p><a NAME="4.2.2)"></a><b>4.2.2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#FFFF00"><font size=+1>HOW
+DO I SET UP TECH TRADING BY INVASION?</font></font></b>
+<br><b>Tech Trading The Invasion Way</b>
+<p><b>&nbsp;What you want to do, of course, is set up a planet of which
+two of you can trade ownership, over and over.&nbsp; Each ownership change
+has a chance of giving the invader a bonus tech level.&nbsp; The chances
+of tech transfer depend on how many tech fields the invader is behind the
+defender in.&nbsp; Nothing to do with how FAR behind he might be, just
+how many fields the other guy leads in.&nbsp; Check out the article <a href="#4.2)">'Guts
+of Tech Trading'</a> for more detailed info.</b>
+<br><b>&nbsp;Of course, the more often you can trade the planet, the more
+chances for tech transfer.&nbsp; You want to take advantage of the fact
+that there are two periods in each Stars! turn during which an invasion
+can take place.</b>
+<br><b>&nbsp;At the start of a turn, all ships with waypoint orders for
+the current location are carried out.&nbsp; Then ships move.&nbsp; Then
+the destination waypoint orders are carried out.(see <a href="q_and_a.htm#3.1)">'order
+of events in a turn'</a>).&nbsp; Thus, at the start of each turn, one of
+you is going to invade the chosen planet from a ship in orbit.&nbsp; Then,
+later the same turn, the other is going to arrive with a freighter and
+invade right back.&nbsp; Next turn, same deal.</b>
+<br><b>&nbsp;So one of you needs to have a freighter full of colonists
+at the planet, and each turn, manually drop 200 colonists.&nbsp; You can't
+use repeating orders, as they only work when the ship moves each turn.
+And you can't move the ship each turn, 'cause then the orders will be carried
+out at the end of the turn, and you need them carried out at the beginning.&nbsp;
+You HAVE to do it manually each turn.</b>
+<br><b>&nbsp; The other player needs 2 freighters, which can be on repeating
+orders, moving to the planet and invading with 200 colonists one year,
+moving away again the next, and repeating.&nbsp; It's a two year repeating
+cycle, so you need 2 ships, so one can arrive like clockwork each year.</b>
+<br><b>&nbsp;Why 200 colonists each time?&nbsp; Well, the smallest unit
+of colonists you can beam up or down is 100.&nbsp; So you want no more
+than 100 colonists on the planet at all times, so it's as easy as possible
+to invade.&nbsp; That means you have to invade with 200 colonists, 100
+to be killed in the fighting, and 100 to remain for the next invasion.</b>
+<br><b>&nbsp;At this rate, a medium freighters worth of colonists will
+last 60 years.&nbsp; That's cheap enough, dont'cha think?</b>
+<p><b>&nbsp;When you're setting this sort of operation up, you can run
+into problems if you forget that the pop count you see on another players
+planet is only an approximation (see the little +- in front of it?)&nbsp;
+The lowest pop your scanners will EVER see on another players world is
+400.&nbsp; So you have to communicate with your ally.&nbsp; Decide who's
+going to send the colony ship to get the invasion world up and running
+(with only 100 colonists, not 200, as none will be lost to invasion), decide
+which year you're going to start, and then trust the other guy to do the
+right thing, 'cause you CAN'T SEE how many colonists are actually on the
+planet when it's in his possession.</b>
+<p><b>&nbsp;It's nice to pick an invasion planet within one years travel
+of the guy using the 2 freighters.&nbsp; There are several advantages to
+this.&nbsp; First, it means the freighters don't have to be full of colonists
+sitting on their asses when they could be hard at work, generating resources.&nbsp;
+The freighters can pick up 200 at a time on auto-orders, and ferry them
+to the invasion world.&nbsp; It also means they will never run out of fuel,
+and they stay under protection of any forces you have defending the planet.&nbsp;
+It also makes the process invisible to all but the most careful observer.&nbsp;
+As the invasion planet is always in the same players possession at the
+end of the turn, it does not appear to others to be trading hands at all,
+unless they take note of the ships in orbit, and the low population, and
+deduce the truth.</b>
+<p><b>&nbsp;Another nice thing about this invasion method is that planets
+that are red to both races may be used.&nbsp; The only thing to remember
+is that the guy who invades manually at the start of the turn will be in
+possession of the planet when 'die-off' occurs, so if the planet is red
+for that player, he should drop 300 colonists a turn... 100 to die invading,
+100 to die off due to climate, and 100 to remain to be killed in the next
+invasion.</b>
+<p><b>&nbsp;For each invasion, your chances of getting tech can be quite
+low.&nbsp; So to get maximum benefit, you have to do it on a lot of worlds
+at once.&nbsp; Why not, if you've got red worlds just sitting there unused?&nbsp;
+The initial costs are low, and the payoff just keeps coming.</b>
+<p><b>&nbsp;Check out the chart below.&nbsp; It shows the percentage chance
+of tech transfer per year in different circumstances.&nbsp; Note that since
+each planet yields one invasion per turn to each player, the transfers
+go both ways.</b>
+<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Numbers show percentage
+chance of a tech advance in a turn</b>
+<p><b>Tech levels</b>
+<br><b>you lag in</b>
+<p><b><tt>&nbsp;&nbsp;&nbsp;&nbsp; 6&nbsp;&nbsp; |&nbsp; 49&nbsp;&nbsp;&nbsp;&nbsp;
+74&nbsp;&nbsp;&nbsp;&nbsp; 87&nbsp;&nbsp;&nbsp;&nbsp; 93&nbsp;&nbsp;&nbsp;&nbsp;
+97&nbsp;&nbsp;&nbsp;&nbsp; 98&nbsp;&nbsp;&nbsp;&nbsp; 99</tt></b>
+<br><b><tt>&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp; |&nbsp; 49&nbsp;&nbsp;&nbsp;&nbsp;
+74&nbsp;&nbsp;&nbsp;&nbsp; 86&nbsp;&nbsp;&nbsp;&nbsp; 93&nbsp;&nbsp;&nbsp;&nbsp;
+96&nbsp;&nbsp;&nbsp;&nbsp; 98&nbsp;&nbsp;&nbsp;&nbsp; 99</tt></b>
+<br><b><tt>&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp; |&nbsp; 47&nbsp;&nbsp;&nbsp;&nbsp;
+72&nbsp;&nbsp;&nbsp;&nbsp; 85&nbsp;&nbsp;&nbsp;&nbsp; 92&nbsp;&nbsp;&nbsp;&nbsp;
+96&nbsp;&nbsp;&nbsp;&nbsp; 98&nbsp;&nbsp;&nbsp;&nbsp; 99</tt></b>
+<br><b><tt>&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp; |&nbsp; 44&nbsp;&nbsp;&nbsp;&nbsp;
+69&nbsp;&nbsp;&nbsp;&nbsp; 82&nbsp;&nbsp;&nbsp;&nbsp; 90&nbsp;&nbsp;&nbsp;&nbsp;
+94&nbsp;&nbsp;&nbsp;&nbsp; 97&nbsp;&nbsp;&nbsp;&nbsp; 98</tt></b>
+<br><b><tt>&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp; |&nbsp; 38&nbsp;&nbsp;&nbsp;&nbsp;
+61&nbsp;&nbsp;&nbsp;&nbsp; 75&nbsp;&nbsp;&nbsp;&nbsp; 84&nbsp;&nbsp;&nbsp;&nbsp;
+91&nbsp;&nbsp;&nbsp;&nbsp; 94&nbsp;&nbsp;&nbsp;&nbsp; 96</tt></b>
+<br><b><tt>&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp; |&nbsp; 25&nbsp;&nbsp;&nbsp;&nbsp;
+44&nbsp;&nbsp;&nbsp;&nbsp; 58&nbsp;&nbsp;&nbsp;&nbsp; 68&nbsp;&nbsp;&nbsp;&nbsp;
+76&nbsp;&nbsp;&nbsp;&nbsp; 82&nbsp;&nbsp;&nbsp;&nbsp; 87</tt></b>
+<br><b><tt>---------------------------------------------------------</tt></b>
+<br><b><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+7</tt></b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Invasion worlds used</b>
+<p><b>&nbsp;As you can see, the more worlds the better!&nbsp; With 6 or
+7 worlds operating, two players can split the research duties and virtually
+never need to duplicate the other's efforts.</b>
+<p><a href="contents.htm#guts in contents">return to table of contents</a>
+<br>&nbsp;
+<p><b>*******************************************************************************</b>
+<p><a NAME="4.2.3)"></a><b>4.2.3)&nbsp;&nbsp;&nbsp;&nbsp; <font color="#FFFF00"><font size=+1>HOW
+DO I GAIN TECH FROM SCRAPPING?</font></font></b>
+<br><b>&nbsp;The guts behind how and why scrapping works found in <a href="#4.2)">'Guts
+of Tech Trading'</a>.</b>
+<br><b>&nbsp;For practical purposes, these are the things to remember:</b>
+<br><b>&nbsp;1) You must scrap at a starbase belonging to the person receiving
+the tech.</b>
+<p><b>&nbsp;2) It makes no difference if your ally scraps the ships at
+your starbase, or if he transfers the ships to you, and you scrap them.</b>
+<p><b>&nbsp;3) Remember: scrapping is a waypoint zero task only; you cannot
+scrap the same turn the ship moves.(see sec 3.1, <a href="q_and_a.htm#3.1)">'order
+of events in a turn'</a>)</b>
+<p><b>&nbsp;4) To gain tech in a given field from scrapping, the scrapped
+ship must contain an item requiring a higher tech level in that field the
+receiving player possesses.</b>
+<p><b>&nbsp;4) The odds of gaining tech from scrapping depend on the number
+of fleets scrapped, not the number of ships.&nbsp; Scrapping a fleet of
+5 ships has the same effect as scrapping a fleet of 1 ship.&nbsp; Split
+the 5 ships into 5 fleets, then scrap, and the chance of transfer goes
+way up.</b>
+<br><b>&nbsp;Below is a small table showing the likelihood of tech transfer
+per fleet scrapped in a single turn, assuming the ship scrapped contains
+superior tech in one field.</b>
+<p><b>&nbsp;fleets scrapped&nbsp;&nbsp;&nbsp;&nbsp; chance of transfer</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+25%</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+44%</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+58%</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+68%</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+76%</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+82%</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+87%</b>
+<p><a href="contents.htm#guts in contents">return to table of contents</a>
+<br>&nbsp;
+<p><b>*******************************************************************************</b>
+<p><a NAME="4.3)"></a><b>4.3)<font color="#FFFF00"> <font size=+1>GUTS
+OF RESEARCH COSTS.</font></font></b>
+<br><b>&nbsp; The cost of a tech level depends on four things:</b>
+<br><b>&nbsp;1) Your research setting for that field (cheap, normal, or
+expensive)</b>
+<br><b>&nbsp;2) The level you are researching (higher level, higher cost)</b>
+<br><b>&nbsp;3) The total number of tech levels you have already have in
+all fields (you can add it up yourself, or look at 'tech levels' on the
+'score' screen).</b>
+<br><b>&nbsp;4) whether 'slow tech advance' was selected as a game parameter.</b>
+<p><b>&nbsp;in general,</b>
+<p><b>&nbsp;<font color="#FF0000">totalCost=(baseCost + (totalLevels *
+10)) * costFactor</font></b>
+<p><b>&nbsp;where&nbsp; totalLevels=the sum of your current levels in all
+fields</b>
+<br><b>&nbsp;&nbsp; costFactor =.5 if your setting for the field is '50%
+less'</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=1 if your setting for the field is 'normal'</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=1.75 if your setting for the field is '75% more expensive'</b>
+<p><b>&nbsp;If 'slow tech advance' is a game parameter, totalCost should
+be doubled.</b>
+<p><b>&nbsp;Below is a table showing the base cost of each level.</b>
+<br>&nbsp;
+<p><b>&nbsp;&nbsp;<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Level&nbsp;&nbsp; Cost&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Level&nbsp; Cost</tt></b>
+<p><b><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1&nbsp;&nbsp;&nbsp;&nbsp; 50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+14&nbsp;&nbsp;&nbsp; 18040</tt></b>
+<br><b><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2&nbsp;&nbsp;&nbsp;&nbsp; 80&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+15&nbsp;&nbsp;&nbsp; 22440</tt></b>
+<br><b><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+3&nbsp;&nbsp;&nbsp;&nbsp; 130&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+16&nbsp;&nbsp;&nbsp; 27050</tt></b>
+<br><b><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4&nbsp;&nbsp;&nbsp;&nbsp; 210&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+17&nbsp;&nbsp;&nbsp; 31870</tt></b>
+<br><b><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+5&nbsp;&nbsp;&nbsp;&nbsp; 340&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+18&nbsp;&nbsp;&nbsp; 36900</tt></b>
+<br><b><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+6&nbsp;&nbsp;&nbsp;&nbsp; 550&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+19&nbsp;&nbsp;&nbsp; 42140</tt></b>
+<br><b><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+7&nbsp;&nbsp;&nbsp;&nbsp; 890&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+20&nbsp;&nbsp;&nbsp; 47590</tt></b>
+<br><b><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+8&nbsp;&nbsp;&nbsp;&nbsp; 1440&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+21&nbsp;&nbsp;&nbsp; 53250</tt></b>
+<br><b><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+9&nbsp;&nbsp;&nbsp;&nbsp; 2330&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+22&nbsp;&nbsp;&nbsp; 59120</tt></b>
+<br><b><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+10&nbsp;&nbsp;&nbsp; 3770&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+23&nbsp;&nbsp;&nbsp; 65200</tt></b>
+<br><b><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+11&nbsp;&nbsp;&nbsp; 6100&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+24&nbsp;&nbsp;&nbsp; 71490</tt></b>
+<br><b><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+12&nbsp;&nbsp;&nbsp; 9870&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+25&nbsp;&nbsp;&nbsp; 77990</tt></b>
+<br><b><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+13&nbsp;&nbsp;&nbsp; 13850&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+26&nbsp;&nbsp;&nbsp; 84700</tt></b>
+<p><b>It's a Fibonacci series up to level 12, then it levels out</b>
+<br><b>quite a bit. To get all 6 categories to TL26: (at all normal cost):</b>
+<br><b>4,185,240</b>
+<p><b>This includes the 10/level additional cost, and assumes all tech
+areas</b>
+<br><b>start at TL0.</b>
+<p><b>(Courtesy Bob Martin, with some editing/formatting/additions of my
+own)</b>
+<p><a href="contents.htm#guts in contents">return to table of contents</a>
+<br>&nbsp;
+<p><a href="guts2.htm#4.4)">continue to 4.4)</a>
+<br>&nbsp;
+<br>&nbsp;
+<br>
+<br>
+<center>
+<p><!--#geoguide--></center>
+
+</body>
+</html>

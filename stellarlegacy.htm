@@ -1,0 +1,254 @@
+<!doctype html public "-//w3c//dtd html 3.2//en">
+
+<html>
+	<meta>
+	<head>
+		<title>
+			The Stars! FAQ - Minefields
+		</title>
+<META NAME = "keywords" CONTENT = "stars, FAQ, PBEM, blitz, hotseat, stratergy, micromanagement, James, McGuigan, Jeff McBride, Jason Cawley, advanced, technical, advFAQ, rgcs, battle, fleet, ship, war, space, 4X, scifi, empire, interactive, xplosiv, Supernova, explore, expand, exterminate, research, diplomacy, JRC3, autohost">
+		<META NAME = "Description" CONTENT = "The Stars! FAQ is the web resource the PBEM game Stars! by Jeff Johnson and Jeff McBride">
+		<META NAME = "ROBOTS" CONTENT="ALL">
+		<META NAME = "Copyright" CONTENT = "James McGuigan">
+		<META NAME = "Author" CONTENT = "James McGuigan">
+		<meta name="FORMATTER" content="Arachnophilia 4.0">
+	</head>
+	<body bgcolor="#000000" text="#8eb3f4" link="#FF0000" vlink="#FF0000" alink="#b1111ff" background="starfield.gif">
+
+		<p align = center>
+		<img src="starsfaqlogo.gif" height="115" width="500"><br>
+		<a href="index.htm">Return to Main Menu</a> 
+		</p>
+
+<table width="90%" align ="center" border="0" cellpadding="0" >
+  <tr> 
+    <td><font size="+2"><strong>Announcement - Stellar Legacy 0.2 (aka &quot;To 
+      infinity, and beyond!&quot;)</strong></font><br> <br> <br>
+      We are happy and proud to release the first public version of &quot;Stellar 
+      Legacy&quot;. Stellar Legacy (SL) is an open source project aiming to create 
+      a new Stars!-like game that's enjoyable to play and easy to expand. <br> 
+      <br>
+      The main goal of the Stellar Legacy Project is the creation of a free version 
+      of the famous and beloved strategy game &quot;Stars!&quot; (tm). &quot;Free&quot; 
+      means that the source code is freely available to everyone and that everyone 
+      is free to modify and change the game in a way he likes. While we started 
+      with the intention of creating a stars! clone our current goals are a bit 
+      different since we found during the development process that stars! has 
+      certain limitations we would like to overcome.<br> <br>
+      A short and incomplete list of features SL has (aka &quot;whetting your 
+      appetite&quot;) 
+      <ul>
+        <li> All files are human readable <br>
+          (of course the player order files will be encrypted in the future)<br>
+          <br>
+        </li>
+        <li> free as beer: it comes at no cost<br>
+          <br>
+        </li>
+        <li> free as speech: everyone can contribute to the project and modify 
+          the code<br>
+          <br>
+        </li>
+        <li> multiplatform: standard c++ compiler and perl interpreter are sufficient<br>
+          (we know that the current version runs under various versions of Linux 
+          and also have some indications that it works on Windows)<br>
+          <br>
+        </li>
+        <li> no limits for number of systems, planets, players, fleets, etc.<br>
+          (there even can be more than one galaxy in the universe)<br>
+          <br>
+        </li>
+        <li> Support for 2D and 3D galaxies<br>
+          (the current code uses 2D galaxies)<br>
+          <br>
+        </li>
+        <li> different implementations of the very same rule are possible<br>
+          (this means that the current code base allows you to implement different 
+          versions of the rule that calculates the fuel consumption, for example. 
+          In this sense stars! will be a subset of Stellar Legacy)<br>
+        </li>
+      </ul>
+      Of course we do not want to withhold the bad side of life ;-)<br> <br>
+      SL in this form is not ready for the usual strategy gamer. The primary audience 
+      for version 0.2 are developers who are interested in joining a nice team 
+      of Stars! addicts who are going to write the best turn-based strategy game 
+      ever (hey, we need a goal!)<br> <br>
+      So you stars! junkies out there, help us building the coolest turn based 
+      strategy game. You might want to join our mailing list<br> <a href="http://lists.sourceforge.net/lists/listinfo/stellarlegacy-developer">http://lists.sourceforge.net/lists/listinfo/stellarlegacy-developer</a><br> 
+      <br>
+      (has all the necessary details) and/or want to have a look at the current 
+      API documentation to get an overview of the current (&gt;0.2) state:<br> 
+      <a href="http://www.itp.uni-hannover.de/%7Ekrohn/sl/api/html/annotated.html">http://www.itp.uni-hannover.de/~krohn/sl/api/html/annotated.html</a><br> 
+      <br>
+      Also you might be interested that the SL user interface (SLUI) made some 
+      progress. This client SLUI is in the CVS and will probably be part of the 
+      0.3 version. First screenshots are here:<br> <a href="http://www.itp.uni-hannover.de/%7Ekrohn/sl/image-gallery/images.html"> 
+      http://www.itp.uni-hannover.de/~krohn/sl/image-gallery/images.html<br>
+      <br>
+      </a>Instructions for downloading and running SL can be found in the appendix.Hope 
+      to see some of you guys on our mailing list soon, otherwise you will hear 
+      from us when 0.3 is ready :-)<br> <br>
+      Best regards, <br>
+      <ul>
+      Your friendly<br>
+      Stellar Legacy team</ul>
+      <br> <strong>----------------</strong><br> 
+      <strong>APPENDIX</strong><br> <br>
+      Some specials for the adventurer and discoverers amongst you: 
+      <ul>
+        <li> <strong>What language SL is written in?</strong><br>
+          With the exception of some smaller parts (see below) all the code is 
+          written in pure C++.<br>
+          <br>
+          <br>
+        </li>
+        <li> <strong>How much code have you guys written?</strong><br>
+          sloccount (http://www.dwheeler.com/sloccount/) gives the following answer<br>
+          (numbers are physical source lines of code):<br>
+          <br>
+          SLOC Directory SLOC-by-Language (Sorted)<br>
+          21075 stellarlegacy cpp=20671,lex=168,yacc=164,sh=72<br>
+          1565 act_to_cpp perl=1565<br>
+          <br>
+          Totals grouped by language (dominant language first):<br>
+          <strong>cpp</strong>: 20671 (91.30%)<br>
+          <strong>perl</strong>: 1565 (6.91%)<br>
+          <strong>lex:</strong> 168 (0.74%)<br>
+          <strong>yacc</strong>: 164 (0.72%)<br>
+          <strong>sh</strong>: 72 (0.32%)<br>
+          <br>
+          <br>
+        </li>
+        <li> <strong>Where can I download SL 0.2. from?</strong><br>
+          <a href="http://stellarlegacy.sourceforge.net/download.php"> http://stellarlegacy.sourceforge.net/download.php</a><br>
+          <br>
+          <br>
+        </li>
+        <li><strong>How to compile?</strong><br>
+          Yeah, right compile (did we mention this is a developer release? :-).<br>
+          Please see stellarlegacy-0.2/code/stellarlegacy/README<br>
+          <br>
+          <br>
+        </li>
+        <li> <strong>Can you give some more details what 0.2 can already do?</strong><br>
+          Sure :-) <br>
+          <br>
+          <strong>Note:</strong><br>
+          the directory stellarlegacy/stellarlegacy/testgame contains all the 
+          game data we are referring to in the following<br>
+        </li>
+        <ul>
+          <br>
+          <li> <strong>game setup:</strong><br>
+            it is possible to change the number of players, races, the size of 
+            the galaxy, the number of systems. All this can be changed directly 
+            in the universe-definition.sl file. <br>
+            <br>
+          <li> <strong>design notes:</strong> 
+            <ul>
+              <li> SL differs between players and races (the latter are controlled 
+                by the former) and it is/will be possible that one player controls 
+                more than one race. 
+              <li> all coordinates are 3d, 2d coordinates are achieved by setting 
+                z=0 
+              <li> actually it is possible to exchange the rules given in the 
+                rulesystem section (and probably this will work). Unfortunately 
+                there is not another set of rules yet available at the moment. 
+            </ul>
+            <br>
+          <li><strong>game creation:</strong><br>
+            starting the game ./stellarlegacy -l (&lt;- small &quot;L&quot;) creates 
+            the player and the server files. At the moment these files are identical 
+            (all players know everything).<br>
+            <br>
+          <li><strong>design notes:</strong> 
+            <ul>
+              <li> SL shares a lot of code between objects controlled by the races 
+                (such as fleets) and objects controlled by the &quot;server&quot;. 
+                The server creates a special race &quot;Iluvatar&quot; which is 
+                the owner of all systems etc. This makes it easily possible to 
+                move systems around (non-static galaxies). 
+              <li> fleets etc. have a link to the owner and the creator which 
+                can be different. This will (among other things) allow races to 
+                control planets with population of a different race on it. 
+              <li> the galaxy can be wrapped, meaning that it is possible eliminate 
+                borders &amp; corners (this feature is currently not available 
+                in the game setup, but is implemented in the source). 
+            </ul>
+            <br>
+          <li> <strong>actions / client:<br>
+            </strong> by choosing &quot;play turn&quot; you can give orders to 
+            your own fleets. Adding a waypoint and saving it results in a new 
+            file, e.g. &quot;PlayerName-order.sl&quot;. This file contains the 
+            orders the player wishes to execute. <br>
+            <br>
+          <li><strong> server / generate turn:</strong> <br>
+            &quot;(l)oad server master file and generate turn&quot; will start 
+            the server, read the servermaster file and right after that the server 
+            will read all player-order files. It then creates an extra backup-directory 
+            for the old game files and starts executing the actions. SL 0.2 will 
+            move the fleets and the wanted direction (taking into account the 
+            speed) and will even find and resolve conflicts (e.g. fleet orders 
+            for A: go to B, fleet orders for B: go to A ). <br>
+            <br>
+          <li><strong>design notes:</strong> 
+            <ul>
+              <li> actions are the only kind of information a player can send 
+                to the server 
+              <li> SL is able to detect and resolve action conflict (the current 
+                testgame contains a demo) 
+            </ul>
+            <br><br>
+        </ul>
+        <li> <strong>What kind of help do you need?<br>
+          </strong> Since we are still working on the guts we are most interested 
+          in getting reinforcement of c++ hackers. You don't have to be an expert--an 
+          important part of being part of an open source project is to improve 
+          your skills. There are two areas we are currently working on: the core 
+          library and the user interface (Work on the user interface is even more 
+          immature than the core library).<br>
+          <br>
+          In short/medium-term we need support of game designers. The current 
+          very flexible framework allows very different rules and we have not 
+          yet decided how the SL rule set will look like. Related to this we need 
+          people writing down what was agreed upon, to conserve the results for 
+          the future (basic html knowledge for that would be an advantage) <br>
+          <br>
+          In the long-term (after 0.3) we need graphic designers and artists to 
+          make SL not only cool but also beautiful. Anyway if you think SL might 
+          be fun, just subscribe yourself to the mailing list and see what's going 
+          on :-)<br>
+          <br>
+          <br>
+        
+        <li> <strong>Hey, that's cool I want to contribute to the project!</strong><br>
+          Join our mailing list<br>
+          <a href="http://lists.sourceforge.net/lists/listinfo/stellarlegacy-developer">http://lists.sourceforge.net/lists/listinfo/stellarlegacy-developer</a> 
+          <br>
+          or get in contact with one of our core developers<strong><br>
+          <br>
+          Alberto:</strong> <A HREF="&#109;&#97;&#105;&#108;&#116;&#111;&#58;
+&#105;&#115;&#104;&#97;&#114;&#107;&#64;&#102;&#114;&#101;&#101;&#46;&#102;&#114;"> 
+          &#105;&#115;&#104;&#97;&#114;&#107;&#64;&#102;&#114;&#101;&#101;&#46;&#102;&#114;</A><br>
+          <strong>Marco</strong>: <A HREF="&#109;&#97;&#105;&#108;&#116;&#111;&#58;
+&#109;&#97;&#114;&#99;&#111;&#46;&#107;&#114;&#111;&#104;&#110;&#64;&#103;&#109;&#120;&#46;&#100;&#101;"> 
+          &#109;&#97;&#114;&#99;&#111;&#46;&#107;&#114;&#111;&#104;&#110;&#64;&#103;&#109;&#120;&#46;&#100;&#101;</A><br>
+          <strong>Ralf</strong>: <A HREF="&#109;&#97;&#105;&#108;&#116;&#111;&#58;
+&#112;&#114;&#111;&#108;&#97;&#116;&#111;&#114;&#64;&#103;&#109;&#120;&#46;&#110;&#101;&#116;"> 
+          &#112;&#114;&#111;&#108;&#97;&#116;&#111;&#114;&#64;&#103;&#109;&#120;&#46;&#110;&#101;&#116;</A> 
+          <br>
+          <br></ul>
+          -- <br>
+          Stellar Legacy Project<br>
+          <a href="http://stellarlegacy.sourceforge.net">http://stellarlegacy.sourceforge.net</a>
+      </td>
+  </tr>
+</table>
+	
+
+	
+<p align = "center"><a href="index.htm">Return to Main Menu</a> </p>
+
+				
+		</body>
+</html>

@@ -1,0 +1,125 @@
+<!doctype html public "-//w3c//dtd html 3.2//en">
+
+<html>
+	<meta>
+	<head>
+		<title>
+			The Stars! FAQ - File Info
+		</title>
+		<meta name="GENERATOR" content="Arachnophilia 4.0">
+		<meta name="FORMATTER" content="Arachnophilia 4.0">
+	</head>
+	<body bgcolor="#000000" text="#8eb3f4" link="#f00000" vlink="#c00000" alink="#800080" background="starfield.gif">
+
+<table width="90%" align ="center" border="0" cellpadding="0" >
+	<tr colspan="2">
+		<td>
+		<p align = center>
+		<img src="starsfaqlogo.gif" height="200" width="640"><br>
+		<a href="index.htm">Return to Main Menu</a> 
+		</p>
+
+<h2 align="center">Running Stars! From the Command Line</h2>
+
+<p>[From the Stars! Help File]</p>
+
+Stars! can be launched from a DOS or Windows prompt, using the stars! command only or with a variety of options. When you use an option, you must also supply either a player or host file name as an argument. You can also supply only the player or host file name without any other options. <br><br>
+
+<ul>
+<li><i>player_file, custom_race_file, or host_file</i> -- Load the specified file, starting the game without showing the splash screen. <br><br>
+
+<li><b>-a</b> game.def -- Create a new game/universe based on the contents of game.def.  This allows you to create new games from the command line. <a href="def.htm">Click here for more information.<a><br><br>
+
+<li><b>-b</b> gamelist_file -- Generate turns for each game listed in the supplied file name. <br><br>
+
+<li><b>-d</b>[<b>p | f | m</b>] [player_file] -- Dumps PLA (planets), FLE (fleet), and MAP (universe definition) files associated with a player's game. You can specify any combo of <b>p, f, or m</b> as arguments. <br><br>
+
+<li><b>-g</b>[# turns] host_file -- generate the specified number of turns and exit. This option forces Stars! to generate the specified number of turns, then exits. You cannot load a player file when you use this option. <br>
+<ul>
+Warning: Using -g to generate numerous turns will chew up CPU cycles like nobody's business. Use it judiciously.<br><br>
+</ul>
+<li><b>-h</b> -- Causes Stars! to always ask you for a password when you open a turn file. This helps keep the wimps who can't play without cheating out of your turn files. This is especially useful for hot seat play.<br><br>
+<li><b>-m</b> -- start with game music turned off<br><br>
+<li><b>-p</b> password -- supplies the password on the command line. You can use this with a host file or a password-protected player file.<br><br>
+
+<li><b>-s</b> -- start with battle sound effects turned off<br><br>
+<li><b>-t</b> -- try, then exit. If you specify a player file, this opens the newly generated turn. If the turn hasn't been generated yet, then Stars! exits. If you specify a host file, this checks to see if all players have submitted their changes for the turn. If they have, Stars! generates the new turn and exits. Otherwise, it just exits. <br><br>
+
+<li><b>-w</b> [host_file] -- wait. If you specify a host file, this auto-generates the new turn as soon as all players have submitted their changes. If you specify a player file, this waits for the new turn to be generated. This option does not cause Stars! to exit.<br><br>
+
+<li><b>-x</b> -- Exit Windows when Stars! exits. This is a good match with the <b>-b</b> option if you wish to create a script that automatically starts Windows, generates the new turn, then exits Windows. <br><br>
+
+<li>The <b>-x</b> flag is for 16-bit Windows only (3.1 or 3.11). Behavior of the -x option on OS/2, Windows NT, or Windows 95 is undefined and probably not what you want.<br><br>
+</ul>
+
+<table width="100%" border="0" cellpadding="0" >
+<tr>
+<td><b>Examples:</b><font color=#000000>________________ _</font><td><td>
+</tr><tr>
+<td><b>stars!  filename</b></td><td>Load a player, custom race, or host file, starting the game without loading the splash screen.</td>
+</tr><tr>
+<td><b>stars!  -w gamename.hst</b></td><td>Load the host file and enter Auto Generate mode.</td>
+</tr><tr>
+<td><b>stars! -w gamename.m#</b></td><td>Load the specified player file and wait for the host to generate a new turn.</td>
+</tr><tr>
+<td><b>stars! -t gamename.m#</b></td><td>Load the specified player file; quit if the host has not yet generated a new turn.</td>
+</tr><tr>
+<td><b>stars! –g gamename.hst</b></td><td>Load the host file, generate 1 turn and quit. </td>
+</tr><tr>
+<td><b>stars! –g10 gamename.hst</b></td><td>Load the host file, generate 10 turns and quit. </td>
+</tr><tr>
+<td><b>stars! -w -g gamename.hst</b></td><td>Load the host file, wait for all players to submit turns, generate and quit.</td>
+</tr><tr>
+<td><b>stars! -t -g gamename.hst</b></td><td>Load the host file, generate a new turn only if all players have submitted turns, then quit. If it generates the turn the return value is 1; if the turn is not generated the return value is 0. </td>
+</tr><tr>
+<td><b>stars! -t -b gamelist_file</b></td><td>Conditionally generate turns for a list of games.</td>
+</tr><tr>
+<td><b>stars! -x -b gamelist_file</b></td><td>Generate turns for each game listed in the supplied file name, then exit Windows. Useful for BBS play.</td>
+</tr><tr>
+<td><b>stars! –df gamename.m1</b></td><td> Dump player 1's fleets to a file and exits.</td>
+</tr><tr>
+<td><b>stars! –dm gamename.m1</b></td><td>Dump the universe definition to a file and exit.</td>
+</tr><tr>
+<td><b>stars! –dfmp gamename.m1</b></td><td> Dump everything player 1 knows to a file and exit.</td>
+</tr>
+</tr>
+</table>
+
+
+</ul><br>
+For example if your BBS is OS/2, NT or Windows-based you can launch Stars! with the -b gamelist_file parameter to batch generate turns for multiple games.  Stars! will automatically exit when the last turn has been generated.  The file listing the games must contain one game name per line including the full path:
+	<ul>
+	<li>c:\games\stars!\play\frenzy.hst
+	<li>c:\games\stars!\play\game.hst
+	<li>c:\user\jeff\stars!\killer.hst
+	</ul>
+You can name this games list file anything you want. If you are running a DOS-based BBS but have Windows installed on the machine, you can launch Windows and Stars! from a nightly maintenance script similar to this:
+<ul>
+<li>win c:\games\stars!\stars!.exe -x -b c:\games\stars!\gamelist.txt
+</ul>
+This will launch Windows and Stars!, generate a turn for each game listed in gamelist.txt, then exit Stars! and Windows.  This method is optimal for Windows 3.1.<br><br>
+
+If you have Windows for Workgroups installed (Windows 3.11) you need to use the win /n option:
+<ul>
+<li>win /n c:\games\stars!\stars!.exe -x -b c:\games\stars!\gamelist.txt
+</ul>
+This will prevent Windows from loading any of its network drivers and suppress its login prompt. If you only need to generate a turn for a single game you can still use the -g gamename.hst parameter with or without -x (use -x with Windows 3.1 or 3.11only).<br><br>
+
+[Copyright 1998 Mare Crisium, LLC]
+
+
+
+		</ul>		<br>
+	
+		<p align = "center">
+		<a href="index.htm">Return to Main Menu</a> 
+		</p>
+
+				
+		</td>
+	</tr>
+</table>
+	
+
+	</body>
+</html>

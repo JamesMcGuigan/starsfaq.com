@@ -1,0 +1,538 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="keywords" content="Known Bugs,Copy Protection Features,Feature, Bug or cheat? Survey,HWF,Living with Chaff by Art Lathrop - Revised: 3th December 2000,RS,Standard Cheats Disclaimer,Stars! FAQ,Stars.ini,Shields,Armor" />
+		<link rel="shortcut icon" href="../favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="../wikinew/opensearch_desc.php" title="Stars!wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Stars!wiki RSS Feed" href="../wikinew/index.php%3Ftitle=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Stars!wiki Atom Feed" href="../wikinew/index.php%3Ftitle=Special:RecentChanges&amp;feed=atom" />
+		<title>Known Bugs - Stars!wiki</title>
+		<link rel="stylesheet" href="../wikinew/skins/common/shared.css%3F207.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../wikinew/skins/common/commonPrint.css%3F207.css" type="text/css" media="print" />
+		<link rel="stylesheet" href="../wikinew/skins/stars/main.css%3F207.css" type="text/css" media="screen" />
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/wikinew/skins/stars/IE50Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/wikinew/skins/stars/IE55Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/wikinew/skins/stars/IE60Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/wikinew/skins/stars/IE70Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<link rel="stylesheet" href="../wikinew/index.php%3Ftitle=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%252Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000.css" type="text/css" />
+		<link rel="stylesheet" href="../wikinew/index.php%3Ftitle=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%252Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000.css" type="text/css" media="print" />
+		<link rel="stylesheet" href="../wikinew/index.php%3Ftitle=MediaWiki:Stars.css&amp;usemsgcache=yes&amp;ctype=text%252Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000.css" type="text/css" />
+		<link rel="stylesheet" href="../wikinew/index.php%3Ftitle=-&amp;action=raw&amp;maxage=18000&amp;gen=css.css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/wikinew/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "stars";
+		var stylepath = "/wikinew/skins";
+		var wgArticlePath = "/wiki/$1";
+		var wgScriptPath = "/wikinew";
+		var wgScript = "/wikinew/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wiki.starsautohost.org";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Known_Bugs";
+		var wgTitle = "Known Bugs";
+		var wgAction = "view";
+		var wgArticleId = "1373";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 5584;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="../wikinew/skins/common/wikibits.js%3F207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<style type="text/css">
+    .xstooltip{
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        font: normal 8pt sans-serif;
+        color: white;
+        padding: 3px;
+        border: solid 1px;
+        background-repeat: repeat;
+        background-image: url(../wikinew/images/ttbg.png);
+    }
+    .xstooltip_body{
+        color: green;
+    }
+</style>
+<script type= "text/javascript">
+    function xstooltip_findPosX(obj) {
+        var curleft = 0;
+        if (obj.offsetParent) {
+            while (obj.offsetParent){
+                curleft += obj.offsetLeft;
+                obj = obj.offsetParent;
+            }
+        } else if (obj.x)
+            curleft += obj.x;
+        return curleft - 200;
+    }
+    function xstooltip_findPosY(obj) {
+        var curtop = 0;
+        if (obj.offsetParent) {
+            while (obj.offsetParent) {
+                curtop += obj.offsetTop;
+                obj = obj.offsetParent;
+            }
+        } else if (obj.y)
+            curtop+= obj.y;
+        return curtop - 25
+    }
+    function xstooltip_show(tooltipId, parentId, posX, posY) {
+        it = document.getElementById(tooltipId);
+        if (it.style.top == '' || it.style.top == 0) {
+            if (it.style.left == '' || it.style.left == 0) {
+                it.style.width = it.offsetWidth + 'px';
+                it.style.height = it.offsetHeight + 'px';
+                img = document.getElementById(parentId);
+                x = xstooltip_findPosX(img) + posX;
+                y = xstooltip_findPosY(img) + posY;
+                if (x < 0 )
+                    x = 0;
+                if (x + it.offsetWidth > img.offsetParent.offsetWidth )
+                    x = img.offsetParent.offsetWidth - it.offsetWidth - 1;
+                it.style.top = y + 'px';
+                it.style.left = x + 'px';
+            }
+        }
+        it.style.visibility = 'visible';
+    }
+    function xstooltip_hide(id) {
+        it = document.getElementById(id);
+        it.style.visibility = 'hidden';
+    }
+</script>		<script type="text/javascript" src="../wikinew/skins/common/ajax.js%3F207"></script>
+		<script type="text/javascript" src="../wikinew/index.php%3Ftitle=-&amp;action=raw&amp;gen=js&amp;useskin=stars"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Known_Bugs skin-stars">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Known Bugs</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Stars!wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="Known_Bugs.html#column-one">navigation</a>, <a href="Known_Bugs.html#searchInput">search</a></div>			<!-- start content -->
+			<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="Known_Bugs.html#Player_Exploitable_Bugs_.2F_.22Features.22"><span class="tocnumber">1</span> <span class="toctext">Player Exploitable Bugs / "Features"</span></a>
+<ul>
+<li class="toclevel-2"><a href="Known_Bugs.html#Chaff"><span class="tocnumber">1.1</span> <span class="toctext">Chaff</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#Split_Fleet_Dodge"><span class="tocnumber">1.2</span> <span class="toctext">Split Fleet Dodge</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#UR.2FCE_Scrapping"><span class="tocnumber">1.3</span> <span class="toctext">UR/CE Scrapping</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#Battle_Board_Overload"><span class="tocnumber">1.4</span> <span class="toctext">Battle Board Overload</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#0.2.25_Minimum_Damage"><span class="tocnumber">1.5</span> <span class="toctext">0.2% Minimum Damage</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#False_Public_Player_Scores"><span class="tocnumber">1.6</span> <span class="toctext">False Public Player Scores</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#North.2FSouth_Minefield_Immunity"><span class="tocnumber">1.7</span> <span class="toctext">North/South Minefield Immunity</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#East.2FWest_Speed_Bump_Minefield_Immunity"><span class="tocnumber">1.8</span> <span class="toctext">East/West Speed Bump Minefield Immunity</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#SS_Pop_Steal"><span class="tocnumber">1.9</span> <span class="toctext">SS Pop Steal</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#.5Bfreepop.5D_Hack"><span class="tocnumber">1.10</span> <span class="toctext">[freepop] Hack</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#Cheap_Starbase"><span class="tocnumber">1.11</span> <span class="toctext">Cheap Starbase</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#Mineral_Upload"><span class="tocnumber">1.12</span> <span class="toctext">Mineral Upload</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#Target_List_Overload"><span class="tocnumber">1.13</span> <span class="toctext">Target List Overload</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#Space_Dock_Armor_slot_Buffer_Overflow"><span class="tocnumber">1.14</span> <span class="toctext">Space Dock Armor slot Buffer Overflow</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#ISB_trumps_IT_gate_scanning"><span class="tocnumber">1.15</span> <span class="toctext">ISB trumps IT gate scanning</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#Starbase_Friendly_Fire"><span class="tocnumber">1.16</span> <span class="toctext">Starbase Friendly Fire</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#Repair_after_gating_loophole"><span class="tocnumber">1.17</span> <span class="toctext">Repair after gating loophole</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#Mine_Damage_Dodge"><span class="tocnumber">1.18</span> <span class="toctext">Mine Damage Dodge</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#Exploding_Minefield_Dodge"><span class="tocnumber">1.19</span> <span class="toctext">Exploding Minefield Dodge</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="Known_Bugs.html#Coding_Bugs"><span class="tocnumber">2</span> <span class="toctext">Coding Bugs</span></a>
+<ul>
+<li class="toclevel-2"><a href="Known_Bugs.html#Race_File_Corruption"><span class="tocnumber">2.1</span> <span class="toctext">Race File Corruption</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#Random_Race"><span class="tocnumber">2.2</span> <span class="toctext">Random Race</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#32k_Ship_Limit_Per_Fleet"><span class="tocnumber">2.3</span> <span class="toctext">32k Ship Limit Per Fleet</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#AR_Starter_Colonies"><span class="tocnumber">2.4</span> <span class="toctext">AR Starter Colonies</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#Failing_to_Close_to_Range_2_with_Sappers_and_R2_Beams"><span class="tocnumber">2.5</span> <span class="toctext">Failing to Close to Range 2 with Sappers and R2 Beams</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#Copy_Protection_Activates_When_Editing_an_Allies_Turn_File"><span class="tocnumber">2.6</span> <span class="toctext">Copy Protection Activates When Editing an Allies Turn File</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#Font_Problems_When_Using_a_Non-English_Version_of_Windows"><span class="tocnumber">2.7</span> <span class="toctext">Font Problems When Using a Non-English Version of Windows</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#Netscape_email_attachment_corruption"><span class="tocnumber">2.8</span> <span class="toctext">Netscape email attachment corruption</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#.22Stuck.22_bug"><span class="tocnumber">2.9</span> <span class="toctext">"Stuck" bug</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#WP0_pop_reload_ignored"><span class="tocnumber">2.10</span> <span class="toctext">WP0 pop reload ignored</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#Crash_Stars_Bug"><span class="tocnumber">2.11</span> <span class="toctext">Crash Stars Bug</span></a></li>
+<li class="toclevel-2"><a href="Known_Bugs.html#Shields_are_displayed_incorrectly_in_VCR"><span class="tocnumber">2.12</span> <span class="toctext">Shields are displayed incorrectly in VCR</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="Known_Bugs.html#Credit"><span class="tocnumber">3</span> <span class="toctext">Credit</span></a></li>
+<li class="toclevel-1"><a href="Known_Bugs.html#See_Also"><span class="tocnumber">4</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Player_Exploitable_Bugs_.2F_.22Features.22" id="Player_Exploitable_Bugs_.2F_.22Features.22"></a><h2> <span class="mw-headline">Player Exploitable Bugs / "Features"</span></h2>
+<p>The use of these bugs (with the exception of chaff), is generally considered cheating in multiplayer games unless specified previously by the host that they are allowed, though if you are in doubt check with your games host. Though it is still advisable for hosts to mention which things are disallowed before the start of the game.
+</p>
+<a name="Chaff" id="Chaff"></a><h3> <span class="mw-headline">Chaff</span></h3>
+<p>The game mechanics will cap the kills inflicted by missiles to the number of missiles fired (i.e. one missile = one kill). Also the targeting algorithm favours weakly armoured targets (in relation to cost in res and bor). These two facts can be taken advantage of. The cheapest armed ship you can build is a scout or frigate with an x-ray laser and QJ5 engine. If you build 1000's of these, the enemy's missiles will target these first. The problem is that the targeting algorithm doesn't take into consideration the fact that to kill a frigate with an Armageddon missile is actually wasting 1005 points of damage in overkill. So with enough chaff you can effectively nullify the enemies missile firepower. But note that the "one missile = one kill rule" doesn't apply to beams, so beamers will eat through chaff very quickly.
+See <a href="http://wiki.starsautohost.org/wiki/Living_with_Chaff_by_Art_Lathrop_-_Revised:_3th_December_2000" title="Living with Chaff by Art Lathrop - Revised: 3th December 2000">Art Lathrops article</a> for a more in-depth description of chaff and the various tactics associated with it. Though most players consider this a perfectly legitimate and very useful tactic, there are an odd few players who consider this cheating, and so you will find the occasional game which bans chaff, though be very careful to get an exact definition (including ship designs) as to what is consider chaff from the host if it is banned (well before it becomes an issue), as the line between chaff and a cheap sweeper is very thin.
+</p>
+<a name="Split_Fleet_Dodge" id="Split_Fleet_Dodge"></a><h3> <span class="mw-headline">Split Fleet Dodge</span></h3>
+<ul><li>(Sort of) Fixed in JRC4
+</li></ul>
+<p>An attacking fleet can only attack ships at the same location. If you split your fleet into many smaller individual fleets and diverge their movement orders, an attacking fleet can only engage one of them (the one with the largest mass will be targeted - though there may be a bug with this). A change was made in the JRC3 patch to stop multiple chasing fleets from all attacking the same target when this was done.
+</p>
+<a name="UR.2FCE_Scrapping" id="UR.2FCE_Scrapping"></a><h3> <span class="mw-headline">UR/CE Scrapping</span></h3>
+<p>Races with CE get half price engines, and races with UR get to reclaim up to 90% of resources and 70% of minerals that went into the ship/fleet. However when scrapping at another races starbase, Stars doesn't take into account the fact that CE races get half price engines and the resources given are based on the full amount. A ship that is mostly engine (scout with pricey engine), can be used between an alliance to generate "free" resources and minerals. This has been partially countered now that gifted or alien ship (i.e. not built by that race) are considered 30% cheaper in working out scrapping.
+</p>
+<a name="Battle_Board_Overload" id="Battle_Board_Overload"></a><h3> <span class="mw-headline">Battle Board Overload</span></h3>
+<p>The battle board can only handle a maximum of 256 tokens (shared among all races present). Excess tokens are simply left out of the battle. The tokens selected are based on fleet number, so the lowest numbered tokens would fight and the other left out, though each player is guaranteed (256 / players present) number of tokens. This can be taken advantage of by splitting off 256 chaff (or other cheap ship type), doing a split all on the 256 chaff fleet and then merging the rest of the fleet with the highest numbered ship. This would allow you to "dodge" the battle for the price of 256 chaff. Or simply keep some of more vulnerable ships out of battle (i.e. bombers and freighters). Most players would consider the deliberate use of this to be "cheating" unless specified by the host prior.
+</p>
+<a name="0.2.25_Minimum_Damage" id="0.2.25_Minimum_Damage"></a><h3> <span class="mw-headline">0.2% Minimum Damage</span></h3>
+<p>Stars records damage to armour in a fleet/stack as in 1/512ths (0.2%). Any shots in combat (that do armour damage) will be rounded up to the next 1/512th of the total armour in the stack. Normally this isn't an issue, but can be abused. By Building 100+ DDs or nubs with alpha/beta torps, and splitting them into individual fleets just before combat, you will fire a very large amount of slavos (100 fleets of nubs with 9 slots each with beta torps = 900 salvos). Normally these would only do a little bit of damage, but because they are all individual salvos they will each do 0.2% damage, and with 900 slavos that is 180% damage. Which would kill one enemy token/stack outright and damage another by 80%, and this is per round of shooting. The number of missiles per slot won't increase the damage, but having 2 or 3 in the slot will give you a second or third chance to make that salvo hit (missed missiles don't damage armour). Note that shields aren't calculated this way. And the 0.2% rule doesn't override the one missile = one kill rule, so when the stack is at 99% damage you will still need one missile per ship to do the killing blow. The best counter tactics for this are first to split up your fleet into several smaller tokens (thus it will only kill part of your fleet), and to have gatling armed beam ships (as they do damage to each token in range).
+</p>
+<dl><dd><a href="http://starsautohost.org/sahforum/index.php?t=msg&amp;th=4743&amp;prevloaded=1&amp;rid=78&amp;S=853f8aca49ea660d36a4803ef0ff9ffd&amp;rev=&amp;reveal=&amp;start=80&amp;count=40#msg_num_28" class="external text" title="http://starsautohost.org/sahforum/index.php?t=msg&amp;th=4743&amp;prevloaded=1&amp;rid=78&amp;S=853f8aca49ea660d36a4803ef0ff9ffd&amp;rev=&amp;reveal=&amp;start=80&amp;count=40#msg_num_28" rel="nofollow">Blue Turbit noted</a>:
+<dl><dd><a href="http://groups.google.com/group/rec.games.computer.stars/browse_thread/thread/dc6f5537fde3133d/619130bc6108679e?hide_quotes=no#msg_619130bc6108679e" class="external text" title="http://groups.google.com/group/rec.games.computer.stars/browse_thread/thread/dc6f5537fde3133d/619130bc6108679e?hide_quotes=no#msg_619130bc6108679e" rel="nofollow">Jeff McBride -Oct 4 2000, 2:00 am on r.g.c.s.</a>:
+<dl><dd>This is *not* a bug and will not change for 2.7k. It is part of the architecture of the original Stars! battle engine. If you don't want 500 alpha torpedoes to be able to destroy 30,000 Nubians, don't put your 30,000 Nubians all in one fleet.
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<a name="False_Public_Player_Scores" id="False_Public_Player_Scores"></a><h3> <span class="mw-headline">False Public Player Scores</span></h3>
+<p>Stars calculated actual resources during the middle of the generation, but calculates resources displayed in public player scores at the very end of the turn. This can be taken advantage of, by uploading pop from each of your planets using waypoint 1 orders (i.e. after movement) and then dropping them back as a waypoint 0 order (ie before movement). This doesn't affect actual output, but can significantly lower your reported resource output from which your score is largely based. This could prevent other players realizing that you are running away with the lead (and thus ganging up on you) until it is too late. Though this could backfire if you are caught, as other players would know that you are hiding something so may to gang up to stop you (which is exactly what you are trying to prevent).
+</p>
+<a name="North.2FSouth_Minefield_Immunity" id="North.2FSouth_Minefield_Immunity"></a><h3> <span class="mw-headline">North/South Minefield Immunity</span></h3>
+<ul><li> <b>NOT</b> Fixed in JRC4
+</li></ul>
+<p>There is an unusual bug in which there are no minefield hit checks done do a fleet traveling exactly due north or due south. Though the checks are carried out if there is even 1ly of east/west movement. This could allow a player to travel through a minefield at warp 10 with a 0% chance of hitting a mine. Most players would consider deliberate use of this bug to be "cheating".<a href="http://starsautohost.org/sahforum/index.php?t=tree&amp;th=348&amp;mid=15611&amp;rid=21&amp;S=be50850b4e2401196cb8ed122ea92f3e&amp;rev=&amp;reveal=" class="external autonumber" title="http://starsautohost.org/sahforum/index.php?t=tree&amp;th=348&amp;mid=15611&amp;rid=21&amp;S=be50850b4e2401196cb8ed122ea92f3e&amp;rev=&amp;reveal=" rel="nofollow">[1]</a>
+</p>
+<a name="East.2FWest_Speed_Bump_Minefield_Immunity" id="East.2FWest_Speed_Bump_Minefield_Immunity"></a><h3> <span class="mw-headline">East/West Speed Bump Minefield Immunity</span></h3>
+<ul><li> (Sort of) Fixed in JRC4
+</li></ul>
+<p>A similar bug to the one above, but this time affecting only speed bump fields for fleet traveling due East or West.
+</p>
+<a name="SS_Pop_Steal" id="SS_Pop_Steal"></a><h3> <span class="mw-headline">SS Pop Steal</span></h3>
+<ul><li> Fixed in JRC4
+</li></ul>
+<p>The robber baron scanner can steal minerals from an enemy player, though a player cannot usually steal enemy colonists. Though in the J patch, the check for seeing if the player wishes to steal enemy colonists was disabled when using the waypoint 1 task option (Transport|colonists|load all). This was not intended. This bug has been proved to unbalance the game when used. Most if not all players would consider use of this bug to be very serious "cheating" unless "specifically" stated by the host prior the start of the game.
+</p><p>JRC4 Fix caveat: Mineral transfers done by waypoint task must be set by hand. They will not happen if using the standard zip orders because those orders include grabbing all pop as well.
+</p>
+<a name=".5Bfreepop.5D_Hack" id=".5Bfreepop.5D_Hack"></a><h3> <span class="mw-headline">[freepop] Hack</span></h3>
+<p>Using a memory editing utility it is possible to create colonists out of thin air, limited only by a players freighter capacity, with the help of a memory editor. This abuses a lack of a viability check for loading colonist from an uninhabited planet, usually you cannot load more colonists than you drop down in a turn, but a memory editor can be used to trick the user interface into believing that you had dropped down millions of colonists, and the host doesn't double check these figures. Use of this in a multiplayer game would be considered by most players to be a totally inexcusable cheating offence.
+</p>
+<a name="Cheap_Starbase" id="Cheap_Starbase"></a><h3> <span class="mw-headline">Cheap Starbase</span></h3>
+<p>If you build an EMPTY starbase on a planet which has no base yet, and finish it to 99%, then next turn you can still EDIT the design, add all the weap and armor you like, and the base is still 99% finished. This means you only pay 1% of the full armed base, and 99% for the empty base.
+</p>
+<a name="Mineral_Upload" id="Mineral_Upload"></a><h3> <span class="mw-headline">Mineral Upload</span></h3>
+<p>Stars! allows you to upload minerals to any fleet in orbit that does not belong to you. You can even do this if that fleet does not have a cargo hold. This causes the minerals to "disappear".
+People have abused this bug to deny the salvage of a battle from their enemy by uploading the minerals from the surface to the enemies warfleet/bombers.
+</p>
+<a name="Target_List_Overload" id="Target_List_Overload"></a><h3> <span class="mw-headline">Target List Overload</span></h3>
+<p>The fleet lists that popup when you right click in the scanner pane and the blue diamond of the waypoint tile will only list 100 fleets. So when someone has 101+ fleets at the same coordinates (in orbit of a planet for instance) you can NOT target fleet 101 or higher (these are the fleets with the highest fleet #s.)
+You can use the "Other fleets here" list to select (but only view) the higher fleets.
+</p>
+<a name="Space_Dock_Armor_slot_Buffer_Overflow" id="Space_Dock_Armor_slot_Buffer_Overflow"></a><h3> <span class="mw-headline">Space Dock Armor slot Buffer Overflow</span></h3>
+<p>If your race has ISB and RS, building a Space Dock with more than 21 SuperLat in the Armor slot will result in some sort of error. 21 SuperLat gives a Space Dock 16,000 armor, 22 SuperLat gives it 49,518 Armor. For a full 24 SuperLat stack, you get a whopping 51,018 armor. In comparison, a Death Star for an RS AR tops out at 31,500 armor (not including M.T. toys). {quote Matt Laub}
+Race has to have the RS LRT and starbase hull has to be Space Dock to trigger this bug. More details <a href="http://starsautohost.org/sahforum/index.php?t=tree&amp;th=348&amp;mid=18749&amp;rid=21&amp;S=116d3690e1e98c9e45cde03dd6fc385e&amp;rev=&amp;reveal=" class="external text" title="http://starsautohost.org/sahforum/index.php?t=tree&amp;th=348&amp;mid=18749&amp;rid=21&amp;S=116d3690e1e98c9e45cde03dd6fc385e&amp;rev=&amp;reveal=" rel="nofollow">here</a> at <a href="http://wiki.starsautohost.org/wiki/HWF" title="HWF" class="mw-redirect">HWF</a>.
+</p>
+<a name="ISB_trumps_IT_gate_scanning" id="ISB_trumps_IT_gate_scanning"></a><h3> <span class="mw-headline">ISB trumps IT gate scanning</span></h3>
+<p>Improved Starbases makes gates invisible to some IT gate scanning. ITs can't see ISB gates with 150kT/600ly gates and infinite/800ly.
+This may seem like a limited liability, however, there is often a fairly long period where infinite/800ly gates are the best that can be built, before the 100ly/infinite or infinite/infinite gates can be built. {quote LEit}
+Note that the other race only needs the ISB LRT, they do not have to build a Space Dock or an Ultra Station to make their gate invisible, any hull will do.
+</p>
+<a name="Starbase_Friendly_Fire" id="Starbase_Friendly_Fire"></a><h3> <span class="mw-headline">Starbase Friendly Fire</span></h3>
+<p>In battles where a starbase is present, the player owning the starbase can change the "attack who" in his default battle orders to make friends fire upon eachother. (There was already a brief note about it in the <a href="http://starsautohost.org/sahforum/index.php?t=tree&amp;th=2388&amp;start=0&amp;rid=21&amp;S=e7c95575bddabf398c2dc4b6e736b7a7" class="external text" title="http://starsautohost.org/sahforum/index.php?t=tree&amp;th=2388&amp;start=0&amp;rid=21&amp;S=e7c95575bddabf398c2dc4b6e736b7a7" rel="nofollow">Starsbase FAQ</a> but <a href="http://starsautohost.org/sahforum/index.php?t=tree&amp;th=2666&amp;start=0&amp;rid=21&amp;S=e7c95575bddabf398c2dc4b6e736b7a7" class="external text" title="http://starsautohost.org/sahforum/index.php?t=tree&amp;th=2666&amp;start=0&amp;rid=21&amp;S=e7c95575bddabf398c2dc4b6e736b7a7" rel="nofollow">this</a> thread at <a href="http://wiki.starsautohost.org/wiki/HWF" title="HWF" class="mw-redirect">HWF</a> promoted this to a bug.)
+</p><p>Latest bug description by Ptolemy:
+</p>
+<dl><dd><a href="http://starsautohost.org/sahforum/index.php?t=tree&amp;th=2666&amp;mid=23273&amp;rid=21&amp;S=e7c95575bddabf398c2dc4b6e736b7a7&amp;rev=&amp;reveal=" class="external text" title="http://starsautohost.org/sahforum/index.php?t=tree&amp;th=2666&amp;mid=23273&amp;rid=21&amp;S=e7c95575bddabf398c2dc4b6e736b7a7&amp;rev=&amp;reveal=" rel="nofollow">Ptolemy wrote on Tue, 22 November 2005 20:14</a>
+</dd></dl>
+<dl><dd><dl><dd>OK here is the definitive description of this bug;
+</dd><dd>I have now completed a series of major tests for this problem and this bug triggers only in one specific circumstance and the bug works like this:
+</dd><dd>1. The default orders for the defender must be set to attack any of the attacking players specifically.
+</dd><dd>2. The highest attacking player number will attack his ally with the lowest player number. If there are 3 or more allies attacking only 2 of them will shoot at each other. The highest and lowest player numbers. This is not an absolute guarantee since battle sims would need to be done with 7 or 8 players to check the effects.
+</dd><dd>Note: I have had difficulties in getting a 5th race into the battle at times - the turn generates and a ship that should have been in the battle is in orbit but was not included in the battle. 
+</dd><dd>Note 2: From the original tests done with low powered ships some false results were seen. Using later tech, higher speed ships the problem occurrs in all cases - with or without defending ships. I serioussly recommend that the setting of default battle orders to attack a specific player in order to get allied ships to kill each other be listed as a known cheat. 
+</dd><dd>The effect with 3 or more allies when the defender default orders are set to attack everyone is slightly different in that it results in a free for all with all ships trying to kill each other.
+</dd><dd>Ptolemy
+</dd></dl>
+</dd></dl>
+<a name="Repair_after_gating_loophole" id="Repair_after_gating_loophole"></a><h3> <span class="mw-headline">Repair after gating loophole</span></h3>
+<p>The help file states that a fleet does not get any repair in the year it travels by gate. However there is a loophole.
+</p><p>In the Stars! Order of Events you'll see that the WP1 merge order is carried out *before* repair. This leads to the following: when you gate a fleet# A and give it a WP1 merge order at the destination with a stationary fleet# B the damaged ships in fleet# A (damage either from previous battles or from overgating) *will* get repaired. Stars! looks for fleet#s that have moved and obviously fleet# A no longer exists.
+</p><p>The repair&nbsp;% depends on the normal rules: does the planet has a dock, does the fleet you merge into holds a SFX etc and of course if you have a battle at the planet where the fleet is gating to there will be *no* repair.
+(<a href="http://starsautohost.org/sahforum/index.php?t=tree&amp;th=3841&amp;start=0&amp;rid=21&amp;S=6fa12b1b66202417f29cada8fc491160" class="external text" title="http://starsautohost.org/sahforum/index.php?t=tree&amp;th=3841&amp;start=0&amp;rid=21&amp;S=6fa12b1b66202417f29cada8fc491160" rel="nofollow">thread in the Academy at HWF</a>)
+</p>
+<a name="Mine_Damage_Dodge" id="Mine_Damage_Dodge"></a><h3> <span class="mw-headline">Mine Damage Dodge</span></h3>
+<p>If you have two different ships in one fleet, the first one in your design pool will take 4/5 of the damage, and the second one will take 1/5. {quote LEit}
+You can (ab)use this to for example give your DD sweepers a longer life span. Pairing one (shielded) DD with a chaff (with the chaff in a design slot somewhere above the DD) makes sure the DD will survive a hit from a standard minefield with minimum damage (1/5). To achieve this otherwise you would need to use 5 of such DDs in one fleet.
+(<a href="http://starsautohost.org/sahforum/index.php?t=tree&amp;th=4241&amp;start=0&amp;rid=21&amp;S=93e86d82643268b9441d834b07144f61" class="external text" title="http://starsautohost.org/sahforum/index.php?t=tree&amp;th=4241&amp;start=0&amp;rid=21&amp;S=93e86d82643268b9441d834b07144f61" rel="nofollow">thread in the Academy at HWF</a>) (<a href="http://groups.google.com/group/rec.games.computer.stars/browse_thread/thread/62c5b670371ffa24/a7c5bb2be6338ec1" class="external text" title="http://groups.google.com/group/rec.games.computer.stars/browse_thread/thread/62c5b670371ffa24/a7c5bb2be6338ec1" rel="nofollow">old r.g.c.s thread</a>)
+</p>
+<a name="Exploding_Minefield_Dodge" id="Exploding_Minefield_Dodge"></a><h3> <span class="mw-headline">Exploding Minefield Dodge</span></h3>
+<p>The SD specific mini-minelayer and super-minelayer hulls are immune to the explosions of their own minefields however the checks are performed in player number order and, regardless of number of detonating minefields the ship's in, it can be hit only by one field hence the rest of the exploding minefields are ignored. I.e. if a given MML or SML has "survived" its own exploding field, it will also survive the exploding fields of all following SD players' exploding fields it may be in.
+(<a href="http://starsautohost.org/sahforum/index.php?t=msg&amp;th=1724&amp;start=0&amp;rid=78&amp;S=4a3456a988923581cfdc1cff25e7704d" class="external text" title="http://starsautohost.org/sahforum/index.php?t=msg&amp;th=1724&amp;start=0&amp;rid=78&amp;S=4a3456a988923581cfdc1cff25e7704d" rel="nofollow">thread in the Academy at HWF</a>)
+</p>
+<a name="Coding_Bugs" id="Coding_Bugs"></a><h2> <span class="mw-headline">Coding Bugs</span></h2>
+<a name="Race_File_Corruption" id="Race_File_Corruption"></a><h3> <span class="mw-headline">Race File Corruption</span></h3>
+<p>If you edit the race name in a race file can cause the file to become corrupt. This is especially common when making the race name shorter than before. To get around this, when editing the race name, either edit it one letter at a time (saving and re-opening each time) or copy the race data into a new file by hand.
+</p>
+<a name="Random_Race" id="Random_Race"></a><h3> <span class="mw-headline">Random Race</span></h3>
+<p>If at any point during the race creation you select random race but then de-select it, it can cause the race to generate a random race every time you use it to play a game with. This is because the random tag within the file is not unselected. Though it has been reported by others, I did a recent test of this, but could not activate it.
+</p>
+<a name="32k_Ship_Limit_Per_Fleet" id="32k_Ship_Limit_Per_Fleet"></a><h3> <span class="mw-headline">32k Ship Limit Per Fleet</span></h3>
+<p>There is a limit of 32k of any one type of ship in a fleet (32,767 to be precise). If you try and merge two fleets together which would push the ship count over this limit (i.e. a fleet with 25k chaff and another with 10k), stars has a few problems. If done manually, the ship type will disappear from the fleet readout, but re-appear in the next generation (you will only lose ships in excess of the 32k). But if done using the "merge with fleet" waypoint order, all the ships of that type will disappear. This is because when the integer (16 bit - signed) holding the number of ships goes over the 32k limit it becomes negative, and as you can't have a negative number of ships, it reads as 0.
+</p><p>There are also some other limits in the game: 512 separate fleets, 512 separate minefields, 16 ship designs, 10 starbase designs, 256 tokens at a battle. The game will not allow you to exceed these limits.
+</p>
+<a name="AR_Starter_Colonies" id="AR_Starter_Colonies"></a><h3> <span class="mw-headline">AR Starter Colonies</span></h3>
+<p>Starter colonies for AR races will not contribute excess resources to research, unless the build queue is cleared first (using the clear button) or the hull design changed / upgraded. This is due to the "build Starter Colony" order invisibly blocks the end of the queue despite the fact that it has already been completed.
+</p>
+<a name="Failing_to_Close_to_Range_2_with_Sappers_and_R2_Beams" id="Failing_to_Close_to_Range_2_with_Sappers_and_R2_Beams"></a><h3> <span class="mw-headline">Failing to Close to Range 2 with Sappers and R2 Beams</span></h3>
+<p>In the battle VCR, if a token of ships armed is armed with both sappers and range 2 beams, and is facing an enemy token for which it has enough power in its sappers to completely take down its shields to 0dp in a single turn, then the ship will not attempt to move into range 2 in that turn even if it has spare movement points and regardless of the given battle orders (even with maximize damage). If the token lacks the sapper firepower to deplete all the shields then the token will close to range 2 as normal. The exact logic code-wise behind this bug has not been figured out yet. 
+</p>
+<a name="Copy_Protection_Activates_When_Editing_an_Allies_Turn_File" id="Copy_Protection_Activates_When_Editing_an_Allies_Turn_File"></a><h3> <span class="mw-headline">Copy Protection Activates When Editing an Allies Turn File</span></h3>
+<p>When you save an submit a turn and then transfer the .x file to another computer (which is being used by another player in the game) and then re-open the turn and then re-save and submit before finally turning over the file to the host, it can cause the copy protection to kick in. The solution is to open the turn file up, delete the .x file while stars is still running and then save and submit, the newly created .x file will be safe to send to the host for generation. The reason for this bug is that the machines hardware hash is only written to the .x file when the .x file is being created and not updated on subsequent save and submit, whereas the stars serial number is updated each time. When you open up your allies turn file, his hardware hash is already encoded into the .x file, but when you update the file with a new save and submit, your stars serial number is added to the file replacing his. Thus the host during generation sees the same serial number on two turn files but both with different hardware hashes. For more information, see the section on the <a href="http://wiki.starsautohost.org/wiki/Copy_Protection_Features" title="Copy Protection Features">Copy Protection Features</a>.
+</p>
+<a name="Font_Problems_When_Using_a_Non-English_Version_of_Windows" id="Font_Problems_When_Using_a_Non-English_Version_of_Windows"></a><h3> <span class="mw-headline">Font Problems When Using a Non-English Version of Windows</span></h3>
+<p>When playing stars on a non-english version of windows, there can be a few problems with fonts used in stars, the most noticeable of these is in the player scores dialog where the player names are written horizontally, making them overlap each other. This is due to the fact that Microsoft has used different filenames for the various fonts in each language version of windows. To solve this problem requires editing the stars.ini file in the windows directory and editing the [fonts] section. Details of the correct text for each language can be found <a href="http://wiki.starsautohost.org/wiki/Stars.ini" title="Stars.ini" class="mw-redirect">here</a>.
+</p>
+<a name="Netscape_email_attachment_corruption" id="Netscape_email_attachment_corruption"></a><h3> <span class="mw-headline">Netscape email attachment corruption</span></h3>
+<p>When sending emails using Netscape, it will treat small attachments of an unknown file type as text (7bit byte) instead of binary (8bit byte) and so truncates the leading byte, this can lead to corruption of turn files sent this way. The solution is to tell it that the various stars file types should be sent MIME encoded. 
+</p>
+<a name=".22Stuck.22_bug" id=".22Stuck.22_bug"></a><h3> <span class="mw-headline">"Stuck" bug</span></h3>
+<p>A fleet targetting a fleet and being targetted itself by another fleet <u>with lower fleet#</u> will not move. Fortunately this can not be exploited by players to interfere with fleet movements of another race. This bug will only affect your own race.
+A new old bug by m.a@stars:
+</p>
+<dl><dd><a href="http://starsautohost.org/sahforum/index.php?t=tree&amp;th=2691&amp;rid=21&amp;S=95faa8991a8890c4ad64704cd8a63d9c" class="external text" title="http://starsautohost.org/sahforum/index.php?t=tree&amp;th=2691&amp;rid=21&amp;S=95faa8991a8890c4ad64704cd8a63d9c" rel="nofollow">m.a@stars wrote on Wed, 21 December 2005 11:53</a>
+<dl><dd>- Let T be the Target fleet. Main pursuer would be M, and let's have some Secondary pursuer(s) S target the main pursuer. T can have a lower or higher fleet# than M, and it can be a foreign fleet or one of ours, stationary or moving.
+</dd><dd>- Next turn, if M has a fleet# lower than S, we find S has moved towards M, and M has moved towards T, as expected. 
+</dd><dd>- If S has a fleet# lower than M, we find S has moved as expected, and M is still targeting its goal, but hasn't moved. It even shows in foreign scans as stationary: M is stuck for as long as at least one secondary fleet with lower fleet# is targeting it!
+</dd><dd>The golden rule to ensure your fleets obey their orders seems as simple as "first to move, lowest ID".
+</dd></dl>
+</dd></dl>
+<a name="WP0_pop_reload_ignored" id="WP0_pop_reload_ignored"></a><h3> <span class="mw-headline">WP0 pop reload ignored</span></h3>
+<p>If:
+</p>
+<ol><li>a waypoint zero unload by hand of any of your population over an uninhabited planet is performed
+</li><li>a waypoint zero dropdown command of "Colonize" is given to a fleet with a colonizer module present over that planet
+</li><li>the population is reloaded by hand
+</li></ol>
+<p>Then: the reload order will be ignored and not saved with your turn. ALL pop will die (even the colonist that you did not unload) and the planet will remain uninhabited. A possible solution is to split the fleet into multiple fleets with cargo space and merge them back. If there is only one ship you'll have to redo your turn.
+</p>
+<ul><li> <a href="http://starsautohost.org/sahforum/index.php?t=msg&amp;th=3706&amp;rid=78&amp;S=62a32cb5868c3a6af43a094a5708f0c8&amp;pl_view=&amp;start=0#msg_36139" class="external text" title="http://starsautohost.org/sahforum/index.php?t=msg&amp;th=3706&amp;rid=78&amp;S=62a32cb5868c3a6af43a094a5708f0c8&amp;pl_view=&amp;start=0#msg_36139" rel="nofollow">Thread at HWF</a>
+</li></ul>
+<a name="Crash_Stars_Bug" id="Crash_Stars_Bug"></a><h3> <span class="mw-headline">Crash Stars Bug</span></h3>
+<p>When Player 1's fleet 1 is at a planet with a starbase other than an orbital fort and the final player has a starbase design occupying his 10th starbase design slot stars can crash, the exact circumstances that cause the crash still need to be figured out since something else seems to also be required for the crash to happen but the above circumstances do need to occur for the crash to take place.
+Ways to avoid the crash are for a dummy race to be placed in the final slot so the 10th starbase slot is never used, for player 1 to keep his fleet 1 away from planets and for it not to be destroyed either in a battle or in a minefield or to have an experienced player as the final player and for them not to use the 10th starbase slot.
+</p>
+<ul><li><a href="http://starsautohost.org/sahforum/index.php?t=msg&amp;th=4107&amp;start=0&amp;rid=78&amp;S=b2ddcadaf441cbf09d37d9a6df09e478" class="external text" title="http://starsautohost.org/sahforum/index.php?t=msg&amp;th=4107&amp;start=0&amp;rid=78&amp;S=b2ddcadaf441cbf09d37d9a6df09e478" rel="nofollow">Thread at HWF</a>
+</li></ul>
+<a name="Shields_are_displayed_incorrectly_in_VCR" id="Shields_are_displayed_incorrectly_in_VCR"></a><h3> <span class="mw-headline">Shields are displayed incorrectly in VCR</span></h3>
+<p>The VCR displays ALL <a href="http://wiki.starsautohost.org/wikinew/index.php?title=Shields&amp;action=edit&amp;redlink=1" class="new" title="Shields (page does not exist)">shields</a> according to your own <a href="http://wiki.starsautohost.org/wiki/RS" title="RS" class="mw-redirect">RS</a> setting and does not account for whether or not foreign ships have RS. This bug only affects the display, not the result calculations.
+</p>
+<dl><dd><a href="http://starsautohost.org/sahforum/index.php?t=tree&amp;th=2075&amp;mid=17761&amp;rid=78&amp;S=600a2c9001ce9be730d7d0b5c87ee657&amp;rev=&amp;reveal=" class="external text" title="http://starsautohost.org/sahforum/index.php?t=tree&amp;th=2075&amp;mid=17761&amp;rid=78&amp;S=600a2c9001ce9be730d7d0b5c87ee657&amp;rev=&amp;reveal=" rel="nofollow">Kotk wrote on Tue, 23 November 2004 01:07</a>
+<dl><dd>If something had shields and you killed it, you should know for sure if it had RS or no by damage done.
+</dd><dd>The damage done is displayed correctly. 
+</dd><dd><a href="http://wiki.starsautohost.org/wikinew/index.php?title=Armor&amp;action=edit&amp;redlink=1" class="new" title="Armor (page does not exist)">Armor</a> damage&nbsp;% is also displayed correctly.
+</dd><dd>If you have RS or no, dont look at the numbers it say about shields left, these are almost always wrong.
+</dd></dl>
+</dd></dl>
+<ul><li><a href="http://starsautohost.org/sahforum/index.php?t=msg&amp;th=4165&amp;rid=78&amp;S=600a2c9001ce9be730d7d0b5c87ee657&amp;pl_view=&amp;start=0#msg_41565" class="external text" title="http://starsautohost.org/sahforum/index.php?t=msg&amp;th=4165&amp;rid=78&amp;S=600a2c9001ce9be730d7d0b5c87ee657&amp;pl_view=&amp;start=0#msg_41565" rel="nofollow">and more recently Micha wrote on Mon, 9 March 2009</a>
+<dl><dd>The race *with* RS saw the correct shield values during the entire battle. The race *without* RS saw the correct shield values in the first round but in the second round the RS race was showing non-RS values.
+</dd></dl>
+</li></ul>
+<a name="Credit" id="Credit"></a><h2> <span class="mw-headline">Credit</span></h2>
+<p>Original document copied from <a href="Stars!_FAQ.html" title="Stars! FAQ">Stars! FAQ</a> via <a href="http://starsautohost.org/sahforum/index.php?t=msg&amp;th=2387&amp;start=0&amp;rid=78&amp;S=96b36656a88f3a20ea51269285c87ba9" class="external text" title="http://starsautohost.org/sahforum/index.php?t=msg&amp;th=2387&amp;start=0&amp;rid=78&amp;S=96b36656a88f3a20ea51269285c87ba9" rel="nofollow">this</a> thread on <a href="http://wiki.starsautohost.org/wiki/HWF" title="HWF" class="mw-redirect">HWF</a>
+</p>
+<a name="See_Also" id="See_Also"></a><h2> <span class="mw-headline">See Also</span></h2>
+<ul><li> <a href="http://starsautohost.org/sahforum/index.php?t=tree&amp;th=348&amp;start=0&amp;rid=21&amp;S=3655577339203c5300a8444b27d7cd45" class="external text" title="http://starsautohost.org/sahforum/index.php?t=tree&amp;th=348&amp;start=0&amp;rid=21&amp;S=3655577339203c5300a8444b27d7cd45" rel="nofollow">Discussion thread</a> at <a href="http://wiki.starsautohost.org/wiki/HWF" title="HWF" class="mw-redirect">HWF</a>
+</li><li> <a href="http://wiki.starsautohost.org/wiki/Standard_Cheats_Disclaimer" title="Standard Cheats Disclaimer">Standard Cheats Disclaimer</a>
+</li><li> <a href="http://wiki.starsautohost.org/wiki/Feature,_Bug_or_cheat%3F_Survey" title="Feature, Bug or cheat? Survey">Feature, Bug or cheat? Survey</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 36/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wikidb-wiki_:pcache:idhash:1373-0!1!0!!en!2!edit=0 and timestamp 20110703214040 -->
+<div class="printfooter">
+Retrieved from "<a href="Known_Bugs.html">http://wiki.starsautohost.org/wiki/Known_Bugs</a>"</div>
+			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="http://wiki.starsautohost.org/wiki/Special:Categories" title="Special:Categories">Categories</a>:&#32;<span dir='ltr'><a href="http://wiki.starsautohost.org/wiki/Category:FAQ" title="Category:FAQ">FAQ</a></span> | <span dir='ltr'><a href="http://wiki.starsautohost.org/wikinew/index.php?title=Category:Gameplay_Issues&amp;action=edit&amp;redlink=1" class="new" title="Category:Gameplay Issues (page does not exist)">Gameplay Issues</a></span></div></div>			<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="Known_Bugs.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="http://wiki.starsautohost.org/wikinew/index.php?title=Talk:Known_Bugs&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="http://wiki.starsautohost.org/wikinew/index.php?title=Known_Bugs&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="http://wiki.starsautohost.org/wikinew/index.php?title=Known_Bugs&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="http://wiki.starsautohost.org/wiki/User:178.79.148.187" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">178.79.148.187</a></li>
+				<li id="pt-anontalk"><a href="http://wiki.starsautohost.org/wiki/User_talk:178.79.148.187" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="http://wiki.starsautohost.org/wikinew/index.php?title=Special:UserLogin&amp;returnto=Known_Bugs" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/wikinew/skins/common/images/starswikilogo.png);" href="Main_Page.html" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-Stars.21wiki'>
+		<h5>Stars!wiki</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page" title="Visit the main page">Main Page</a></li>
+				<li id="n-ooe"><a href="/wiki/Order_of_Events">Order of Events</a></li>
+				<li id="n-bugs"><a href="/wiki/Known_Bugs">Known Bugs</a></li>
+				<li id="n-faq"><a href="/wiki/Stars!_FAQ">Stars! FAQ</a></li>
+				<li id="n-articles"><a href="/wiki/Article_Library">Article Library</a></li>
+				<li id="n-Utilities"><a href="/wiki/Utilities">Utilities</a></li>
+				<li id="n-Glossary"><a href="/wiki/Category:Glossary">Glossary</a></li>
+				<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/wiki/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class='generated-sidebar portlet' id='p-External_Sites'>
+		<h5>External Sites</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-Stars.21-AutoHost"><a href="http://www.starsautohost.org">Stars! AutoHost</a></li>
+				<li id="n-Home-World-Forum"><a href="http://www.starsautohost.org/sahforum/">Home World Forum</a></li>
+				<li id="n-Stars.21-AutoHost-PL"><a href="http://www.cezar.mnc.pl/">Stars! AutoHost PL</a></li>
+				<li id="n-Stars.21-FAQ"><a href="http://www.starsfaq.com">Stars! FAQ</a></li>
+				<li id="n-Other-Sites-.28local.29"><a href="/wiki/Related_Websites">Other Sites (local)</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class='generated-sidebar portlet' id='p-.'>
+		<h5>.</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-Stars.21-newsgroup"><a href="news://rec.games.comp.stars">Stars! newsgroup</a></li>
+				<li id="n-.23.23Stars.21-IRC-channel"><a href="irc://chat.freenode.net/##stars!">##Stars! IRC channel</a></li>
+				<li id="n-.23.23Stars.21-via-Stars.21wiki"><a href="/wiki/IRC">##Stars! via Stars!wiki</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wikinew/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Stars!wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+	../wikinew/skins/common/images/starswikilogo.png);" href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-Stars.21wiki'>
+		<h5>Stars!wiki</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="Main_Page.html" title="Visit the main page">Main Page</a></li>
+				<li id="n-ooe"><a href="Order_of_Events.html">Order of Events</a></li>
+				<li id="n-bugs"><a href="Known_Bugs.html">Known Bugs</a></li>
+				<li id="n-faq"><a href="Stars!_FAQ.html">Stars! FAQ</a></li>
+				<li id="n-articles"><a href="Article_Library.html">Article Library</a></li>
+				<li id="n-Utilities"><a href="Utilities.html">Utilities</a></li>
+				<li id="n-Glossary"><a href="Category:Glossary.html">Glossary</a></li>
+				<li id="n-randompage"><a href="http://wiki.starsautohost.org/wiki/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="Help:Contents.html" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class='generated-sidebar portlet' id='p-External_Sites'>
+		<h5>External Sites</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-Stars.21-AutoHost"><a href="http://www.starsautohost.org">Stars! AutoHost</a></li>
+				<li id="n-Home-World-Forum"><a href="http://www.starsautohost.org/sahforum/">Home World Forum</a></li>
+				<li id="n-Stars.21-AutoHost-PL"><a href="http://www.cezar.mnc.pl/">Stars! AutoHost PL</a></li>
+				<li id="n-Stars.21-FAQ"><a href="http://www.starsfaq.com">Stars! FAQ</a></li>
+				<li id="n-Other-Sites-.28local.29"><a href="Related_Websites.html">Other Sites (local)</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class='generated-sidebar portlet' id='p-.'>
+		<h5>.</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-Stars.21-newsgroup"><a href="news://rec.games.comp.stars">Stars! newsgroup</a></li>
+				<li id="n-.23.23Stars.21-IRC-channel"><a href="irc://chat.freenode.net/##stars!">##Stars! IRC channel</a></li>
+				<li id="n-.23.23Stars.21-via-Stars.21wiki"><a href="IRC.html">##Stars! via Stars!wiki</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wiki.starsautohost.org/wikinew/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Stars!wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://wiki.starsautohost.org/wiki/Special:WhatLinksHere/Known_Bugs" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://wiki.starsautohost.org/wiki/Special:RecentChangesLinked/Known_Bugs" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="Special:SpecialPages.html" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="http://wiki.starsautohost.org/wikinew/index.php?title=Known_Bugs&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="http://wiki.starsautohost.org/wikinew/index.php?title=Known_Bugs&amp;oldid=5584" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-fr"><a href="http://wiki.starsautohost.org/wiki/Bugs_connus">Français</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="../wikinew/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 15 May 2011, at 03:55.</li>
+					<li id="viewcount">This page has been accessed 5,967 times.</li>
+					<li id="privacy"><a href="Stars!wiki:Privacy_policy.html" title="Stars!wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="Stars!wiki:About.html" title="Stars!wiki:About">About Stars!wiki</a></li>
+					<li id="disclaimer"><a href="Stars!wiki:General_disclaimer.html" title="Stars!wiki:General disclaimer">Disclaimers &amp; Credit</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.274 secs. --></body></html>

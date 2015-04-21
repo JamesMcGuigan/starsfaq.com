@@ -1,0 +1,106 @@
+<!doctype html public "-//w3c//dtd html 3.2//en">
+
+<html>
+	<meta>
+	<head>
+		<title>
+			The Stars! FAQ - Targeting Order in Battles (Target Attractiveness)
+ by Art Lathrop
+		</title>
+		<META NAME = "keywords" CONTENT = "stars, FAQ, PBEM, blitz, hotseat, stratergy, micromanagement, James, McGuigan, Jeff McBride, Jason Cawley, advanced, technical, advFAQ, rgcs, battle, fleet, ship, war, space, 4X, scifi, empire, interactive, xplosiv, Supernova, explore, expand, exterminate, research, diplomacy, JRC3, autohost">
+		<META NAME = "Description" CONTENT = "The Stars! FAQ is the web resource the PBEM game Stars! by Jeff Johnson and Jeff McBride">
+		<META NAME = "ROBOTS" CONTENT="ALL">
+		<META NAME = "Copyright" CONTENT = "James McGuigan">
+		<META NAME = "Author" CONTENT = "James McGuigan">
+	</head>
+	<body bgcolor="#000000" text="#8eb3f4" link="#FF0000" vlink="#c00000" alink="#800080" background="../starfield.gif">
+		
+		<p align = center>
+		<img src="../starsfaqlogo.gif" height="115" width="500">
+		<br>
+		<a href="index.htm">Return to Main Menu</a>
+		 
+		</p>
+		
+		<table width="90%" align ="center" border="0" cellpadding="0" >
+			<tr>
+				<td>
+				<p>
+					<H3>Targeting Order in Battles (Target Attractiveness)
+</H3>
+					Author: Art Lathrop<br>
+					Revised: 14th April 1999<br>
+					<br>
+					<blockquote>
+
+For quite a while players of Stars! have been speculating on how targeting order in battle is determined. Several rules of thumb were proposed; however, none of them could compare designs with difference defensive ratings. Likewise, they could not account for different mixes of weapons and components.<br>
+<br>
+During a debate regarding the accuracy and usefulness of one such rule of thumb, Thomas Pfister wrote a brief post outlining his belief that as long as defensive factors were identical, ships were targeted in order of "resources + boranium." I originally had no intention of working out the details of the targeting algorithm; however, after I saw his post I was curious to see if I could apply his results to get at the heart of a problem I was considering with shielded chaff.<br>
+<br>
+As David Moen mentioned in his own article on targeting, there is some rounding going on in the formula, so ships that have a very close in "attractiveness" will be selected as if they had the same value. The game engine may use integers for certain steps in determining which targets to shoot at, while I am using exclusively floating point variables which could be the source of the rounding. William Butler notice that rounding down to the nearest one hundredth almost universally predicts the exact order that ships will be targeted. Ships with identical attractivenesses are targeted randomly. The formula predicts accurately that certain shielded or jammed targets will be fired upon before less attractive unshielded targets. This of course may not be the actual formula, but it has worked so far with all the tests I have given it and I would appreciate other people trying it out. When testing it, please take care to make sure all potential targets are in range or the results from the test bed may be misleading.<br>
+<br>
+The general formula is quite simple:<br>
+<br>
+Attractiveness = Cost/APN<br>
+Where: Cost = Boranium + Resources<br>
+APN = Attack Power Needed (please note that other people have referred to this as eff_dp)<br>
+<br>
+Since beam weapons are much simpler I will work with them first.<br>
+<br>
+Attack Power Needed (solely APN from here on) is simply the combined defenses for a ship modified by weapon power reducing factors such as beam deflectors (and most likely range). I have not tested for range for two reasons. One, it is not as easy to test for range since it shifts and one does not have direct control over the ships movement. A second reason is that for player's use, this is really not that important. If you are going to use this to determine if a certain design will be targeted before another one of your designs, range is not a factor that you will be able to control very well with your ship design.<br>
+<br><br>
+
+<h3>APN Formulae for Beamers</h3>
+Non-Sappers:<br>
+APN = (Armor + Shields)/(.9^n)*(Range Modifier)<br>
+<br>
+Sappers:<br>
+APN= Shields/(.9^n)*(Range Modifier)<br>
+<br>
+Where: n = number of beam deflectors on the ship<br>
+Range Modifier = 1 - .1*(Range)/(Max Range)<br>
+<br>
+Please note again that the range modifier has not been confirmed to be part of this equation; however, it is most like that it is.<br>
+<br>
+This is a relatively easy formula to follow. It basically is just how much damage a ship can take from a beam weapon. To calculate which ships are targeted first, simply add APN back into the attractiveness formula.<br>
+<br><br>
+
+<h3>APN Formula for Torpedoes and Missiles</h3>
+Please note accuracy includes jamming and targeting computers and is a percentage expressed as a number ranging between 0 and 1. Weapon type is equal to 1 for torpedoes and 2 for missiles. Accuracy is equal to the percent chance the missile or torpedo has to hit its target. This includes the effects of jamming. Please note that in calculating accuracy, it is easy to introduce a rounding error. William Butler posted a description of how to get the correct figure in February of 1999. Either refer to his article or just check to see if changing this number one percent makes a difference. 
+<br><br>
+This is not the original formula that I posted; however, this formula is much simpler.<br>
+<br>
+For targets that have shield values equal to or greater than their armor value:<br>
+APN = Armor*2/Accuracy<br>
+<br>
+For targets that have shield values less than their armor value:<br>
+APN = Shield*2/Accuracy + (Armor-Shield)/(Accuracy * Weapon Type)<br>
+<br>
+So far all of my tests have duplicated these results. I have not extensively studied whether the number of the ships in the stack matters; however, my early tests did include a wide range of stack sizes ranging from one to 280. After those tests showed no effect for the number of ships in the stack, I concerned myself more with completing the general formulae. Of course you can enter the values of individual ships or stacks into the equation and it will not change the results there (since the cost will increase in direct proportion to APN).<br>
+<br>
+I encourage people to double-check this. So far, I my tests have shown that it accurately accounts for all of the targeting behaviors that I could present to it. Notice that chaff have very high attractiveness (though shielded chaff, much less so). Ships with jammers, high armor, or shields tend to be much less attractive targets. It even correctly predicted that torpedoes' choice of targets differ from missiles.<br>
+<br><ul>
+Art Lathrop
+</ul><br>
+
+
+The most recent edition of this article and an Excel 5.0 spreadsheet of the formulae can be found at the <a href="http://art.lathrop.com/stars/directory.htm"> Stars! Directory</a>. It is under &quot;A Few Extra Things.&quot;</p>
+												
+					</blockquote><br>
+					
+					
+
+					
+					<p align = "center">
+					<a href="index.htm">Return to Main Menu</a>
+					 
+					</p>
+					
+					
+				</td>
+			</tr>
+		</table>
+		
+		
+	</body>
+</html>

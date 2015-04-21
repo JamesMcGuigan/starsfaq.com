@@ -1,0 +1,147 @@
+<!DOCTYPE htm PUBLIC "-//W3C//DTD htm 4.0 Transitional//EN"
+	"http://www.w3.org/TR/REC-htm40/loose.dtd">
+
+<htm lang="en-US">
+
+<HEAD>
+	<TITLE>Stars!-R-Us Article</TITLE>
+
+	<META name="author" content="Donald Davis">
+	<META name="copyright" content="&copy; 1999">
+	<!-- <META http-equiv="Content-Style-Type" content="text/css"> -->
+
+	<!-- <LINK href="main.css" rel="stylesheet" type="text/css"> -->
+
+	<!-- <href="http://www.strategygamefan.com/starsrus/"> -->
+</HEAD>
+<BODY background="../../starfield.gif" text="#8eb3f4" link="#FF0000" vlink="#c00000" alink="#800080" bgcolor="#000000">
+<h3>Stars! table of population growth <br>
+By James Raisbeck</h3>
+
+<p>Empirical evidence indicates to me that after 25%, per capita population growth decreases with the square of (100% - %population). This results in a separable ODE whose solution was used to generate the following table that shows how many turns it takes to populate a planet to various levels. This table is based on a 100% planet and a 15% race. To adjust for other situations, scaling by <br><br>
+
+(/ (log 1.15) (log 1 + (* racial_growth_rate planet_value)))<br><br>
+
+</p>
+
+<p>should do the trick. Actually, for x < .15, (log x) can be approximated by x to a relative accuracy of less than 7.5%. In other words, if you have the standard racial growth rate, scaling the table below by 1/planetary_value should work fine. <br><br>
+
+</p>
+
+<TABLE align=center cellspacing=3 cellpadding=3>
+<tr><th>Percent of max<th>Turns to achieve<th>Notes
+<tr><th>0.25<th>0.00<th>Santa Maria
+<tr><th>0.5<th>4.96<th>
+<tr><th>0.7<th>7.37<th>Lt Freighter
+<tr><th>0.75<th>7.86<th>
+<tr><th>0.8<th>8.32<th>Second Planet if Low start
+<tr><th>1<th>9.92<th>Second Planet if start w/2
+<tr><th>1.6<th>13.28<th>First Planet  if Low start
+<tr><th>1.75<th>13.92<th>Low Starting Pop
+<tr><th>2<th>14.88<th>First  Planet if start w/2
+<tr><th>2.1<th>15.23<th>Md Freighter
+<tr><th>2.5<th>16.48<th>Standard Starting Planet (or Privateer)
+<tr><th>3<th>17.78<th>Meta-Morph
+<tr><th>4<th>19.84<th>
+<tr><th>5<th>21.43<th>Rogue
+<tr><th>10<th>26.39<th>Galleon
+<tr><th>12<th>27.70<th>Lg Freighter
+<tr><th>15<th>29.30<th>
+<tr><th>20<th>31.35<th>
+<tr><th>25<th>32.95<th>Max per capita growth (37,500 per turn)
+<tr><th>30<th>34.34<th>Super Freighter
+<tr><th>33.33<th>35.25<th>Max per planet growth (39,500 per turn)
+<tr><th>35<th>35.71<th>
+<tr><th>40<th>37.08<th>
+<tr><th>45<th>38.52<th>
+<tr><th>50<th>40.05<th>
+<tr><th>55<th>41.76<th>
+<tr><th>60<th>43.70<th>
+<tr><th>65<th>46.00<th>
+<tr><th>70<th>48.83<th>
+<tr><th>75<th>52.53<th>
+<tr><th>80<th>57.71<th>
+<tr><th>85<th>65.82<th>
+<tr><th>90<th>81.10<th>
+<tr><Th>95<th>124.35<th>
+</table>
+
+<p>Note: 1% of max = 10,000 on normal beginning worlds, 5,000 for Hyper-Expansionists, 12,000 for rev 2.0a Jack-of-all-Traders, etc. </p>
+ <TABLE align=center cellspacing=3 cellpadding=3 width=100%<TABLE align=center cellspacing=3 cellpadding=3 width=100%<br><br>
+
+<p>Note: This table is based on a continuous approximation to a discreet phenomena. It will start to break down when 1 turn corresponds less than a few hundred colonists. <br><br>
+
+  </p>
+
+<p>For example, on a 10% world, 100 people is 0.1% of the population and the mimimum growth rate is probably 0.1%/year meaning that it would only take 50 years to get from 90-95%. Scaling the above table would result in 433 turns. <br><br>
+
+  </p>
+
+<p>The above table should work well for 30%+ worlds and a large mid-range (1%-75%) should work OK down to 10%. <br><br>
+
+  </p>
+
+<p>Note: Growth Rates of 37,500 and 39,500 assume normal racial mods and a 100% planet. <br><br>
+
+  </p>
+
+<p>Note: Hull values are for the basic capacities. These can be supplemented by using cargo pods. <br><br>
+
+  </p>
+
+<p>Here's the lisp code I used to generate raw data for the table. <br><br>
+
+;; Integral of population growth rate for population over 25%<br>
+(defun f (x)<br>
+  (let ((alpha (* (/ 16.0 9.0) (log 1.15))))<br>
+    (/ (- (/ 1 (- 1 x)) (log (- (/ 1 x) 1))) alpha)))<br><br>
+
+;; Calculate a bunch of population growth times for values under 25%<br>
+;; assuming you start at 0.25%<br>
+(mapcar (lambda (x) (/ (log (/ x .0025)) (log 1.15)))<br>
+   '(.0025 .005 .007 .0075 .008 .01 .016 .0175 .02 .021 .025 .03 .04<br>
+     .05 .10 .12 .15 .20 .25))<Br><br>
+
+;; Calculate a bunch of population growth times for values over 25%<Br>
+;; assuming you start at 0.25%<br>
+(mapcar (lambda (x) (+ (- (f x) (f .25)) (/ (log 100) (log 1.15))))	<br>
+'(.25 .30 .3333 .35 .40 .45 .50 .55 .60 .65 .70 .75 .80 .85 .90 .95))<BR><br>
+
+  </p>
+
+<p>This table provides a visible justification for many of the population growth tips posted. Random population tips I've found/seen. <br><br>
+
+  </p>
+
+<p>Use the biggest colony ship you can build if you can afford the colonists. If you can't and you don't think you'll lose the world, wait until you can afford the colonists. <br><br>
+
+  </p>
+
+<p>It's important to get to good planets early. (The above table can be useful in determining (tech advance => larger freighters) vs early colonization tradeoffs. <br><br>
+
+  </p>
+
+<p>Don't worry about filling high value planets with extra freighter trips early in the game. They grow too fast. But do fill them up late in the game. <br><br>
+
+  </p>
+
+<p>Don't worry about emptying your home world when it reaches 25% or 33%. Population growth stays near optimal until about 50% and doesn't deteriorate too badly until after about 75% <br><br>
+
+  </p>
+
+<p>Do fill up up low value planets with extra freighter trips early in the game. But be careful to avoid overcrowding. <br><br>
+
+  </p>
+
+<p>Remember, population growth is roughly proportional to the square of the planet value. 1 100% world will grow as fast as 25 20% worlds. <br><br>
+
+  </p>
+
+<p>James Raisbeck<br><br>
+
+
+  </p>
+
+
+<h4><A HREF="../index.htm">Back to the Article Main Page.</A>
+</body>

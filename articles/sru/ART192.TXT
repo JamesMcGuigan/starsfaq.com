@@ -1,0 +1,717 @@
+                   Stars! 2.6b Item Database Structure
+                   Compiled by BayBeVet & The Chairman
+                         Update Date: 12/20/96
+                              Revision #3
+
+     This text file will assist you in editing various items in the STARS!
+game. Using this file, knowledge of hex/dec numbers, and a good hex editing
+program ( We recommend Ultraedit32 for Win95 ) you wil be able to edit ship
+& starbase hulls, tech requirements, mineral requirements, terraforming %'s,
+stargate limits, nearly everything.. Things you will not be able to do is
+change PRT/LRT requirements or MT Toys to available.. You can change the
+tech levels and mineral requirements of MT Toy Plans you are given and
+mod the Mini-Morph hull thou..
+------------------------------------------------------------------------------
+
+     First off, let us touch on the very basics of hex editng a game to your
+liking. 
+
+
+1) First off, never ever hex edit your STARS!.EXE file, always edit a
+   copy of the .EXE calling it, for our example, TUNSTAR.EXE .. This gives you
+   insurance if you screw up, as well as leaving a virgin copy of the game for
+   normal playing. After editing a file, you would copy TUNSTAR.EXE back
+   to your Stars! directory and run TUNSTAR.EXE instead of Stars!.exe
+   ( as player OR as host, all players MUST run the same edited copy! )
+
+2) You should know how to convert between hex and decimal numbers
+   If you use Windows95, you can simply use the calculator that comes
+   with windows ( look in the Accessories Group ), and once you run
+   it, simple toggle it ( pulling down VIEW ) and select Scientific.
+   You can simple punch in the numbers and convert between hex and dec
+   by selecting the mode ( Hex, Dec, Oct and Bin are the options there )
+
+
+3) Single byte hex numbers is inforamtion stored in 1 byte representing
+   a decimal number. In Stars! for example, Tech level requirements are
+   stored this way. A hex number of 0F for example would convert to 16
+   in decimal, thus changing that byte from a 0F to a 05 would lower that
+   tech requirement from 16 to 5
+
+4) Double byte ( 2 byte ) hex numbers store information across 2 bytes. In
+   STARS! this is done in 3 ways Shown below
+
+16 based        First byte = 1's      2nd byte = 16's
+128 based       First byte = 1's      2nd byte = 128's
+256 based       First byte = 1's      2nd byte = 256's
+
+    OK, so what does that mean. That means if we have the following 2 bytes
+    and for our example, the thing you are editing is 256 based
+
+                             FE 01
+
+    The first thing you would want to do is convert the hex numbers into
+    decimal so you can work with it. For this example it would end up being
+
+                            254  1 
+ 
+    OF we know that the 254 represents 1's and the 1 represents 256's so
+    knowing that we have
+
+                           254 * 1's = 254
+                           1 * 256's = 256
+
+    The total of those 2 numbers is 510, so the thing we are editing ( lets
+    further say its the ironium requirement of a ship hull for better
+    understanding in this example ) requires 510 pieces of ironium. Now,
+    lets say, you wish to drop that to 300 ironium, what would the 2 byte
+    hex number be?? Heres how you figure it
+
+                            300 / 256 = 1
+                   with 44 remaining ( 300-256 = 44 )
+
+   So now we know there is 1 of the 256's and 44 of the 1's, so now we have
+
+                                 44  1
+
+   We now have to convert those decimal numbers into hex to replace in the
+   file we are editing, the result of this would be
+
+                                 2C  01
+
+   Replace the 2 bytes, and blam!, you only need 300 instead of 510 pieces
+   of ironium to build that hull now!
+
+    I hope you will understand this principle and how it is used with 128's
+and 16's, it should be fairly clear and simple we hope. :)
+
+
+------------------------------------------------------------------------------
+
+
+   Now for the guts you have been waiting for, the stars! database structures
+themselves. All starting locations are for Stars! 2.6b, it will vary from
+version to version, but really it isnt important where is starts in your
+version, cause once it starts, it is all the same after that
+
+                                       *
+*******************************************************************************
+StarGates:
+First item starting location: 2F0F
+               Record Length: 56 Bytes
+               Total Records: 7
+
+
+Byte Number |# Bytes| Type | Description and notes
+____________|_______|_____________________________________________________
+    1-2     |   2   | 256's| Item Number
+     3      |   1   | hex  | Energy Tech Requirement
+     4      |   1   | hex  | Weapon Tech Requirement
+     5      |   1   | hex  | Popul. Tech Requirement
+     6      |   1   | hex  | Construction Tech Requirement
+     7      |   1   | hex  | Electronics Tech Requirement
+     8      |   1   | hex  | Bio. Tech Requirement
+    9-40    |  32   | Ascii| Item Name
+   41-42    |   2   | 128's| Normally Mass, not used in Stargates
+   43-44    |   2   | 128's| Resources Required To Build At First
+   45-46    |   2   | 256's| Iron Requirements
+   47-48    |   2   | 256's| Bor. Requirements
+   49-50    |   2   | 256's| Ger. Requirements
+   51-52    |   2   | 128's| Picture Shown In Tech Browser/Elsewhere
+   53-54    |   2   | 256's| Safe Mass ( FF FF = unlimited )
+   55-56    |   2   | 256's| Safe Distance ( FF FF = unlimited )
+
+*****************************************************************************
+
+Mass Drivers:
+
+First item starting location: 3097
+               Record Length: 56 Bytes
+               Total Records: 9
+
+
+Byte Number |# Bytes| Type | Description and notes
+____________|_______|_____________________________________________________
+    1-2     |   2   | 256's| Item Number
+     3      |   1   | hex  | Energy Tech Requirement
+     4      |   1   | hex  | Weapon Tech Requirement
+     5      |   1   | hex  | Popul. Tech Requirement
+     6      |   1   | hex  | Construction Tech Requirement
+     7      |   1   | hex  | Electronics Tech Requirement
+     8      |   1   | hex  | Bio. Tech Requirement
+    9-40    |  32   | Ascii| Item Name
+   41-42    |   2   | 128's| Normally Mass, not used in Mass Drivers
+   43-44    |   2   | 128's| Resources Required To Build At First
+   45-46    |   2   | 256's| Iron Requirements
+   47-48    |   2   | 256's| Bor. Requirements
+   49-50    |   2   | 256's| Ger. Requirements
+   51-52    |   2   | 128's| Picture Shown In Tech Browser/Elsewhere
+   53-54    |   2   | 256's| Driver Speed
+   55-56    |   2   | 256's| Not Used
+
+
+## Note: We use IT as our PRT, and changing the mass driver appeared not to
+         work, it may for other PRT's, let us know please
+
+******************************************************************************
+Ship and Starbase Hulls:
+
+Ship
+First item starting location: 378E
+               Record Length: 143 Bytes
+Starbase
+First Item starting location: 328F
+               Record Lenght: 143 Bytes
+
+
+Byte Number |# Bytes| Type | Description and notes
+____________|_______|_____________________________________________________
+    1-2     |   2   | 256's| Item Number
+     3      |   1   | hex  | Energy Tech Requirement
+     4      |   1   | hex  | Weapon Tech Requirement
+     5      |   1   | hex  | Popul. Tech Requirement
+     6      |   1   | hex  | Construction Tech Requirement
+     7      |   1   | hex  | Electronics Tech Requirement
+     8      |   1   | hex  | Bio. Tech Requirement
+    9-40    |  32   | Ascii| Item Name
+   41-42    |   2   | 128's| Mass
+   43-44    |   2   | 128's| Resources Required To Build At First
+   45-46    |   2   | 256's| Iron Requirements
+   47-48    |   2   | 256's| Bor. Requirements
+   49-50    |   2   | 256's| Ger. Requirements
+   51-52    |   2   | 128's| Picture Shown In Tech Browser/Elsewhere
+   53-54    |   2   | 256's| Cargo (in KT) or (Dockspaces FF FF= unlimited)
+   55-56    |   2   | 256's| Fuel ( S/B 00 00 for starbases )
+   57-58    |   2   | 256's| Armor
+   59-62    |   4   |note 1| Ship Slot #1 ( Must Be A Engine on a ship )
+   63-66    |   4   |note 1| Ship Slot #2
+   67-70    |   4   |note 1| Ship Slot #3
+   71-74    |   4   |note 1| Ship Slot #4
+   75-78    |   4   |note 1| Ship Slot #5
+   79-82    |   4   |note 1| Ship Slot #6
+   83-86    |   4   |note 1| Ship Slot #7
+   87-90    |   4   |note 1| Ship Slot #8
+   91-94    |   4   |note 1| Ship Slot #9
+   95-98    |   4   |note 1| Ship Slot #10
+   99-102   |   4   |note 1| Ship Slot #11
+  103-106   |   4   |note 1| Ship Slot #12
+  107-110   |   4   |note 1| Ship Slot #13
+  111-114   |   4   |note 1| Ship Slot #14
+  115-118   |   4   |note 1| Ship Slot #15
+  119-122   |   4   |note 1| Ship Slot #16
+    123     |   1   | hex  | Number Of Slots Used on Ship Hull
+    124     |   1   |note 2| Hull Inititive
+    125     |   1   | hex  | Unknown, may be worth/priority in battle ?
+    126     |   1   |note 3| Bottom Right Corner of Cargo/Dock Square (IfUsed)
+    127     |   1   |note 3| Top Left Corner Of Cargo/Dock Square (IfUsed)
+    128     |   1   |note 3| Ship Slot XY Location #1 ( Engine always in Ship )
+    129     |   1   |note 3| Ship Slot XY Location #2
+    130     |   1   |note 3| Ship Slot XY Location #3
+    131     |   1   |note 3| Ship Slot XY Location #4
+    132     |   1   |note 3| Ship Slot XY Location #5
+    133     |   1   |note 3| Ship Slot XY Location #6
+    134     |   1   |note 3| Ship Slot XY Location #7
+    135     |   1   |note 3| Ship Slot XY Location #8
+    136     |   1   |note 3| Ship Slot XY Location #9
+    137     |   1   |note 3| Ship Slot XY Location #10
+    138     |   1   |note 3| Ship Slot XY Location #11
+    139     |   1   |note 3| Ship Slot XY Location #12
+    140     |   1   |note 3| Ship Slot XY Location #13
+    141     |   1   |note 3| Ship Slot XY Location #14
+    142     |   1   |note 3| Ship Slot XY Location #15
+    143     |   1   |note 3| Ship Slot XY Location #16
+
+
+
+Note 1: There are 16 possible Slots that are used by Stars! to create hulls.
+        Of course, not all of them need to be used ( even the Nubian doesnt
+        use them all ). BUT, the first slot MUST always be a engine ( in
+        ships only ), and all other slots used must be in order, no
+        skipping slots !!. Use 1, then 2, then 3, and so on
+
+    OK, as you see, each slot is made up of 4 bytes of information. The first
+3 bytes controls what type of slot it is ( General purpose, Bomb, Orbital,
+so so forth ). The 4 byte is the max amount ( or required in the case of
+engines ) the slot can hold. This 4th byte is a single byte hex number, and
+you would edit it just like you would the tech levels of an item. The
+first 3 bytes control what a slot is. These 3 bytes work together to and make
+a bit based control of what a slot is..
+
+Whats a Bit ??
+
+who cares, here's some quick charts so you can just make the slots what you
+want them to be. Note, often strange combo's of types will say COMBO in the
+slot in the ship design hull. Dont worry about it, and yes, while you can
+put a orbital slot on the ship, you still cant put a stargate on a ship :)
+
+
+
+Byte #1
+--------
+
+Slot Type        |Value|  Notes
+---------------------------------------------------
+Engine           |   1 |
+Scanner          |   2 |
+Shield           |   4 |
+Armor            |   8 |
+Beam             |  16 | Should be used with Missile/Torp, doesnt have too
+Missile/Torp     |  32 | Should be used with Beam, doesnt have too
+Bomb             |  64 |
+Mining Robot     | 128 |
+
+
+Byte #2
+
+Slot Type        |Value|  Notes
+---------------------------------------------------
+Mine (laying)    |   1 |
+Orbital          |   2 | Useful on Starbases only!
+Unknown          |   4 |
+Electrical       |   8 |
+Mech             |  16 |
+Unknown          |  32 |
+Unknown          |  64 |
+Unknown          | 128 |
+
+
+Byte #3
+
+Slot Type        |Value|  Notes
+---------------------------------------------------
+Unknown          |   1 |
+Unknown          |   2 |
+Unknown          |   4 |
+Unknown          |   8 |
+Unknown          |  16 |
+Unknown          |  32 |
+Unknown          |  64 |
+Unknown          | 128 |
+
+
+
+
+OK, nice charts you say, but how do I use them ?? Simple, Lets say for example
+you wanted a BOMB/MINING ROBOT/MINE LAYING slot on your hull. First you would
+goto byte#1 chart and see if it has anything you need, and yes, it does. We
+need BOMB and MINING ROBOT from it. Each of those things has a value. In
+this case BOMB has a value of 64 and MINING ROBOT has a value of 128. Take
+64 and add 128 to it. The result is 192. So, we need a value of 192 in the
+1st byte in order to get bombs and the mining robots. We need to get the
+mine laying ability now. Well, the 1st byte chart doesnt have Mines on it,
+but the 2nd byte chart does. And according to the chart, it has a value of 1.
+So, since we need nothing else, for our 2nd byte we need a value of 1 put
+in in order to be able to put Mine laying ability.  There is nothing we
+need from the 3rd byte chart, so the value we need for byte 3 is zero ( 0 )
+
+OK, so we have our values for each byte. they are
+
+                            192   1    0
+
+Now, all we need is the 4th byte value which will be how many or the max.
+number this slot we are making is going to have. For our example, lets say
+we want 5 as the max number of stuff in this slot. We now have all 4 bytes
+worth of values to make our ship slot now. They are, in order
+
+                              192   1   0   5
+
+           You would convert these decimal numbers into Hex
+
+                               C0 01 00 05
+
+And you would place these into the ship slot as the 4 bytes it needs, and blam
+you have a ship slot that can hold up to 5 bombs, or 5 miners, or 5 mines !
+
+======------======---====
+
+*** Note 2:
+    Hull Inititive settings in Stars! is wierd at best. Normally, when
+we look at a hex number, lets say 1A, we would take 1A and convert it to
+decimal and see our inititive right there. But NO, stars! takes this hex
+number and splits it in 2 pieces like this
+
+
+1C   -----+----->  1
+          |----->  A
+
+Stars! treats each number/letter alone now, placeing them apart like this
+
+                              1     A
+
+
+We convert the numbers to decimal getting
+
+                              1     10
+
+In stars! ship and starbase INIT., the first number is 16's and the 2nd
+number is the 1's, so we get
+
+                              1 * 16's  = 16
+                             10 *  1's  = 10
+
+Adding them together, our ship has a INIT of 26 in our example.
+
+Now lets say we want it to be 28 instead of 26, we would then
+
+                              28 / 16 = 1
+                            With 12 remaining
+
+Which leaves us with the values ( remember, this ship init stuff is backwards
+from all other things in the database! )
+
+                                  1  12
+
+Which we convert to hex
+
+                                  1   C
+
+We put the 2 halfs back together
+
+                                    1C
+
+And put this in the byte for Ship/Starbase INIT.
+
+======-======-======-=====-
+
+*** Note 3
+
+     Ship slot location uses each half of the hex number as x and y
+so putting  14 hex in a ship slot XY byte would put that slot in square
+1,4
+
+This format is also used to draw those Cargo hold and Space dock areas
+that have the gray lines thru them. If you put 44 hex in byte 126 ( bottom
+right ) and 11 hex in byte 127 ( top left ), Stars! make and fill a box
+from 1,1 to 4,4 and fill it with gray lines, and place the ships KT or
+the starbases dock space centered within it
+
+Allowed values are 0 - 8
+
+
+
+
+*****************************************************************************
+
+Beam/Trop/Missile
+
+
+First item starting location: 558C
+               Record Length: 60 Bytes
+               Total Records: 36
+
+
+Byte Number |# Bytes| Type | Description and notes
+____________|_______|_____________________________________________________
+    1-2     |   2   | 256's| Item Number
+     3      |   1   | hex  | Energy Tech Requirement
+     4      |   1   | hex  | Weapon Tech Requirement
+     5      |   1   | hex  | Popul. Tech Requirement
+     6      |   1   | hex  | Construction Tech Requirement
+     7      |   1   | hex  | Electronics Tech Requirement
+     8      |   1   | hex  | Bio. Tech Requirement
+    9-40    |  32   | Ascii| Item Name
+   41-42    |   2   | 128's| Mass
+   43-44    |   2   | 128's| Resources Required To Build At First
+   45-46    |   2   | 256's| Iron Requirements
+   47-48    |   2   | 256's| Bor. Requirements
+   49-50    |   2   | 256's| Ger. Requirements
+   51-52    |   2   | 128's| Picture Shown In Tech Browser/Elsewhere
+   53-54    |   2   | 256's| Range ( only first byte used )
+   55-56    |   2   | 256's| Power
+    57      |   1   | hex  | Inititive
+    58      |   1   | hex  | Accuracy
+    59      |   1   | hex  | Not Used
+
+******************************************************************************
+
+Bombs
+
+
+First item starting location: 5DFC
+               Record Length: 58 Bytes
+               Total Records: 15
+
+
+Byte Number |# Bytes| Type | Description and notes
+____________|_______|_____________________________________________________
+    1-2     |   2   | 256's| Item Number
+     3      |   1   | hex  | Energy Tech Requirement
+     4      |   1   | hex  | Weapon Tech Requirement
+     5      |   1   | hex  | Popul. Tech Requirement
+     6      |   1   | hex  | Construction Tech Requirement
+     7      |   1   | hex  | Electronics Tech Requirement
+     8      |   1   | hex  | Bio. Tech Requirement
+    9-40    |  32   | Ascii| Item Name
+   41-42    |   2   | 128's| Normally Mass, not used in Stargates
+   43-44    |   2   | 128's| Resources Required To Build At First
+   45-46    |   2   | 256's| Iron Requirements
+   47-48    |   2   | 256's| Bor. Requirements
+   49-50    |   2   | 256's| Ger. Requirements
+   51-52    |   2   | 128's| Picture Shown In Tech Browser/Elsewhere
+   53-54    |   2   | 256's| Not Used
+   55-56    |   2   | ---- | Pop. Kill  ( 1st byte = .1's 2nd byte = 25.5's )
+   57-58    |   2   | ---- | Fact/Defense Kill ( see above for bytes )
+
+
+******************************************************************************
+
+Armor
+
+
+First item starting location: 7814
+               Record Length: 54 Bytes
+               Total Records: 12
+
+
+Byte Number |# Bytes| Type | Description and notes
+____________|_______|_____________________________________________________
+    1-2     |   2   | 256's| Item Number
+     3      |   1   | hex  | Energy Tech Requirement
+     4      |   1   | hex  | Weapon Tech Requirement
+     5      |   1   | hex  | Popul. Tech Requirement
+     6      |   1   | hex  | Construction Tech Requirement
+     7      |   1   | hex  | Electronics Tech Requirement
+     8      |   1   | hex  | Bio. Tech Requirement
+    9-40    |  32   | Ascii| Item Name
+   41-42    |   2   | 128's| Mass
+   43-44    |   2   | 128's| Resources Required To Build At First
+   45-46    |   2   | 256's| Iron Requirements
+   47-48    |   2   | 256's| Bor. Requirements
+   49-50    |   2   | 256's| Ger. Requirements
+   51-52    |   2   | 128's| Picture Shown In Tech Browser/Elsewhere
+   53-54    |   2   | 256's| Armor Strength
+
+
+******************************************************************************
+
+Jammers
+
+
+First item starting location: 7092
+               Record Length: 54 Bytes
+               Total Records: 3
+
+
+Byte Number |# Bytes| Type | Description and notes
+____________|_______|_____________________________________________________
+    1-2     |   2   | 256's| Item Number
+     3      |   1   | hex  | Energy Tech Requirement
+     4      |   1   | hex  | Weapon Tech Requirement
+     5      |   1   | hex  | Popul. Tech Requirement
+     6      |   1   | hex  | Construction Tech Requirement
+     7      |   1   | hex  | Electronics Tech Requirement
+     8      |   1   | hex  | Bio. Tech Requirement
+    9-40    |  32   | Ascii| Item Name
+   41-42    |   2   | 128's| Mass
+   43-44    |   2   | 128's| Resources Required To Build At First
+   45-46    |   2   | 256's| Iron Requirements
+   47-48    |   2   | 256's| Bor. Requirements
+   49-50    |   2   | 256's| Ger. Requirements
+   51-52    |   2   | 128's| Picture Shown In Tech Browser/Elsewhere
+   53-54    |   2   | 256's| Jamming Rate ( only 1st byte used )
+
+******************************************************************************
+
+Mines ( not Planet mines, but mine layers for ship hulls )
+
+
+First item starting location: 6A74
+               Record Length: 54 Bytes
+               Total Records: 10
+
+
+Byte Number |# Bytes| Type | Description and notes
+____________|_______|_____________________________________________________
+    1-2     |   2   | 256's| Item Number
+     3      |   1   | hex  | Energy Tech Requirement
+     4      |   1   | hex  | Weapon Tech Requirement
+     5      |   1   | hex  | Popul. Tech Requirement
+     6      |   1   | hex  | Construction Tech Requirement
+     7      |   1   | hex  | Electronics Tech Requirement
+     8      |   1   | hex  | Bio. Tech Requirement
+    9-40    |  32   | Ascii| Item Name
+   41-42    |   2   | 128's| Mass
+   43-44    |   2   | 128's| Resources Required To Build At First
+   45-46    |   2   | 256's| Iron Requirements
+   47-48    |   2   | 256's| Bor. Requirements
+   49-50    |   2   | 256's| Ger. Requirements
+   51-52    |   2   | 128's| Picture Shown In Tech Browser/Elsewhere
+   53-54    |   2   | 256's| Mines Laid a year * 10 ( only 1st byte used)
+
+******************************************************************************
+
+Remote Ore Mining Robots
+
+
+First item starting location: 68C4
+               Record Length: 54 Bytes
+               Total Records: 8
+
+
+Byte Number |# Bytes| Type | Description and notes
+____________|_______|_____________________________________________________
+    1-2     |   2   | 256's| Item Number
+     3      |   1   | hex  | Energy Tech Requirement
+     4      |   1   | hex  | Weapon Tech Requirement
+     5      |   1   | hex  | Popul. Tech Requirement
+     6      |   1   | hex  | Construction Tech Requirement
+     7      |   1   | hex  | Electronics Tech Requirement
+     8      |   1   | hex  | Bio. Tech Requirement
+    9-40    |  32   | Ascii| Item Name
+   41-42    |   2   | 128's| Mass
+   43-44    |   2   | 128's| Resources Required To Build At First
+   45-46    |   2   | 256's| Iron Requirements
+   47-48    |   2   | 256's| Bor. Requirements
+   49-50    |   2   | 256's| Ger. Requirements
+   51-52    |   2   | 128's| Picture Shown In Tech Browser/Elsewhere
+   53-54    |   2   | 256's| KT of each ore mined per year
+
+******************************************************************************
+
+Planetary Based Scanners
+
+
+First item starting location: 659A
+               Record Length: 54 Bytes
+               Total Records: 9
+
+
+Byte Number |# Bytes| Type | Description and notes
+____________|_______|_____________________________________________________
+    1-2     |   2   | 256's| Item Number
+     3      |   1   | hex  | Energy Tech Requirement
+     4      |   1   | hex  | Weapon Tech Requirement
+     5      |   1   | hex  | Popul. Tech Requirement
+     6      |   1   | hex  | Construction Tech Requirement
+     7      |   1   | hex  | Electronics Tech Requirement
+     8      |   1   | hex  | Bio. Tech Requirement
+    9-40    |  32   | Ascii| Item Name
+   41-42    |   2   | 128's| Mass
+   43-44    |   2   | 128's| Resources Required To Build At First
+   45-46    |   2   | 256's| Iron Requirements
+   47-48    |   2   | 256's| Bor. Requirements
+   49-50    |   2   | 256's| Ger. Requirements
+   51-52    |   2   | 128's| Picture Shown In Tech Browser/Elsewhere
+   53-54    |   2   | 256's| Range In Light Years ( See Note )
+
+### Note: There are 2 types of  Planet based Scanners. The normal ones
+          and the SX series which can also determine a planets stats
+          ( normally 1/2 the distance of the total scan range )
+          The way STARS! determines if a planet scanner is capable of
+          being a SX series is kinda tricky but once you understand
+          it is actually very easy....
+
+          For example sake, lets say we have a scanner we wish to change
+          to normal 300 light years range. we know that scanner range is
+          a 2 byte 256's number, so for 300 we would find that:
+
+                              300 / 256 = 1
+                            With 44 remaining
+
+           This gives us the 1's and 256's in 300 in decimal
+
+                                 44  1
+
+                Which we convert to hex ending up with
+
+                                 2C 01
+
+              Which we promptly place into bytes 53 and 54
+
+OK, now we want to make a SX 300 light year scanner that can see a planets
+stats ( at 150 light years, it will always be 1/2 the total ), we need to
+do a bit more math. If stars! sees any number over 32768 light years (wow!)
+as the scanner range, it takes that number and subtracts it from 65536
+and turns it into a SX series scanner.
+
+OK, you with us so far. OK, now to make the scanner we wish, we need to
+figure out what 65536 - 300 is !
+
+                          65536 - 300 = 65236
+
+     Ok, so now we know that we need to put in as a scanner range the
+     result 65236, and stars! will make a 300sx scanner instead of a
+     normal 300 light year scanner, so we figure out
+
+                           65236 / 256 = 254
+                          with 212 remaining
+
+              Give us the bytes we need in decimal being
+
+                              212  254
+
+                Which we convert to hex ending up with
+
+                                D4 FE
+
+        Which we place into bytes 53 and 54, and blam, there it is :)
+
+******************************************************************************
+
+Terraforming
+
+
+First item starting location: 6162
+               Record Length: 54 Bytes
+               Total Records: 20
+
+
+Byte Number |# Bytes| Type | Description and notes
+____________|_______|_____________________________________________________
+    1-2     |   2   | 256's| Item Number
+     3      |   1   | hex  | Energy Tech Requirement
+     4      |   1   | hex  | Weapon Tech Requirement
+     5      |   1   | hex  | Popul. Tech Requirement
+     6      |   1   | hex  | Construction Tech Requirement
+     7      |   1   | hex  | Electronics Tech Requirement
+     8      |   1   | hex  | Bio. Tech Requirement
+    9-40    |  32   | Ascii| Item Name
+   41-42    |   2   | 128's| Mass
+   43-44    |   2   | 128's| Resources Required To Build At First (n/u)
+   45-46    |   2   | 256's| Iron Requirements (n/u)
+   47-48    |   2   | 256's| Bor. Requirements (n/u)
+   49-50    |   2   | 256's| Ger. Requirements (n/u)
+   51-52    |   2   | 128's| Picture Shown In Tech Browser/Elsewhere
+   53-54    |   2   | 256's| Terraform % ( only 1st byte used ) SEE NOTE
+
+#### NOTE : Terraforming items ADD UP as you learn them, so dont go too
+            crazy ( +-3 + +-5 + +-10  = +-18 terraforming total ). If
+            you go nuts, the map will be nearly impossible to see clearly
+            when you have it in planet worth% mode.
+
+
+
+****************************************************************************
+
+Revision 2: Added mining robots, terraforming, planetary scanners, mines
+            armor, shields and jammers
+
+Revision 3: Correct Ship init. byte, added ship hull layouts,design, slot
+            onwership and placement. Added Starbase's
+
+
+****************************************************************************
+
+
+   Thats it for now!!! Watch for further revisions in this list, or if you
+   have any info to add, please forward it to us. If you use this info to
+    create an editor or mod. a pre-existing editor, we ask that you kindly
+    mention us as contributors if this file was usefull. Thank you.......
+
+
+       Thanks to Patryk Z. Stencel for his input on Ship Slot Breakdowns
+
+
+
+ Send fan mail to baybevet@[199.173.91.200] or the_chairman@[199.173.91.200]
+
+                                     OR
+
+                Visit our website at http://199.173.91.200
+
+
+
+
+
+
+

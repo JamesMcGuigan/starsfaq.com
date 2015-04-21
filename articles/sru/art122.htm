@@ -1,0 +1,146 @@
+<!DOCTYPE htm PUBLIC "-//W3C//DTD htm 4.0 Transitional//EN"
+	"http://www.w3.org/TR/REC-htm40/loose.dtd">
+
+<htm lang="en-US">
+
+<HEAD>
+	<TITLE>Stars!-R-Us Article</TITLE>
+
+	<META name="author" content="Donald Davis">
+	<META name="copyright" content="&copy; 1999">
+	<!-- <META http-equiv="Content-Style-Type" content="text/css"> -->
+
+	<!-- <LINK href="main.css" rel="stylesheet" type="text/css"> -->
+
+	<!-- <href="http://www.strategygamefan.com/starsrus/"> -->
+</HEAD>
+<BODY background="../../starfield.gif" text="#8eb3f4" link="#FF0000" vlink="#c00000" alink="#800080" bgcolor="#000000">
+<h3>"Value Rating" formula for ship designs.<br>
+by: Lance Warren Hankins</h3>
+
+<p>I was wondering if anyone else has come up with a general purpose "Value
+Rating" formula that attempts to relate a ship's effectiveness (attack and
+defense) in relation to how much it cost in minerals and resources...<br><br>
+
+<p>I am currently playing in about three games and in one (actually a 2.0b
+game) it is very late in the game and I have a maxed 2 techonologies and
+am about to build some new ships (I was waiting on the complete phase
+shield to build a series of new Dreadnaughts), and started looking at
+the cost of several different designs.  In one, I outfitted a dreadnaught
+with epsilon torpedos (which cost virtually nothing at this stage of the
+game  75 DP at range 8 for cost of 2/9/5/25 (this is i/b/g/r)) and
+kelarium armor (also VERY cheap - 300 dp of armor for cost of 5/1/0/10)
+and put two jammers in the "special" slot.<br><br>
+
+<p>In the other design, I have a
+mac'd out Dreadnaught with all the latest and greatest armor
+(Superlatnium : 750 dp for 32/2/2/100), shields and torpedos (omegas : 270
+dp @ rng 9 for a whopping 8/38/19/162), and also 2 jammers in the special
+slot. The cheap dreadnaughts cost less than one third what the expensive
+ones do...  So how do I decide which will be MORE EFFECTIVE to build...? <br><br>
+
+<p>Well I whipped out Excel and started plugging in formula's to see what
+kind of "value rating" I could get for a ship (by value rating I mean how
+effective is the ship vs. how much it cost).  Here's the initial formula
+I've been using :<br><br>
+
+
+ value rating = (a * aMod + d * dMod) / <br>
+                (ic * iMod)+(bc * bMod)+(gc * gMod)+(rc * rMod)<br><br>
+
+
+   (the first line is the numerator, the second is the denominator)<br><br>
+
+
+<p>Here's a definition of the variables :<br><br>
+
+<u>a = ships attacks per round</u><br>
+<p>aMod   : Attack Modifer (I usually set this to 1.25 since a ship's
+attack per round is usually quite a bit smaller than its total dp -
+keep reading)... If you wanted to have a greater bias towards ships with
+better attack you could set this to 1.5 (it essentially allows you to give
+more "weight" to the attack of the ship).<br><br>
+
+<u>d = total amount of damage a ship can take</u><br>
+<p>dMod   : Defense Modifer (I usually set this to 1).  This is similar to
+the aMod in that it allows you to give more "weight" to the defense value
+when coming up with the rating.<br><br>
+
+<u>ic = cost in ironium</u><br>
+<p>iMod   : Ironium Modifer (usually 1).  You could set this to a value
+greater than one to reflect the fact that Ironium was "more valuable"
+(i.e. in shorter supply). <br><br>
+
+<u>bc = cost in boranium</u><br>
+<p>bMod   : Boranium Modifer (usually 1).  You could set this to a value
+greater than one if you were in short supply of Boranium.  I seem to run
+low on Boranium in 2.0b games late in the game due to the high bc of good
+hi-tech weapons... (I actually have the bMod set to 1.3, because Boranium
+IS more valuable to me in this particular game, but its "default" value
+assuming all minerals are equally value is 1). <br><br>
+
+gc = cost in Germanium<br><br>
+
+<p>gMod   : Similar to iMod and bMod, used to give unequal weight to the
+cost of germanium...<br><br>
+
+<p>rc     : Cost of resouce points (how many non-mineral resources does it
+take to build the thing).<br><br>
+
+<p>rMod   : Similar to iMod, bMod, gMod... Used to give unequal weight to
+the cost of non-mineral resources.<br><br>
+
+<p>Ok, obviously this system is only (maybe) good for comparing ships
+which have identically (or close to it) ranged weapons, but this is OK,
+since we're comparing similarly functioning ships (two fully torpedo
+carrying ships in this case), its just one uses out-of-date (mid-game)
+tech. and the other uses state of the art tech. It also doesn't take into
+account differences in regenerating shields, initiative,jamming,  etc (but
+the two models shouldn't have vastly different initiatives or jamming
+ratings, its not the Battle Computers or Jammers that are expensive, its
+the torpedos / armor / shields).  <br><br>
+
+<p>Using this system and the aforementioned Dreadnaught example (keep in
+mind these are version 2.0b costs for weapons, armor, etc.).  It seems to
+imply that it is more "cost-effective" at this stage of the game for me to
+build larger amounts of ships with outdated tech on them.  Here are the
+stats for the two designs mentioned (in this instance I used a aMod value
+of 1.25 and a bMod value of 1.3 (as I said Boranium is more scarce than
+the other resources this late in the game), all other Mod values are 1) :<br><br>
+
+<TABLE align=center cellspacing=3 cellpadding=3 width=100%>
+<tr><th>Ship<th>Def.<th>Attack<th>ic<th>bc<th>gc<th>rc<th>Value Rating
+<tr><th>New Tech DN<th>17500<th>8910<th>1101<th>1387<th>813<th>7834<th>2.479201115
+<tr><th>Old Tech DN<th>7800<th>2850<th>348<th>404<th>270<th>1630<th>4.097252272
+<tr><th>3 Old DN's<th>23400<th>8550<th>1044<th>1212<th>810<th>4890<th>4.097252272
+</table>
+
+<p>As you can see, you can build 3 of the old DN's for well under the
+total resource cost of one of the new DNs...  The old DN's have a Value
+Rating of about 4 vs. the new Dn's rating of about 2.5...  A fleet of
+three old DN's will have more armor - almost as much firepower, and cost
+significantly less in rc...  I've tried varying the paramters for aMod and
+dMod, and always seem to get a Value Rating which favors the miniturized
+technology over the current tech.  <br><br>
+
+Does anyone have comments on this?<br><br>
+
+<p>I'd like some feedback on the formula - is there something I could do to
+make it more effective?  KEEP IN MIND - THIS IS ONLY MEANT TO COMPARE
+SIMILARLY FUNCTIONING SHIPS.  It is NOT meant to be used to compare a beam
+weapon ship to a torp ship, but rather to contrast like functioning ships
+with differing technology level items (e.g. two range 8-9 torp destroyers
+with differing technology levels for their armor and torps) with regard to
+their cost in minerals and resource points.  I have not compared the costs
+in version 2.6a, but I suspect any "general" formula which imparted
+information in 2.0b would be useful in similar decisions in version 2.6a
+as well..<br><br>
+
+Any (constructive) feedback would be appreciated...<br><br>
+
+
+				- Lance<br><br>
+
+
+<h4><A HREF="../index.htm">Back to the Article Main Page.</A>
+</font></body>
