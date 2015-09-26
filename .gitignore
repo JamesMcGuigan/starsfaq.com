@@ -4,3 +4,4 @@ logfiles
 *.log
 logs
 new_site
+.idea
